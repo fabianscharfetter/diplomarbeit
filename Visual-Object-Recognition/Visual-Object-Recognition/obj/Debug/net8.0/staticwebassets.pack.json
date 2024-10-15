@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\Visual-Object-Recognition\\Visual-Object-Recognition\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Visual-Object-Recognition.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Visual-Object-Recognition.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\Visual-Object-Recognition\\Visual-Object-Recognition\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\Visual-Object-Recognition\\Visual-Object-Recognition\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\Visual-Object-Recognition\\Visual-Object-Recognition\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\Visual-Object-Recognition\\Visual-Object-Recognition\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Visual-Object-Recognition.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Visual-Object-Recognition.props",
+      "PackagePath": "build\\Visual-Object-Recognition.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Visual-Object-Recognition.props",
+      "PackagePath": "buildMultiTargeting\\Visual-Object-Recognition.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Visual-Object-Recognition.props",
+      "PackagePath": "buildTransitive\\Visual-Object-Recognition.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
