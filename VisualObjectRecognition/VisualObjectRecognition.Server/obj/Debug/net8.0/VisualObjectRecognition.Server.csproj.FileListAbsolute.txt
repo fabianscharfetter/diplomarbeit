@@ -6,7 +6,6 @@ C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\Vis
 C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\VisualObjectRecognition.Server.runtimeconfig.json
 C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\VisualObjectRecognition.Server.dll
 C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\VisualObjectRecognition.Server.pdb
-C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
 C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\fabia\OneDrive\Desktop\project\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll

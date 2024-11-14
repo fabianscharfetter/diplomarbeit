@@ -47,7 +47,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.SpaProxy": {
               "target": "Package",
-              "version": "[8.*-*, )"
+              "version": "[9.0.0, )"
             },
             "MongoDB.Bson": {
               "target": "Package",
@@ -63,7 +63,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
