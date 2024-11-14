@@ -53,7 +53,7 @@ namespace VisualObjectRecognition.Server.Controllers
 
             await _mongoDbService.UpdateUserAsync(id, updatedUser);
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id}")]
@@ -68,7 +68,7 @@ namespace VisualObjectRecognition.Server.Controllers
 
             await _mongoDbService.DeleteUserAsync(id);
 
-            return NoContent();
+            return Ok();
         }
     }
 }
