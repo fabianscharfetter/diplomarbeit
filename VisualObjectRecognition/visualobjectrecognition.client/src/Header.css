@@ -1,0 +1,39 @@
+:root {
+    --background-color: #1a1c1f;
+    --text-color: white;
+    --secondary-color: #f9a800;
+    --header-color: #1d2024;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 100px;
+    background-color: var(--header-color);
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+    .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem; 
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
