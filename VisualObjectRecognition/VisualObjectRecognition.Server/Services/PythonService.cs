@@ -18,22 +18,21 @@ namespace VisualObjectRecognition.Server.Services
         {
             try
             {
-                // Prozess konfigurieren
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = _pythonExePath,               // Python-Binary in der venv
-                    Arguments = $"{scriptPath} {arguments}", // Skript und Argumente
-                    RedirectStandardOutput = true,          // Normale Ausgabe umleiten
-                    RedirectStandardError = true,           // Fehlerausgabe umleiten
-                    UseShellExecute = false,                // Shell nicht verwenden
-                    CreateNoWindow = true                   // Kein neues Fenster
+                    FileName = _pythonExePath,                  // venv
+                    Arguments = $"{scriptPath} {arguments}",    
+                    RedirectStandardOutput = true,              // Normale Ausgabe umleiten
+                    RedirectStandardError = true,               // Fehlerausgabe umleiten
+                    UseShellExecute = false,                    
+                    CreateNoWindow = true                       
                 };
 
                 using (Process process = new Process { StartInfo = psi })
                 {
                     process.Start();
 
-                    // Lies sowohl die Standard-Ausgabe als auch die Fehlerausgabe
+                    // Liest sowohl die Standard-Ausgabe als auch die Fehlerausgabe
                     string output = await process.StandardOutput.ReadToEndAsync();
                     string error = await process.StandardError.ReadToEndAsync();
                     
@@ -42,13 +41,12 @@ namespace VisualObjectRecognition.Server.Services
                     // Beide zusammenfügen für Logging oder spätere Analyse
                     string combinedOutput = $"{output}\n{error}";
 
-                    // Fehlerausgabe prüfen: Wenn StandardError echte Probleme enthält, werfe Exception
                     if (!string.IsNullOrEmpty(error) && process.ExitCode != 0)
                     {
                         throw new Exception($"Python-Fehler: {error.Trim()}");
                     }
 
-                    return combinedOutput.Trim(); // Gesamtausgabe zurückgeben
+                    return combinedOutput.Trim(); 
                 }
             }
             catch (Exception ex)

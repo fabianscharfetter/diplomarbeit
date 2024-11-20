@@ -2,7 +2,7 @@
 {
     public enum Permisson
     {
-        None = 0,
-        Legal = 1,
+        Legal ,
+        Illegal
     }
 }

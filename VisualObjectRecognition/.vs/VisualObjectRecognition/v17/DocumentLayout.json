@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\services\\pythonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\services\\pythonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\controllers\\pythoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\controllers\\pythoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\pages\\about.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\pages\\about.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\about.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\about.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\pages\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\pages\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 226,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,117 +46,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Controllers\\UserController.cs",
-              "RelativeToolTip": "VisualObjectRecognition.Server\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\User.cs",
+              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\User.cs",
+              "RelativeToolTip": "VisualObjectRecognition.Server\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T15:38:14.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PythonController.cs",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Controllers\\PythonController.cs",
-              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Controllers\\PythonController.cs",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Controllers\\PythonController.cs",
-              "RelativeToolTip": "VisualObjectRecognition.Server\\Controllers\\PythonController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T15:38:05.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PythonService.cs",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Services\\PythonService.cs",
-              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Services\\PythonService.cs",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Services\\PythonService.cs",
-              "RelativeToolTip": "VisualObjectRecognition.Server\\Services\\PythonService.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAYwBsAAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T15:35:51.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\index.html",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\index.html",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\index.html",
-              "RelativeToolTip": "visualobjectrecognition.client\\index.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-14T16:21:47.144Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Header.css",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Header.css",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Header.css",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Header.css",
-              "RelativeToolTip": "visualobjectrecognition.client\\src\\Header.css",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-14T15:55:30.804Z",
+              "WhenOpened": "2024-11-20T15:36:09.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\Admin.cs",
+              "RelativeToolTip": "VisualObjectRecognition.Server\\Models\\Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T15:17:42.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\Customer.cs",
+              "RelativeToolTip": "VisualObjectRecognition.Server\\Models\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T15:06:22.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Login.tsx",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Login.tsx",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Login.tsx",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Login.tsx",
-              "RelativeToolTip": "visualobjectrecognition.client\\src\\Login.tsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAaAAAA",
+              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Pages\\Login.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Pages\\Login.tsx",
+              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Pages\\Login.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\Login.tsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-11-14T14:55:29.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "About.tsx",
-              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\About.tsx",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\About.tsx",
-              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\About.tsx",
-              "RelativeToolTip": "visualobjectrecognition.client\\src\\About.tsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Pages\\About.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Pages\\About.tsx",
+              "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Pages\\About.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\About.tsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-11-14T14:54:04.987Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "App.tsx",
               "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\App.tsx",
               "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\App.tsx",
               "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\App.tsx",
               "RelativeToolTip": "visualobjectrecognition.client\\src\\App.tsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-11-14T14:19:01.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "main.tsx",
               "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\main.tsx",
               "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\main.tsx",
               "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\main.tsx",
               "RelativeToolTip": "visualobjectrecognition.client\\src\\main.tsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-11-14T14:08:58.618Z",
               "EditorCaption": ""

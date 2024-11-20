@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './Header';
-import Home from './Home';
-import About from './About';
-import Contact from './Login';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Login';
 import Footer from './Footer';
-import './App.css';
+import './Stylesheets/App.css';
 
 const App: React.FC = () => {
     return (
