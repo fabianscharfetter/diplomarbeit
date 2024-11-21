@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-//import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../Context/useAuth";
@@ -37,51 +38,38 @@ const LoginPage: React.FC = () => {
             {/* Left Container: Anmeldeformular */}
             <div className="login-left-container">
                 <div className="login-form">
-                    <h1>Bei Ihrem Konto anmelden</h1>
+                    <h3>Bei Ihrem Konto anmelden</h3>
+                    <br></br>
                     <form onSubmit={handleSubmit(handleLogin)}>
                         <div>
-                            <label
-                                htmlFor="email"
-                                className="block mb-2 text-sm font-medium"
-                            >
-                                Email
-                            </label>
                             <input
                                 type="text"
                                 id="email"
-                                placeholder="Vorname"
+                                placeholder="Email"
                                 {...register("email")}
                             />
                             {errors.email && (
-                                <p className="text-red-500">{errors.email.message}</p>
+                                <h5 className="error">{errors.email.message}</h5>
                             )}
                         </div>
 
                         <div>
-                            <label
-                                htmlFor="password"
-                                className="block mb-2 text-sm font-medium"
-                            >
-                                Passwort
-                            </label>
                             <input
                                 type="password"
                                 id="password"
-                                placeholder="••••••••"
+                                placeholder="Passwort"
                                 {...register("password")}
                             />
                             {errors.password && (
-                                <p className="text-red-500">{errors.password.message}</p>
+                                <h5 className="error">{errors.password.message}</h5>
                             )}
                         </div>
 
                         <button type="submit">Anmelden</button>
 
                         <footer>
-                            <p>
-                                Du hast noch kein Konto?{" "}
-                                <a href="#">Jetzt registrieren!</a>
-                            </p>
+                            <h5>Du hast noch kein Konto?</h5>
+                            <Link to="/account/register">Jetzt Regristrieren</Link>
                         </footer>
                     </form>
                 </div>
