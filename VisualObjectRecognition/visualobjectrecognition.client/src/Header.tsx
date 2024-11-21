@@ -14,7 +14,7 @@ const Header: React.FC = () => {
                 <a href="https://lagerage.at/home">SelfStorage</a>
                 <a href="https://lagerage.at/home/immobilien">Immobilien</a>
                 <Link to="/about">{"\u00DCber uns"}</Link>
-                <Link to="/login">Anmelden</Link>
+                <Link to="/account/login">Anmelden</Link>
             </nav>
         </header>
     );
