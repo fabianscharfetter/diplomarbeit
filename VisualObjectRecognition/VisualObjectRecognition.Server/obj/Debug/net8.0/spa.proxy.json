@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\..\\visualobjectrecognition.client",
+"WorkingDirectory": "C:\\Users\\tobia\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\..\\visualobjectrecognition.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

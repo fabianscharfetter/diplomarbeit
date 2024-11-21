@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Ly12lc12xec9NPS3l5jakmacT/nCBRyAIV+7ENMX1MQ=",
+  "Hash": "XR0Ug21xEMB8PSzDkMjt+lvB4sFRsRh05uu8ZsPuviQ=",
   "Source": "VisualObjectRecognition.Server",
   "BasePath": "_content/VisualObjectRecognition.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\visualobjectrecognition.client.esproj",
+      "Identity": "C:\\Users\\tobia\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\visualobjectrecognition.client.esproj",
       "Version": 2,
       "Source": "visualobjectrecognition.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
