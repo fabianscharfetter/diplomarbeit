@@ -11,8 +11,7 @@ const Header: React.FC = () => {
                 </Link>
             </div>
             <nav className="nav-links">
-                <a href="https://lagerage.at/home">SelfStorage</a>
-                <a href="https://lagerage.at/home/immobilien">Immobilien</a>
+                <Link to="/Home"><img src=""></img></Link>
                 <Link to="/about">{"\u00DCber uns"}</Link>
                 <Link to="/login">Anmelden</Link>
             </nav>
