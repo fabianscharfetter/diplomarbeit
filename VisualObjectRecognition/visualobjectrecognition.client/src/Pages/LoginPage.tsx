@@ -77,9 +77,10 @@ const LoginPage: React.FC = () => {
 
             {/* Right Container: Bild */}
             <div className="login-right-container">
-                <img src="../../public/logo.svg" alt="Logo" className="logo-footer" />
+                <img src="../../public/couch.svg" alt="Logo" className="login-image" />
             </div>
         </section>
+        
     );
 };
 

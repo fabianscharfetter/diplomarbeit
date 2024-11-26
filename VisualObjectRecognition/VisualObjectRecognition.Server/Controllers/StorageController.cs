@@ -1,76 +1,97 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using VisualObjectRecognition.Server.Data;
 using VisualObjectRecognition.Server.Models;
-using VisualObjectRecognition.Server.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace VisualObjectRecognition.Server.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class StorageController : Controller
-    {
-        private readonly MongoDbService _mongoDbService;
+	[ApiController]
+	[Route("api/[controller]")]
+	public class StorageController : Controller
+	{
+		private readonly ApplicationDBContext _context;
 
-        public StorageController(MongoDbService mongoDbService)
-        {
-            _mongoDbService = mongoDbService;
-        }
+		public StorageController(ApplicationDBContext context)
+		{
+			_context = context;
+		}
 
-        [HttpGet]
-        public async Task<ActionResult<List<Storage>>> Get() =>
-            await _mongoDbService.GetStoragesAsync();
+		// GET: api/Storage
+		[HttpGet]
+		public async Task<ActionResult<List<Storage>>> Get()
+		{
+			return await _context.Storages.ToListAsync();
+		}
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Storage>> GetById(string id)
-        {
-            var storage = await _mongoDbService.GetStorageByIdAsync(id);
+		// GET: api/Storage/{id}
+		[HttpGet("{id}")]
+		public async Task<ActionResult<Storage>> GetById(string id)
+		{
+			var storage = await _context.Storages.FindAsync(id);
 
-            if (storage == null)
-            {
-                return NotFound();
-            }
+			if (storage == null)
+			{
+				return NotFound();
+			}
 
-            return storage;
-        }
+			return storage;
+		}
 
-        [HttpPost]
-        public async Task<IActionResult> Create(Storage newStorage)
-        {
-            await _mongoDbService.CreateStorageAsync(newStorage);
-            return CreatedAtAction(nameof(GetById), new { id = newStorage.Id }, newStorage);
-        }
+		// POST: api/Storage
+		[HttpPost]
+		public async Task<IActionResult> Create(Storage newStorage)
+		{
+			_context.Storages.Add(newStorage);
+			await _context.SaveChangesAsync();
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, Storage updatedStorage)
-        {
-            var storage = await _mongoDbService.GetStorageByIdAsync(id);
+			return CreatedAtAction(nameof(GetById), new { id = newStorage.Id }, newStorage);
+		}
 
-            if (storage == null)
-            {
-                return NotFound();
-            }
+		// PUT: api/Storage/{id}
+		[HttpPut("{id}")]
+		public async Task<IActionResult> Update(string id, Storage updatedStorage)
+		{
+			if (id != updatedStorage.Id)
+			{
+				return BadRequest("Storage ID mismatch");
+			}
 
-            updatedStorage.Id = storage.Id;
+			var existingStorage = await _context.Storages.FindAsync(id);
 
-            await _mongoDbService.UpdateStorageAsync(id, updatedStorage);
+			if (existingStorage == null)
+			{
+				return NotFound();
+			}
 
-            return Ok();
-        }
+			// Aktualisiere die relevanten Felder
+			existingStorage.Title = updatedStorage.Title;
+			existingStorage.Location = updatedStorage.Location;
+			existingStorage.StorageSize = updatedStorage.StorageSize;
+			// Weitere Felder je nach Modell
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id)
-        {
-            var storage = await _mongoDbService.GetStorageByIdAsync(id);
+			_context.Storages.Update(existingStorage);
+			await _context.SaveChangesAsync();
 
-            if (storage == null)
-            {
-                return NotFound();
-            }
+			return Ok();
+		}
 
-            await _mongoDbService.DeleteStorageAsync(id);
+		// DELETE: api/Storage/{id}
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> Delete(string id)
+		{
+			var storage = await _context.Storages.FindAsync(id);
 
-            return Ok();
-        }
-    }
+			if (storage == null)
+			{
+				return NotFound();
+			}
+
+			_context.Storages.Remove(storage);
+			await _context.SaveChangesAsync();
+
+			return Ok();
+		}
+	}
 }

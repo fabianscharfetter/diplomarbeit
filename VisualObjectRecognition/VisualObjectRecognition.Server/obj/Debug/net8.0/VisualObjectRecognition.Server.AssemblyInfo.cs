@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("b130e7f1-7997-48fb-b62a-2ba08f4e873c")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37046eb90a0f43c6af756bafd676d0566a78b763")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44f099ee3324620f314a71b06313574278213dec")]
 [assembly: System.Reflection.AssemblyProductAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
