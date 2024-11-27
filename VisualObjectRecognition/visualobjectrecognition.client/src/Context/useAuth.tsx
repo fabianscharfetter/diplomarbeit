@@ -52,11 +52,11 @@ export const UserProvider = ({ children }: Props) => {
                     localStorage.setItem("user", JSON.stringify(userObj));
                     setToken(res?.data.token!);
                     setUser(userObj!);
-                    toast.success("Login Success!");
+                    toast.success("Registrierung war erfolgreich!");
                     navigate("/home");
                 }
             })
-            .catch(() => toast.warning("Server error occured"));
+            .catch(() => toast.warning("Server-Error aufgetreten!"));
     };
 
     const loginUser = async (email: string, password: string) => {
@@ -71,11 +71,11 @@ export const UserProvider = ({ children }: Props) => {
                     localStorage.setItem("user", JSON.stringify(userObj));
                     setToken(res?.data.token!);
                     setUser(userObj!);
-                    toast.success("Login Success!");
+                    toast.success("Anmeldung war erfolgreich!");
                     navigate("/home");
                 }
             })
-            .catch(() => toast.warning("Server error occured"));
+            .catch(() => toast.warning("Server-Error aufgetreten!"));
     };
 
     const isLoggedIn = () => {
