@@ -22,7 +22,7 @@ const validation = Yup.object().shape({
         .min(6, "Name zu kurz"),
     password: Yup.string()
         .required("Passwort wird benötigt")
-        .min(13, "Passwort muss mindestens 13 Zeichen beinhalten"),
+        .min(8, "Passwort muss mindestens 8 Zeichen beinhalten"),
     password2: Yup.string()
         .oneOf([Yup.ref("password")], "Passwörter stimmen nicht überein")
         .required("Passwortwiederholung wird benötigt"),
