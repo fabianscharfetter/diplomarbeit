@@ -28,7 +28,7 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 	options.Password.RequireLowercase = true;
 	options.Password.RequireUppercase = true;
 	options.Password.RequireNonAlphanumeric = true;
-	options.Password.RequiredLength = 12;
+	options.Password.RequiredLength = 8;
 })
 .AddEntityFrameworkStores<ApplicationDBContext>();
 
@@ -57,7 +57,33 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+// Füge CORS hinzu
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowSpecificOrigin", policy =>
+	{
+		policy.WithOrigins("https://localhost:5173") // Erlaube das Frontend
+			  .AllowAnyHeader()
+			  .AllowAnyMethod();
+	});
+});
+
 var app = builder.Build();
+
+// Rollen erstellen
+using (var scope = app.Services.CreateScope())
+{
+	var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+	var roles = new[] { "Admin", "User"};
+
+	foreach (var role in roles)
+	{
+		if (!await roleManager.RoleExistsAsync(role))
+		{
+			await roleManager.CreateAsync(new IdentityRole(role));
+		}
+	}
+}
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
@@ -68,6 +94,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// Aktiviere die CORS-Policy
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 
