@@ -2,7 +2,7 @@ import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
 import { UserProfileToken } from "../Models/User";
 
-const api = "http://localhost:7228/api/";
+const api = "https://localhost:7228/api/";
 
 export const loginAPI = async (email: string, password: string) => {
     try {
@@ -28,6 +28,8 @@ export const registerAPI = async (
         });
         return data;
     } catch (error) {
+        console.error("Registrierungsfehler:", error); // Debugging: Logge Fehler
+
         handleError(error);
     }
 };
