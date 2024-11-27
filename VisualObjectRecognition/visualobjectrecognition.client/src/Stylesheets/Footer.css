@@ -8,29 +8,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 150px;    /* Abstand links und rechts */
+    padding: 5%;    /* Abstand links und rechts */
     background-color: var(--background-color);
     width: 100%;            /* Stellt sicher, dass der Footer die gesamte Breite einnimmt */
     box-sizing: border-box; 
-    margin-bottom: 50px;
-}
-
-.logo-container-footer {
-    flex: 0 0 auto;
-    margin-left: 150px;
+    margin-bottom: 5%;
 }
 
 .hr-footer {
     border: none;
     border-top: 2px solid var(--secondary-color);
-    margin-left: 150px; /* Abstand links */
-    margin-right: 150px; /* Abstand rechts */
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-left: 5%; /* Abstand links */
+    margin-right: 5%; /* Abstand rechts */
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.logo-container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%; /* Abstand links und rechts */
+    background-color: var(--background-color);
+    width: 100%; /* Stellt sicher, dass der Footer die gesamte Breite einnimmt */
+    box-sizing: border-box;
+    margin-bottom: 0;
 }
 
 .logo-footer {
-    height: 120px;
+    height: 150px;
+    margin-left: 5%
 }
 
 /* Container für die Footer-Spalten */
