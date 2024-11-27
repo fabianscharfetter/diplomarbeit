@@ -1,0 +1,89 @@
+:root {
+    --background-color: #1a1c1f;
+    --text-color: white;
+    --secondary-color: #f9a800;
+    --header-color: #1d2024;
+    --content-box-color: #1e2024;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Garantiert, dass der Body mindestens 100% der Ansichtsh he einnimmt */
+    display: flex;
+    flex-direction: column; /* Damit die Seite von oben nach unten w chst */
+}
+
+.footer-link {
+    color: var(--secondary-color);
+}
+
+.main-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.standorte {
+    width: 95%;
+    margin: auto;
+    height: 100vh;
+    background-color: var(--content-box-color);
+    align-content: center;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-bottom: 5%;
+    margin-right: 4%
+}
+
+#zell {
+    margin-top: 20px;
+}
+
+#saalfelden {
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.auswahl {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.standort {
+    text-align: center;
+}
+
+.saalfeldenpicture, .zellpicture {
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    padding:5%;
+    margin-top: 5%
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 16px;
+}
