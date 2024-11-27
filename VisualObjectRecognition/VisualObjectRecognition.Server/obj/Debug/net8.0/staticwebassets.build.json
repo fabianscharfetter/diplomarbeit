@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ly12lc12xec9NPS3l5jakmacT/nCBRyAIV+7ENMX1MQ=",
+  "Hash": "/YzTNCrXcrrFT4lO/T7+qVsHTYys/YB7/lz0YMjBeIE=",
   "Source": "VisualObjectRecognition.Server",
   "BasePath": "_content/VisualObjectRecognition.Server",
   "Mode": "Default",
@@ -19,5 +19,6 @@
     }
   ],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

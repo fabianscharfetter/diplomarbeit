@@ -94,3 +94,7 @@ C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjec
 C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\VisualObjectRecognition.Server.pdb
 C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\VisualObjectRecognition.Server.genruntimeconfig.cache
 C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\ref\VisualObjectRecognition.Server.dll
+C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\VisualObjectRecognition.Server.staticwebassets.endpoints.json
+C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\staticwebassets\msbuild.VisualObjectRecognition.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
