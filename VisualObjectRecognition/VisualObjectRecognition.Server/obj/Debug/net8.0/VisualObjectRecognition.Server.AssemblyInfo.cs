@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c0cadddc7f47237490a23a0073a62fe77a60d94")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29b530317abb26a0d253297500d1951e60868558")]
 [assembly: System.Reflection.AssemblyProductAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
