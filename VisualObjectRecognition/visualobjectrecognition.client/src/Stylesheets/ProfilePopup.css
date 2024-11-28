@@ -46,3 +46,63 @@
     .close-button:hover {
         color: var(--secondary-color);
     }
+
+.popup {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    font-family: Arial, sans-serif;
+}
+
+
+.popup-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.popup-form .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.popup-form label {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #007BFF;
+    visibility: hidden; /* Unsichtbar, wenn kein Input */
+    transition: 0.2s ease-in-out;
+}
+
+.popup-form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    font-size: 1rem;
+    color: white;
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+    .popup-form input:focus {
+        border-bottom: 1px solid #007BFF; /* Fokusfarbe */
+    }
+
+    .popup-form input::placeholder {
+        color: lightgrey;
+        opacity: 1; /* Sichtbarer Platzhalter */
+    }
+
+    .popup-form input:not(:placeholder-shown) + label {
+        visibility: visible; /* Sichtbar, wenn Eingabe erfolgt */
+    }
