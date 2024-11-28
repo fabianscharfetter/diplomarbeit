@@ -30,6 +30,7 @@ packages/
 .vscode/tasks.json
 .vscode/launch.json
 .vscode/*.code-workspace
+.vs/VisualObjectRecognition/v17/DocumentLayout.json
 
 # Backup- und Sicherungsdateien
 *.bak
