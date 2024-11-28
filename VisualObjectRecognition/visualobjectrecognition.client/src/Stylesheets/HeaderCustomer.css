@@ -1,0 +1,57 @@
+:root {
+    --background-color: #1D2024;
+    --text-color: white;
+    --secondary-color: #E6A100;
+    --header-color: #1E2024;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 150px;
+    background-color: var(--header-color);
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo {
+    height: 40px;
+}
+
+.profile {
+    display: inline-flex; /* Nebeneinander ausrichten */
+    align-items: center; /* Vertikale Ausrichtung angleichen */
+}
+
+    .profile a:hover {
+        color: var(--secondary-color);
+    }
+
+.profile-link {
+    margin-right: 0.5rem;
+}
+
+.profile-link, .profile-link-text {
+    vertical-align: middle; /* Beide auf die gleiche Höhe bringen */
+    transition: color 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+    .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            cursor: pointer; /* Ändert den Mauszeiger auf Zeigefinger */
+        }
