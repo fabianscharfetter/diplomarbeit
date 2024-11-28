@@ -31,9 +31,10 @@ body {
 }
 
 .standorte {
-    width: 95%;
+    width: 90%;
     margin: auto;
-    height: 100vh;
+    margin-top: 5%;
+    height: 87vh;
     background-color: var(--content-box-color);
     align-content: center;
 }
@@ -49,11 +50,11 @@ img {
 }
 
 #zell {
-    margin-top: 20px;
+    margin-top: 3%;
 }
 
 #saalfelden {
-    margin-top: 20px;
+    margin-top: 3%;
 }
 
 h1 {

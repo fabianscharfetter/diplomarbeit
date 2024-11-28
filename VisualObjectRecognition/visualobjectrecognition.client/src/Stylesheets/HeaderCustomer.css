@@ -21,9 +21,31 @@
     height: 40px;
 }
 
+.profile {
+    display: inline-flex; /* Nebeneinander ausrichten */
+    align-items: center; /* Vertikale Ausrichtung angleichen */
+}
+
+    .profile a:hover {
+        color: var(--secondary-color);
+    }
+
+.profile-link {
+    margin-right: 0.5rem;
+}
+
+.profile-link, .profile-link-text {
+    vertical-align: middle; /* Beide auf die gleiche Höhe bringen */
+    transition: color 0.3s;
+}
+
+
+
+
+
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
     .nav-links a {
@@ -35,4 +57,5 @@
 
         .nav-links a:hover {
             color: var(--secondary-color);
+            cursor: pointer; /* Ändert den Mauszeiger auf Zeigefinger */
         }
