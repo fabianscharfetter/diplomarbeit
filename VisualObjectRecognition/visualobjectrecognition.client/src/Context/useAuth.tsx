@@ -53,7 +53,7 @@ export const UserProvider = ({ children }: Props) => {
                     setToken(res?.data.token!);
                     setUser(userObj!);
                     toast.success("Registrierung war erfolgreich!");
-                    navigate("/home");
+                    navigate("/account");
                 }
             })
             .catch(() => toast.warning("Server-Error aufgetreten!"));
@@ -72,7 +72,7 @@ export const UserProvider = ({ children }: Props) => {
                     setToken(res?.data.token!);
                     setUser(userObj!);
                     toast.success("Anmeldung war erfolgreich!");
-                    navigate("/home");
+                    navigate("/account");
                 }
             })
             .catch(() => toast.warning("Server-Error aufgetreten!"));

@@ -15,11 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64ad312635229dff4fcb224075a1d4218db0f2bf")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84ba09015e4cb700db8f5526761f160eb76a7384")]
->>>>>>> origin/Frontend_Zilla
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3d0ad484374273d849c773ad1be8c3cd3b42d40")]
 [assembly: System.Reflection.AssemblyProductAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VisualObjectRecognition.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

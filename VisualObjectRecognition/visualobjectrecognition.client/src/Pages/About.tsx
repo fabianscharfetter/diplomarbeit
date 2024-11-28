@@ -1,11 +1,17 @@
 import React from 'react';
+import Header from '../Header'
+import Footer from '../Footer'
 
 const About: React.FC = () => {
     return (
-        <main className="main-content">
-            <h1>About Us</h1>
-            <p>Das ist die About - Page.</p>
-        </main>
+        <>
+            <Header></Header>
+            <main className="main-content">
+                <h1>About Us</h1>
+                <p>Das ist die About - Page.</p>
+            </main>
+            <Footer></Footer>
+        </>
     );
 };
 

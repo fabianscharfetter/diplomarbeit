@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../Stylesheets/HeaderCustomer.css';
 import { IoHomeOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
-import ProfilePopup from './ProfilePopUp';
+import ProfilePopup from './ProfilePopup';
 
 const HeaderCustomer: React.FC = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
