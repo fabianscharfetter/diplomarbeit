@@ -83,7 +83,7 @@
               "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Program.cs",
               "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Program.cs",
               "RelativeToolTip": "VisualObjectRecognition.Server\\Program.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAF8AAAAcAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAFgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T16:18:26.412Z",
               "EditorCaption": ""
@@ -98,8 +98,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAGUAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-27T16:47:53.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T16:47:53.544Z"
             },
             {
               "$type": "Document",
@@ -111,8 +110,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\LoginPage.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-26T12:00:05.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T12:00:05.494Z"
             },
             {
               "$type": "Document",
@@ -148,8 +146,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\App.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-26T17:58:23.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T17:58:23.56Z"
             },
             {
               "$type": "Document",
@@ -173,8 +170,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\RegisterPage.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAGkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-26T14:44:14.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:44:14.799Z"
             },
             {
               "$type": "Document",
@@ -186,8 +182,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Services\\AuthService.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-26T10:22:54.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T10:22:54.742Z"
             },
             {
               "$type": "Document",

@@ -1,0 +1,33 @@
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore Build Output Folders
+bin/
+obj/
+Debug/
+Release/
+
+# Ignore generated files
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.log
+*.tmp
+*.csproj.user
+*.json.schemastore
+*.AssemblyInfoInputs.cache
+
+# Ignore specific files in .NET projects
+apphost.exe
+*.ref/
+*.sourceinfo
+
+# Ignore Rider and ReSharper
+.idea/
+*.DotSettings.user
