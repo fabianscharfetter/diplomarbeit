@@ -3,6 +3,12 @@
 .vs\
 .vs/VisualObjectRecognition/
 .vs\VisualObjectRecognition\
+./.vs/
+.\.vs\
+./.vs/VisualObjectRecognition/
+.\.vs\VisualObjectRecognition\
+vs/
+vs\
 
 *.user
 *.suo
