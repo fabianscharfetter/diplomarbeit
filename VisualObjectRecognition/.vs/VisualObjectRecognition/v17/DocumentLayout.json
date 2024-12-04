@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\stylesheets\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\stylesheets\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\header.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\header.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\stylesheets\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\stylesheets\\header.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\stylesheets\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\stylesheets\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\fabia\\onedrive\\desktop\\project\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\pages\\account.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 226,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,20 +70,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Stylesheets\\index.css",
               "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Stylesheets\\index.css",
               "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Stylesheets\\index.css",
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Stylesheets\\index.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-11-28T14:14:21.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Header.css",
               "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Stylesheets\\Header.css",
               "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Stylesheets\\Header.css",
@@ -91,18 +91,17 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Stylesheets\\Header.css",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-28T14:13:02.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T14:13:02.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Header.tsx",
               "DocumentMoniker": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Header.tsx",
               "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Header.tsx",
               "ToolTip": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Header.tsx",
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Header.tsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-11-28T14:11:14.432Z",
               "EditorCaption": ""
@@ -117,8 +116,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\Home.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-28T14:10:50.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T14:10:50.759Z"
             },
             {
               "$type": "Document",
@@ -130,8 +128,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Services\\AuthService.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-28T14:07:49.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T14:07:49.79Z"
             },
             {
               "$type": "Document",
@@ -143,8 +140,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\Account.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-28T14:06:44.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T14:06:44.922Z"
             },
             {
               "$type": "Document",
@@ -156,8 +152,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\About.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-28T14:03:41.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T14:03:41.552Z"
             },
             {
               "$type": "Document",
@@ -169,8 +164,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Routes\\Routes.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-28T13:52:53.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T13:52:53.776Z"
             },
             {
               "$type": "Document",
@@ -182,8 +176,7 @@
               "RelativeToolTip": "VisualObjectRecognition.Server\\Program.cs",
               "ViewState": "AQIAAEgAAAAAAAAAAAAAAF0AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T16:18:26.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T16:18:26.412Z"
             },
             {
               "$type": "Document",
@@ -195,8 +188,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
               "ViewState": "AQIAACQAAAAAAAAAAAAAADcAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-27T16:47:53.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T16:47:53.544Z"
             },
             {
               "$type": "Document",
@@ -208,8 +200,7 @@
               "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\LoginPage.tsx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-26T12:00:05.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T12:00:05.494Z"
             }
           ]
         }

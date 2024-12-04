@@ -9,8 +9,6 @@
 bin/
 obj/
 out/
-*.bin
-*.cache
 
 # Paketverwaltung
 *.nupkg
