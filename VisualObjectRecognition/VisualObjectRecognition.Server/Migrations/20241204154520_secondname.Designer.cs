@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VisualObjectRecognition.Server.Data;
 
@@ -11,9 +12,11 @@ using VisualObjectRecognition.Server.Data;
 namespace VisualObjectRecognition.Server.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20241204154520_secondname")]
+    partial class secondname
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,39 +158,6 @@ namespace VisualObjectRecognition.Server.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("VisualObjectRecognition.Server.Models.Adress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Hausnummer")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Land")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Postleitzahl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Stadt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Straße")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Adress");
-                });
-
             modelBuilder.Entity("VisualObjectRecognition.Server.Models.Item", b =>
                 {
                     b.Property<string>("Id")
@@ -243,9 +213,6 @@ namespace VisualObjectRecognition.Server.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("AdressId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -256,13 +223,6 @@ namespace VisualObjectRecognition.Server.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Firma")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -281,9 +241,6 @@ namespace VisualObjectRecognition.Server.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNbr")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -291,7 +248,6 @@ namespace VisualObjectRecognition.Server.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("SecondName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
@@ -305,8 +261,6 @@ namespace VisualObjectRecognition.Server.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AdressId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -382,15 +336,6 @@ namespace VisualObjectRecognition.Server.Migrations
                     b.HasOne("VisualObjectRecognition.Server.Models.User", null)
                         .WithMany("Storages")
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("VisualObjectRecognition.Server.Models.User", b =>
-                {
-                    b.HasOne("VisualObjectRecognition.Server.Models.Adress", "Adress")
-                        .WithMany()
-                        .HasForeignKey("AdressId");
-
-                    b.Navigation("Adress");
                 });
 
             modelBuilder.Entity("VisualObjectRecognition.Server.Models.User", b =>

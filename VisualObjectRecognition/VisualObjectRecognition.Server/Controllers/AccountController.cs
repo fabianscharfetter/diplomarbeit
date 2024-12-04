@@ -37,9 +37,12 @@ namespace VisualObjectRecognition.Server.Controllers
 			return Ok(
 				new NewUserDto
 				{
-					UserName = user.UserName,
-					Email = user.Email,
-					Token = _tokenService.CreateToken(user)
+                    Email = user.Email,
+                    FirstName = user.FirstName,
+					SecondName = user.SecondName,
+					PhoneNbr = user.PhoneNbr,
+                    Firma = user.Firma,
+                    Token = _tokenService.CreateToken(user)
 				}
 			);
 		}
@@ -54,8 +57,12 @@ namespace VisualObjectRecognition.Server.Controllers
 
 				var appUser = new User
 				{
-					UserName = registerDto.Username,
-					Email = registerDto.Email
+					UserName = registerDto.FirstName.ToLower() +"." +registerDto.SecondName.ToLower(),	//Soll dann beispielsweise so aussehen: max.mustermann
+					FirstName = registerDto.FirstName,
+                    SecondName = registerDto.SecondName,
+					Email = registerDto.Email,
+					Firma = registerDto.Firma,
+					PhoneNbr = registerDto.PhoneNbr,
 				};
 
 				var createdUser = await _userManager.CreateAsync(appUser, registerDto.Password);
@@ -68,9 +75,12 @@ namespace VisualObjectRecognition.Server.Controllers
 						return Ok(
 							new NewUserDto
 							{
-								UserName = appUser.UserName,
+								FirstName = appUser.FirstName,
+								SecondName = appUser.SecondName,
 								Email = appUser.Email,
-								Token = _tokenService.CreateToken(appUser)
+								PhoneNbr = appUser.PhoneNbr,
+                                Firma = registerDto.Firma,
+                                Token = _tokenService.CreateToken(appUser)
 							}
 						);
 					}

@@ -87,5 +87,13 @@ namespace VisualObjectRecognition.Server.Controllers
 
 			return Ok();
 		}
-	}
+        [HttpDelete("/all")]
+        public async Task<IActionResult> DeleteALL()
+        {
+			_context.Users.ExecuteDelete();
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+    }
 }

@@ -15,21 +15,28 @@ export const loginAPI = async (email: string, password: string) => {
         handleError(error);
     }
 };
+
 export const registerAPI = async (
     email: string,
-    username: string,
-    password: string
+    firstname: string,
+    secondname: string,
+    phonenbr: string,
+    password: string,
+    firma?: string | null  // firma optional oder null
+
 ) => {
     try {
         const data = await axios.post<UserProfileToken>(api + "account/register", {
             email: email,
-            username: username,
+            firstname: firstname,
+            secondname: secondname,
+            phonenbr: phonenbr,
             password: password,
+            firma: firma ?? null, // Wenn firma nicht angegeben wird, null setzen
         });
         return data;
     } catch (error) {
         console.error("Registrierungsfehler:", error); // Debugging: Logge Fehler
-
         handleError(error);
     }
 };
