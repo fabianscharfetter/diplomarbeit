@@ -1,0 +1,58 @@
+# Visual Studio spezifisch
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.csproj.user
+
+# Build-Ausgaben
+bin/
+obj/
+out/
+
+# Paketverwaltung
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs, Debugging und temporäre Dateien
+*.log
+*.tlog
+*.cache
+*.ide
+*.pdb
+*.opendb
+
+# Webentwicklung
+node_modules/
+bower_components/
+lib/
+
+# Konfigurationsdateien
+appsettings*.json
+secrets.json
+
+# Betriebssystem spezifisch
+.DS_Store
+Thumbs.db
+
+# Arbeitsbereichsdateien
+*.code-workspace
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Weitere Tool-spezifische Dateien
+ReSharper/
+*.DotSettings.user
+
+# Docker und Container
+.dockerignore
+docker-compose.override.yml
+
+# Sonstige
+*.tmp
