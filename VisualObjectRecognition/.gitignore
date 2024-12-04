@@ -1,3 +1,4 @@
+#gitignore
 # Visual Studio spezifisch
 .vs/
 *.user

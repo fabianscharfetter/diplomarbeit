@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\VisualObjectRecognition.Server.props" />
-</Project>
