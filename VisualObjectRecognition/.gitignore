@@ -1,5 +1,9 @@
 # Visual Studio spezifisch
 .vs/
+.vs\
+.vs/VisualObjectRecognition/
+.vs\VisualObjectRecognition\
+
 *.user
 *.suo
 *.vcxproj.user
@@ -30,6 +34,7 @@ artifacts/
 node_modules/
 bower_components/
 lib/
+
 
 # Konfigurationsdateien
 appsettings*.json
