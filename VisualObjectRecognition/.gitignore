@@ -29,9 +29,6 @@ artifacts/
 *.pdb
 *.opendb
 
-# Konfigurationsdateien
-appsettings*.json
-secrets.json
 *.config
 
 # Betriebssystem spezifisch
