@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace VisualObjectRecognition.Server.Data
 {
-    /*public class ApplicationDBContext : IdentityDbContext<User>
+	public class ApplicationDBContext : IdentityDbContext<User>
 	{
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
 		: base(options)
@@ -14,6 +14,5 @@ namespace VisualObjectRecognition.Server.Data
 		}
 
 		public DbSet<Storage> Storages { get; set; }
-	
-}*/
+	}
 }

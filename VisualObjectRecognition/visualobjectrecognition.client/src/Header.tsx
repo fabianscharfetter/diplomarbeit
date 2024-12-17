@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                 <Link to="/about">{"\u00DCber uns"}</Link>
                 {isLoggedIn() ? (
                     <>
-                        <Link className="account-link" to="/account">Willkommen,{user?.firma} {user?.secondname}</Link>
+                        <Link className="account-link" to="/account">Willkommen,{user?.userName}</Link>
                         <a onClick={logout} className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"> Abmelden </a>
                     </>
                 ) : (

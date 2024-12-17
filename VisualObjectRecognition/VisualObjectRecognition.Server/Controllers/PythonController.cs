@@ -13,6 +13,7 @@ namespace VisualObjectRecognition.Server.Controllers
 
         public PythonController()
         {
+            // Pfad zur Python-Exe in der virtuellen Umgebung
             string pythonExePath = @"C:\Users\fabia\OneDrive\Desktop\yolov5\venv\Scripts\python.exe";
             _pythonService = new PythonService(pythonExePath);
         }

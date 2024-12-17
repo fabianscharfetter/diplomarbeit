@@ -5,22 +5,13 @@ import Contact from '../Pages/Login';*/
 import Footer from '../Footer';
 import '../Stylesheets/Account.css';
 import { Link } from 'react-router-dom';
-import { useAuth } from "../Context/useAuth";
-
 
 const Account: React.FC = () => {
-    const { user } = useAuth();
     return (
         <>
             <HeaderCustomer />
             <body className="body">
-
-                <h1>Eingelogged als {user?.secondname}</h1>
-
-
-                <div className="standorte">
-
-                    
+            <div className="standorte">
 
                 <h1>Standorte</h1>
 

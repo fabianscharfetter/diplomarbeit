@@ -9,7 +9,7 @@ import axios from "axios";
 type UserContextType = {
     user: UserProfile | null;
     token: string | null;
-    registerUser: (email: string, firstname: string, secondname: string, phonenbr: string, password: string, firma?: string | null) => void;
+    registerUser: (email: string, username: string, password: string) => void;
     loginUser: (email: string, password: string) => void;
     logout: () => void;
     isLoggedIn: () => boolean;
@@ -38,22 +38,16 @@ export const UserProvider = ({ children }: Props) => {
 
     const registerUser = async (
         email: string,
-        firstname: string,
-        secondname: string,
-        phonenbr: string,
-        password: string,
-        firma?: string | null  // firma ist jetzt optional oder null
+        username: string,
+        password: string
     ) => {
-        await registerAPI(email, firstname, secondname, phonenbr, password, firma!)
+        await registerAPI(email, username, password)
             .then((res) => {
                 if (res) {
                     localStorage.setItem("token", res?.data.token);
                     const userObj = {
-                        firstname: res?.data.firstname,
-                        secondname: res?.data.secondname,
+                        userName: res?.data.userName,
                         email: res?.data.email,
-                        phonenbr: res?.data.phonenbr,
-                        firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
                     setToken(res?.data.token!);
@@ -71,11 +65,8 @@ export const UserProvider = ({ children }: Props) => {
                 if (res) {
                     localStorage.setItem("token", res?.data.token);
                     const userObj = {
-                        firstname: res?.data.firstname,
-                        secondname: res?.data.secondname,
+                        userName: res?.data.userName,
                         email: res?.data.email,
-                        phonenbr: res?.data.phonenbr,
-                        firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
                     setToken(res?.data.token!);
