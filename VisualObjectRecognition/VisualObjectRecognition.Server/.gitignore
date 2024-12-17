@@ -33,10 +33,6 @@ node_modules/
 bower_components/
 lib/
 
-# Konfigurationsdateien
-appsettings*.json
-secrets.json
-
 # Betriebssystem spezifisch
 .DS_Store
 Thumbs.db
