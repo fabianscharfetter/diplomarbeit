@@ -80,7 +80,6 @@ const LoginPage: React.FC = () => {
                 <img src="../../public/couch.svg" alt="Logo" className="login-image" />
             </div>
         </section>
-        
     );
 };
 

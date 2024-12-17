@@ -1,9 +1,15 @@
-﻿namespace VisualObjectRecognition.Server.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VisualObjectRecognition.Server.Dtos
 {
 	public class NewUserDto
 	{
-		public string UserName { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+        public string SecondName { get; set; } = string.Empty;
 		public string Email { get; set; } = string.Empty;
-		public string Token { get; set; } = string.Empty;
+        public string? Firma { get; set; } = string.Empty;
+        public string PhoneNbr { get; set; } = string.Empty;
+
+        public string Token { get; set; } = string.Empty;
 	}
 }
