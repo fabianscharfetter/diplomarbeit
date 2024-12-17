@@ -1,3 +1,4 @@
+using VisualObjectRecognition.Server.Data;
 using VisualObjectRecognition.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;

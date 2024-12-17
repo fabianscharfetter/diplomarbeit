@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using VisualObjectRecognition.Server.Data;
+using VisualObjectRecognition.Server.Models;
 using VisualObjectRecognition.Server.Services;
 
 namespace VisualObjectRecognition.Server.Controllers
