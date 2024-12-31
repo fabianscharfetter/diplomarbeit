@@ -56,6 +56,7 @@ export const UserProvider = ({ children }: Props) => {
                         firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
                     setToken(res?.data.token!);
                     setUser(userObj!);
                     toast.success("Registrierung war erfolgreich!");
@@ -78,6 +79,7 @@ export const UserProvider = ({ children }: Props) => {
                         firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
                     setToken(res?.data.token!);
                     setUser(userObj!);
                     toast.success("Anmeldung war erfolgreich!");
