@@ -1,0 +1,166 @@
+:root {
+    --background-color: #1c1c1c;
+    --text-color: #ffffff;
+    --container-background: #1D2024;
+    --list-item-background: #1b1e22;
+    --delete-button-color: #ff4c4c;
+    --delete-button-hover: #ff1a1a;
+    --add-button-color: #ffaa00;
+    --add-button-hover: #ffcc33;
+    --button-text-color: #ffffff;
+    --button-hover-transition: 0.3s ease;
+}
+
+/* Basis-Stile */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: calc(100vh - 100px); /* Platz für Header und Footer */
+    padding: 20px;
+    gap: 20px;
+}
+
+.list-container {
+    background-color: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    height: 80vh;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+    /* Responsive Scrollbar-Stil */
+    .list-container::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .list-container::-webkit-scrollbar-track {
+        background: #2b2b2b;
+        border-radius: 10px;
+    }
+
+    .list-container::-webkit-scrollbar-thumb {
+        background: #ffaa00;
+        border-radius: 10px;
+        border: 2px solid #2b2b2b;
+    }
+
+        .list-container::-webkit-scrollbar-thumb:hover {
+            background: #ffcc33;
+        }
+
+.h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 10px;
+}
+
+.item-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .item-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: var(--list-item-background);
+        border-radius: 5px;
+    }
+
+.delete-button {
+    background-color: var(--delete-button-color);
+    color: var(--button-text-color);
+    border: none;
+    width: 100px;
+    height: 25px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--button-hover-transition);
+}
+
+    .delete-button:hover {
+        background-color: var(--delete-button-hover);
+    }
+
+.add-button {
+    background-color: var(--add-button-color);
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color var(--button-hover-transition);
+    position: fixed; /* Fixiert den Button am Bildschirm */
+    bottom: 20px; /* Abstand zum unteren Rand */
+    right: 20px; /* Abstand zum rechten Rand */
+}
+
+    .add-button:hover {
+        background-color: var(--add-button-hover);
+    }
+
+.right-space {
+    width: 45%;
+    background-color: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Wechselt zu Spalten-Layout */
+        align-items: center;
+    }
+
+    .list-container, .right-space {
+        width: 90%; /* Nimmt fast die gesamte Breite ein */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .list-container {
+        width: 100%; /* Nimmt die volle Breite ein */
+        height: auto; /* Höhe passt sich dem Inhalt an */
+    }
+
+    .right-space {
+        display: none; /* Versteckt die rechte Fläche bei kleinen Bildschirmen */
+    }
+
+    .add-button {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h1 {
+        font-size: 20px; /* Kleinere Schriftgröße für Titel */
+    }
+
+    .delete-button {
+        width: 80px; /* Kleinere Buttons */
+        height: 20px;
+    }
+}

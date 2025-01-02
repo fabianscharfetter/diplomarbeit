@@ -17,13 +17,13 @@ const HomeCustomer: React.FC = () => {
 
                 <div className="auswahl">
                         <div className="standort">
-                            <Link to="">
+                            <Link className="link" to="/LagerPage">
                                 <img src="../public/Saalfelden.jpeg" className="saalfeldenpicture" alt="Saalfelden" />
                             </Link>
                             <h2>Saalfelden</h2>
                         </div>
                         <div className="standort">
-                            <Link to="">
+                            <Link className="link" to="/LagerPage">
                                 <img src="../public/ZellAmSee.jpeg" className="zellpicture" alt="Zell am See" />
                             </Link>
                             <h2>Zell am See</h2>

@@ -2,6 +2,7 @@
     --background-color: #1E2024;
     --text-color: white;
     --secondary-color: #E6A100;
+    --secondary-background-color: #1D2024
 }
 
 .popup-overlay {
@@ -22,9 +23,9 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 450px;
+    width: 500px;
     max-width: 90%;
-    height: 800px;
+    height: 650px;
     max-height: 90%;
     text-align: center;
     position: relative;
@@ -47,6 +48,14 @@
         color: var(--secondary-color);
     }
 
+.save-button{
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: var(--secondary-background-color);
+    margin-top: 20px;
+}
+
 .popup {
     position: absolute;
     top: 10px;
@@ -65,23 +74,43 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
+    padding-top: 20px
 }
 
-.popup-form .form-group {
+/* Form-Gruppe mit zwei Eingaben pro Zeile */
+.popup-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+    gap: 20px; /* Abstand zwischen den Feldern */
+}
+
+.form-group {
     position: relative;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Label über dem Input */
 }
 
+/* Labels initial verstecken */
 .popup-form label {
     position: absolute;
-    top: -10px;
+    top: 0;
     left: 0;
-    font-size: 0.8rem;
-    color: #007BFF;
-    visibility: hidden; /* Unsichtbar, wenn kein Input */
-    transition: 0.2s ease-in-out;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    opacity: 0; /* Unsichtbar standardmäßig */
+    transform: translateY(10px); /* Leichter Versatz */
+    transition: all 0.3s ease-in-out; /* Sanfte Bewegung */
+    pointer-events: none; /* Nicht klickbar */
 }
 
+/* Label sichtbar machen bei Fokus oder Eingabe */
+.popup-form input:focus + label,
+.popup-form input:not(:placeholder-shown) + label {
+    opacity: 1; /* Sichtbar */
+    transform: translateY(0); /* Zurück auf Standardposition */
+}
+
+/* Eingabefelder */
 .popup-form input {
     width: 100%;
     border: none;
@@ -94,15 +123,19 @@
     transition: border-color 0.2s ease-in-out;
 }
 
+    /* Fokus-Stil für Eingabefelder */
     .popup-form input:focus {
-        border-bottom: 1px solid #007BFF; /* Fokusfarbe */
+        border-bottom: 1px solid var(--secondary-color);
     }
+
+        .popup-form input:focus + label {
+            visibility: visible;
+            color: var(--secondary-color); /* Farbe beim Fokus */
+            font-weight: bold;
+        }
+
 
     .popup-form input::placeholder {
-        color: lightgrey;
+        color: #888;
         opacity: 1; /* Sichtbarer Platzhalter */
-    }
-
-    .popup-form input:not(:placeholder-shown) + label {
-        visibility: visible; /* Sichtbar, wenn Eingabe erfolgt */
     }

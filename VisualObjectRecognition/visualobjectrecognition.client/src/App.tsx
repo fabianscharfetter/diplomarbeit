@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './Pages/Home';
 import About from './Pages/About';
 import LoginPage from './Pages/LoginPage';
-import HomeCustomer from './User/HomeCustomer'
+import HomeCustomer from './User/HomeCustomer';
+import LagerPage from './User/LagerPage';
 import './Stylesheets/App.css';
 //import "dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -21,6 +22,7 @@ const App: React.FC = () => {
                     <Route path="/account/login" element={<LoginPage />} />
                     <Route path="*" element={<Navigate to="/home" replace />} />
                     <Route path="/User/HomeCustomer" element={<HomeCustomer />} />
+                    <Route path="/User/LagerPage" element={<LagerPage />} />
                 </Routes>
             </body>
 
