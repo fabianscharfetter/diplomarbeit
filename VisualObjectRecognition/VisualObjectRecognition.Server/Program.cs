@@ -1,35 +1,35 @@
 using VisualObjectRecognition.Server.Data;
 using VisualObjectRecognition.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-
 using VisualObjectRecognition.Server.Interfaces;
 using VisualObjectRecognition.Server.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDBContext>(options =>
-	options.UseSqlServer(connectionString));
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddIdentity<User, IdentityRole>(options =>
-{
-	options.Password.RequireDigit = true;
-	options.Password.RequireLowercase = true;
-	options.Password.RequireUppercase = true;
-	options.Password.RequireNonAlphanumeric = true;
-	options.Password.RequiredLength = 8;
-})
-.AddEntityFrameworkStores<ApplicationDBContext>();
+//COSMOSDB
+builder.Services.AddScoped<IUserRepository, UserRepository>(
+    x => new UserRepository(
+        builder.Configuration.GetConnectionString("CosmosDb"),
+        builder.Configuration["CosmosConfig:primaryKey"],
+        builder.Configuration["CosmosConfig:databaseName"],
+        builder.Configuration["CosmosConfig:userContainer"]
+        ))
+    .AddScoped<IStorageRepository, StorageRepository>(
+    x => new StorageRepository(
+        builder.Configuration.GetConnectionString("CosmosDb"),
+        builder.Configuration["CosmosConfig:primaryKey"],
+        builder.Configuration["CosmosConfig:databaseName"],
+        builder.Configuration["CosmosConfig:storagesContainer"]
+        )); 
+
+
 
 builder.Services.AddAuthentication(options =>
 {
@@ -64,25 +64,10 @@ builder.Services.AddCors(options =>
 		policy.WithOrigins("https://localhost:5173") // Erlaube das Frontend
 			  .AllowAnyHeader()
 			  .AllowAnyMethod();
-	});
+    });
 });
 
 var app = builder.Build();
-
-// Rollen erstellen
-using (var scope = app.Services.CreateScope())
-{
-	var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-	var roles = new[] { "Admin", "User" };
-
-	foreach (var role in roles)
-	{
-		if (!await roleManager.RoleExistsAsync(role))
-		{
-			await roleManager.CreateAsync(new IdentityRole(role));
-		}
-	}
-}
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
@@ -93,6 +78,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+
 // Aktiviere die CORS-Policy
 app.UseCors("AllowSpecificOrigin");
 

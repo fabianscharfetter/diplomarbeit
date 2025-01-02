@@ -4,9 +4,14 @@ import '../Stylesheets/HeaderCustomer.css';
 import { IoHomeOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import ProfilePopup from './ProfilePopup';
+import { useAuth } from "../Context/useAuth";
+
+
 
 const HeaderCustomer: React.FC = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const { logout } = useAuth();
+
 
     const openPopup = () => setIsPopupOpen(true);
     const closePopup = () => setIsPopupOpen(false);
@@ -26,7 +31,8 @@ const HeaderCustomer: React.FC = () => {
                     </a>
                     <a className="profile-link-text"> Profil </a>
                 </div>
-                <Link to="/login"> Abmelden </Link>
+
+                <a onClick={logout} className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"> Abmelden </a>
             </nav>
             <ProfilePopup isOpen={isPopupOpen} onClose={closePopup} />
         </header>

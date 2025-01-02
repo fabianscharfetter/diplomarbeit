@@ -1,0 +1,50 @@
+# Visual Studio spezifisch
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.csproj.user
+
+# Build-Ausgaben
+bin/
+obj/
+out/
+*.bin
+*.cache
+
+# Paketverwaltung
+artifacts/
+
+# Logs, Debugging und temporäre Dateien
+*.log
+*.tlog
+*.cache
+*.ide
+*.pdb
+*.opendb
+
+# Webentwicklung
+bower_components/
+lib/
+
+# Betriebssystem spezifisch
+.DS_Store
+Thumbs.db
+
+# Arbeitsbereichsdateien
+*.code-workspace
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Weitere Tool-spezifische Dateien
+ReSharper/
+*.DotSettings.user
+
+# Docker und Container
+.dockerignore
+docker-compose.override.yml
+
+# Sonstige
+*.tmp
