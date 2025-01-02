@@ -7,7 +7,7 @@ interface ProfilePopupProps {
 }
 
 const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
-    if (!isOpen) return null; // Popup nur anzeigen, wenn `isOpen` true ist
+    if (!isOpen) return null;
 
     return (
         <div className="popup-overlay">
@@ -40,6 +40,30 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
                         <input type="date" id="dob" />
                     </div>
                 </form>
+                <h2 className="popup-title">Adresse</h2>
+                <form className="popup-form">
+                    <div className="form-group">
+                        <label htmlFor="firstName">*Straße</label>
+                        <input type="text" id="firstName" placeholder="Straße" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="lastName">*Hausnummer</label>
+                        <input type="text" id="lastName" placeholder="Hausnummer" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="company">*Stadt</label>
+                        <input type="text" id="company" placeholder="Stadt" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">*Postleitzahl</label>
+                        <input type="email" id="email" placeholder="Postleitzahl" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="phone">*Land</label>
+                        <input type="tel" id="phone" placeholder="Land" />
+                    </div>
+                </form>
+                <a className="save-button" onClick={onClose}>speichern</a>
             </div>
         </div>
     );
