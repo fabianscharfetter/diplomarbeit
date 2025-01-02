@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "h/A7o9u63liJsNdFltA9V/9La+LfT1HFTL1Ov62At8g=",
+  "Hash": "/w9G0feR69exKM8XzQJ9LuA4gBGJpBMqR2qW5ABSxlo=",
   "Source": "VisualObjectRecognition.Server",
   "BasePath": "_content/VisualObjectRecognition.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\fabia\\OneDrive\\Desktop\\project\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\visualobjectrecognition.client.esproj",
+      "Identity": "C:\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\visualobjectrecognition.client.esproj",
       "Version": 2,
       "Source": "visualobjectrecognition.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

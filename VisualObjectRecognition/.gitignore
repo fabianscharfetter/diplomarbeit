@@ -6,17 +6,9 @@
 *.vcxproj.user
 *.csproj.user
 
-# Build-Ausgaben
-bin/
-obj/
-out/
-Debug/
-Release/
-
 # Paketverwaltung
 *.nupkg
 *.snupkg
-packages/
 project.lock.json
 project.fragment.lock.json
 artifacts/
@@ -48,9 +40,6 @@ ReSharper/
 .dockerignore
 docker-compose.override.yml
 
-# Node.js spezifisch (für React-Client)
-node_modules/
-jspm_packages/
 
 # React-Build-Ausgaben
 build/
