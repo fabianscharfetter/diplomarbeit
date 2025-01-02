@@ -1,33 +1,12 @@
-# Ignore Visual Studio files
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
 
-# Ignore Build Output Folders
-bin/
-obj/
-Debug/
-Release/
-
-# Ignore generated files
-*.exe
-*.dll
-*.pdb
-*.cache
-*.ilk
-*.log
-*.tmp
-*.csproj.user
-*.json.schemastore
-*.AssemblyInfoInputs.cache
-
-# Ignore specific files in .NET projects
-apphost.exe
-*.ref/
-*.sourceinfo
-
-# Ignore Rider and ReSharper
-.idea/
-*.DotSettings.user
+VisualObjectRecognition/.vs/VisualObjectRecognition/FileContentIndex/2ab2d0f5-57eb-471f-9d46-048bfe6ec111.vsidx
+VisualObjectRecognition/.vs/VisualObjectRecognition/FileContentIndex/91505845-9669-4498-bf46-ccdddf460187.vsidx
+VisualObjectRecognition/.vs/VisualObjectRecognition/FileContentIndex/ff23698f-a442-4266-93df-a98a42a883b1.vsidx
+VisualObjectRecognition/visualobjectrecognition.client/obj/Debug/visualobjectrecognition.client.esproj.CoreCompileInputs.cache
+VisualObjectRecognition/visualobjectrecognition.client/obj/Debug/visualobjectrecognition.client.esproj.FileListAbsolute.txt
+VisualObjectRecognition/.vs/VisualObjectRecognition/FileContentIndex/07a58899-f51f-4eff-b89b-38491be59a3f.vsidx
+VisualObjectRecognition/.vs/VisualObjectRecognition/FileContentIndex/146ad81e-266c-40f4-ba20-eaf0fee4e359.vsidx
+VisualObjectRecognition/.vs/VisualObjectRecognition/v17/.suo
+VisualObjectRecognition/.vs/VisualObjectRecognition/v17/.suo
+/VisualObjectRecognition/.vs
+/VisualObjectRecognition/.vs

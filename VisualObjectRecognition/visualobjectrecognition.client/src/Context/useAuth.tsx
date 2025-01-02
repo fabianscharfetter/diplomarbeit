@@ -50,7 +50,7 @@ export const UserProvider = ({ children }: Props) => {
                         email: res?.data.email,
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
-                    setToken(res?.data.token!);
+                    setToken(res.data.token!);
                     setUser(userObj!);
                     toast.success("Registrierung war erfolgreich!");
                     navigate("/account");
@@ -69,7 +69,7 @@ export const UserProvider = ({ children }: Props) => {
                         email: res?.data.email,
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
-                    setToken(res?.data.token!);
+                    setToken(res.data.token!);
                     setUser(userObj!);
                     toast.success("Anmeldung war erfolgreich!");
                     navigate("/account");
