@@ -18,6 +18,11 @@
 .logo-container-footer {
     flex: 0 0 auto;
     margin-left: 150px;
+    padding: 5%;    /* Abstand links und rechts */
+    background-color: var(--background-color);
+    width: 100%;            /* Stellt sicher, dass der Footer die gesamte Breite einnimmt */
+    box-sizing: border-box; 
+    margin-bottom: 5%;
 }
 
 .hr-footer {
@@ -31,16 +36,36 @@
 
 .logo-footer {
     height: 120px;
+    margin-left: 5%; /* Abstand links */
+    margin-right: 5%; /* Abstand rechts */
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
-/* Container für die Footer-Spalten */
+.logo-container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%; /* Abstand links und rechts */
+    background-color: var(--background-color);
+    width: 100%; /* Stellt sicher, dass der Footer die gesamte Breite einnimmt */
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.logo-footer {
+    height: 150px;
+    margin-left: 5%
+}
+
+/* Container fï¿½r die Footer-Spalten */
 .footer-container {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Fügt dem Container die gesamte Breite hinzu */
+    width: 100%; /* Fï¿½gt dem Container die gesamte Breite hinzu */
     max-width: none; /* Entfernt das maximale Width-Limit */
     padding: 0 20px; /* Optionaler Abstand innen */
-    box-sizing: border-box; /* Verhindert Überlauf */
+    box-sizing: border-box; /* Verhindert ï¿½berlauf */
 }
 
 .footer-column {

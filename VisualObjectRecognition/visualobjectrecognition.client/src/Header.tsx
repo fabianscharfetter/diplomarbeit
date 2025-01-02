@@ -5,7 +5,6 @@ import { useAuth } from "./Context/useAuth";
 
 const Header: React.FC = () => {
     const { isLoggedIn, user, logout } = useAuth();
-
     return (
         <header className="header">
             <div className="logo-container">
