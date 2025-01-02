@@ -1,13 +1,16 @@
-/* Allgemeine Styles für den Header */
+:root {
+    --background-color: #1D2024;
+    --text-color: white;
+    --secondary-color: #E6A100;
+    --header-color: #1E2024;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 150px;
-    background-color: #1E2024;
-    transition: padding 0.3s, height 0.3s;
-    position: relative;
-    height: 80px;
+    background-color: var(--header-color);
 }
 
 .logo-container {
@@ -18,71 +21,37 @@
     height: 40px;
 }
 
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    gap: 0.3rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+.profile {
+    display: inline-flex; /* Nebeneinander ausrichten */
+    align-items: center; /* Vertikale Ausrichtung angleichen */
 }
 
-    .menu-icon div {
-        width: 30px;
-        height: 3px;
-        background-color: white;
+    .profile a:hover {
+        color: var(--secondary-color);
     }
+
+.profile-link {
+    margin-right: 0.5rem;
+}
+
+.profile-link, .profile-link-text {
+    vertical-align: middle; /* Beide auf die gleiche Höhe bringen */
+    transition: color 0.3s;
+}
 
 .nav-links {
     display: flex;
     gap: 2rem;
-    justify-content: flex-end;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
 }
 
-    .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        background-color: #1E2024;
-        position: absolute; /* Bleibt relativ zum Header */
-        top: 80px; /* Direkt unter dem Header */
-        left: 0; /* Startet am linken Rand des Headers */
-        width: 100%; /* Breite des Headers */
-        max-height: 300px; /* Höhe begrenzen, damit der Body sichtbar bleibt */
-        overflow-y: auto; /* Scrollbar hinzufügen, falls zu viele Links */
-        padding: 1rem 0;
-        z-index: 10; /* Über dem Inhalt, aber nicht über alles */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ein kleiner Schatten für Optik */
+    .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
     }
 
-/* Responsive Design für mobile Ansicht */
-@media (max-width: 768px) {
-    .header {
-        padding: 1rem 20px;
-        height: 100px;
-        position: fixed; /* Fixiere den Header oben */
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20; /* Über dem Rest des Inhalts */
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .menu-icon {
-        display: flex;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    /* Hier fügen wir dem Body ein Padding hinzu, um Platz für den fixierten Header zu schaffen */
-    body {
-        margin-top: 100px; /* Gleiche Höhe wie der Header */
-    }
-}
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            cursor: pointer; /* Ändert den Mauszeiger auf Zeigefinger */
+        }

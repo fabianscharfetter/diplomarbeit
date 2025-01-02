@@ -26,13 +26,13 @@ const Account: React.FC = () => {
 
                 <div className="auswahl">
                         <div className="standort">
-                            <Link className="link" to="/LagerPage">
+                            <Link to="">
                                 <img src="../public/Saalfelden.jpeg" className="saalfeldenpicture" alt="Saalfelden" />
                             </Link>
                             <h2>Saalfelden</h2>
                         </div>
                         <div className="standort">
-                            <Link className="link" to="/LagerPage">
+                            <Link to="">
                                 <img src="../public/ZellAmSee.jpeg" className="zellpicture" alt="Zell am See" />
                             </Link>
                             <h2>Zell am See</h2>

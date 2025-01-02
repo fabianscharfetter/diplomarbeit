@@ -1,13 +1,10 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Stylesheets/Header.css';
 import { useAuth } from "./Context/useAuth";
-import React, { useState } from 'react';
 
 const Header: React.FC = () => {
     const { isLoggedIn, user, logout } = useAuth();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
     return (
         <header className="header">
@@ -16,13 +13,7 @@ const Header: React.FC = () => {
                     <img src="./public/logo.svg" alt="Logo" className="logo" />
                 </Link>
             </div>
-            <div className="menu-icon" onClick={toggleMenu}>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+            <nav className="nav-links">
                 <a href="https://lagerage.at/home">SelfStorage</a>
                 <a href="https://lagerage.at/home/immobilien">Immobilien</a>
                 <Link to="/about">{"\u00DCber uns"}</Link>

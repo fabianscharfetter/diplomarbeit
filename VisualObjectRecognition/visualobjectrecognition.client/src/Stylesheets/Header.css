@@ -5,16 +5,12 @@
     --header-color: #1d2024;
 }
 
-/* Allgemeine Header-Stile */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 150px;
     background-color: var(--header-color);
-    position: relative;
-    height: 80px;
-    transition: padding 0.3s, height 0.3s;
 }
 
 .logo-container {
@@ -32,12 +28,9 @@
         color: #535bf2;
     }
 
-/* Navigationslinks */
 .nav-links {
     display: flex;
     gap: 1.5rem;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
 }
 
     .nav-links a {
@@ -50,63 +43,3 @@
         .nav-links a:hover {
             color: var(--secondary-color);
         }
-
-/* Hamburger-Men� f�r Mobilger�te */
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    gap: 0.3rem;
-    cursor: pointer;
-}
-
-    .menu-icon div {
-        width: 30px;
-        height: 3px;
-        background-color: var(--text-color);
-    }
-
-/* Ge�ffnete Navigation */
-.nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: var(--header-color);
-    padding: 1rem 0;
-    gap: 1rem;
-    z-index: 10;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-/* Responsive Design f�r mobile Ansicht */
-@media (max-width: 768px) {
-    .header {
-        padding: 1rem 20px;
-        height: 100px;
-        position: fixed; /* Fixiere den Header oben */
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20; /* �ber dem Rest des Inhalts */
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .menu-icon {
-        display: flex;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    /* Hier f�gen wir dem Body ein Padding hinzu, um Platz f�r den fixierten Header zu schaffen */
-    body {
-        margin-top: 100px; /* Gleiche H�he wie der Header */
-    }
-}
