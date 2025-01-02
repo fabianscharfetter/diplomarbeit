@@ -6,53 +6,53 @@
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Standardmäßig untereinander für mobile Geräte */
+    justify-content: center;
     align-items: center;
-    padding: 5%;    /* Abstand links und rechts */
+    padding: 5%;
     background-color: var(--background-color);
-    width: 100%;            /* Stellt sicher, dass der Footer die gesamte Breite einnimmt */
-    box-sizing: border-box; 
+    width: 100%;
+    box-sizing: border-box;
     margin-bottom: 5%;
 }
 
 .hr-footer {
     border: none;
     border-top: 2px solid var(--secondary-color);
-    margin-left: 5%; /* Abstand links */
-    margin-right: 5%; /* Abstand rechts */
-    margin-top: 2%;
-    margin-bottom: 2%;
+    width: 90%; /* Passt die Breite an */
+    margin: 2% auto; /* Zentriert die Linie */
 }
 
 .logo-container-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 5%; /* Abstand links und rechts */
+    padding: 5%;
     background-color: var(--background-color);
-    width: 100%; /* Stellt sicher, dass der Footer die gesamte Breite einnimmt */
+    width: 100%;
     box-sizing: border-box;
     margin-bottom: 0;
 }
 
 .logo-footer {
-    height: 150px;
-    margin-left: 5%
+    height: 100px; /* Kleinere Höhe für alle Geräte */
+    margin: 0 auto; /* Zentriert das Logo */
 }
 
-/* Container für die Footer-Spalten */
 .footer-container {
     display: flex;
+    flex-wrap: wrap; /* Ermöglicht Zeilenumbruch */
     justify-content: space-between;
-    width: 100%; /* Fügt dem Container die gesamte Breite hinzu */
-    max-width: none; /* Entfernt das maximale Width-Limit */
-    padding: 0 20px; /* Optionaler Abstand innen */
-    box-sizing: border-box; /* Verhindert Überlauf */
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    gap: 20px; /* Fügt Abstand zwischen den Spalten hinzu */
 }
 
 .footer-column {
-    flex: 1;
-    padding: 0 20px;
+    flex: 1 1 100%; /* Standardmäßig nimmt jede Spalte die volle Breite ein */
+    padding: 10px;
+    text-align: center; /* Zentriert den Text für kleinere Geräte */
 }
 
     .footer-column h3 {
@@ -65,3 +65,23 @@
         margin-bottom: 3px;
         line-height: 1.6;
     }
+
+/* Medienabfragen für größere Geräte */
+@media (min-width: 768px) {
+    .footer {
+        flex-direction: row; /* Footer-Elemente nebeneinander für größere Geräte */
+    }
+
+    .footer-container {
+        flex-wrap: nowrap; /* Kein Zeilenumbruch */
+    }
+
+    .footer-column {
+        flex: 1; /* Teilt den Platz gleichmäßig */
+        text-align: left; /* Text linksbündig */
+    }
+
+    .logo-footer {
+        height: 150px; /* Größeres Logo für größere Geräte */
+    }
+}
