@@ -6,6 +6,8 @@ import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage'
 import Account from '../Pages/Account'
 import ProtectedRoute from "./ProtectedRoutes";
+import LagerPage from '../Pages/LagerPage'
+
 
 
 export const router = createBrowserRouter([
@@ -22,6 +24,13 @@ export const router = createBrowserRouter([
                 path: "account", element: (
                     <ProtectedRoute>
                         <Account />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "account/lager", element: (
+                    <ProtectedRoute>
+                        <LagerPage />
                     </ProtectedRoute>
                 ),
             },
