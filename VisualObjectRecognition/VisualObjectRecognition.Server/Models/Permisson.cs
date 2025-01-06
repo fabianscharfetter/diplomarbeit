@@ -1,8 +1,8 @@
 ﻿namespace VisualObjectRecognition.Server.Models
 {
     public enum Permisson
-    {
-        Legal ,
-        Illegal
+    { 
+        Legal = 0,
+        Illegal =1
     }
 }

@@ -39,12 +39,12 @@ const Account: React.FC = () => {
                 <h1>
                     {loading ? (
                         <span>
-                            Lade Benutzerinformationen...
+                            Lade Items...
                             <span className="loader"></span>
                         </span>
                     ) : fetchedUser ? (
                         <>
-                            Eingelogged als {fetchedUser?.email || ""}
+                                Deine Items, {fetchedUser?.firstName || ""} {fetchedUser?.secondName || ""}:
                         </>
                     ) : (
                         "Benutzer nicht gefunden"
@@ -53,24 +53,16 @@ const Account: React.FC = () => {
 
                 {error && <p className="error-message">{error}</p>}
 
-                <div className="user-items">
-                    <h1>Deine Items</h1>
+                <div className="items-list">
                     {fetchedUser?.items?.length > 0 ? (
-                        <ul>
-                            {fetchedUser.items.map((item: any, index: number) => (
-                                <li key={index}>
-                                    {item.name || "Unbenanntes Item"}
-                                    <button className="delete-button">Löschen</button>
-                                </li>
-                            ))}
-                        </ul>
+                        fetchedUser.items.map((item: any, index: number) => (
+                            <div key={index} className="item-card">
+                                <h3>{item.title || "Unbenanntes Item"}</h3>
+                                <button className="delete-button">Auslagern</button>
+                            </div>
+                        ))
                     ) : (
                         <p>Keine Items gefunden.</p>
-                    )}
-                    {fetchedUser?.role > 0 && (
-                        <div className="admin-content">
-                            
-                        </div>
                     )}
                 </div>
                 

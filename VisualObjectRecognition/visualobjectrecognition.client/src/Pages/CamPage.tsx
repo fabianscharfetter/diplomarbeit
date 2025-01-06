@@ -19,7 +19,9 @@ function CamPage() {
 
     return (
         <>
-           <Header />
+            <Header />
+            <h1>Admin-Cam:</h1>
+
             <div className="livestream-container">
                 <video className="livestream-video" autoPlay muted loop>
                     <source src="livestream.mp4" type="video/mp4" />

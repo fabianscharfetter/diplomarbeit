@@ -39,7 +39,9 @@ const Account: React.FC = () => {
         <>
             <HeaderCustomer />
             <body className="body">
-                
+
+                <br></br>
+
                 <h1>
                     {loading ? (
                         <span>
@@ -48,7 +50,7 @@ const Account: React.FC = () => {
                         </span>
                     ) : fetchedUser ? (
                         <>
-                            Eingelogged als {fetchedUser?.email || ""}
+                            Willkommen, {fetchedUser?.email || ""} !
                         </>
                     ) : (
                         "Benutzer nicht gefunden"
@@ -57,12 +59,11 @@ const Account: React.FC = () => {
 
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
+                <br></br>
 
                 <div className="standorte">
-
-                    
-
-                <h1>Standorte</h1>
+                    <h1>Deine Standorte</h1>
+                
 
                 <div className="auswahl">
                         <div className="standort" >
