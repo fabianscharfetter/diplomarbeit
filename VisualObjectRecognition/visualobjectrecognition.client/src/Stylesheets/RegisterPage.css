@@ -31,8 +31,27 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+    gap: 1rem; /* Abstand zwischen den Feldern */
+}
+
+    .form-grid div {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .form-grid div input {
+            width: 100%;
+        }
+
+button {
+    grid-column: span 2; /* Button über die gesamte Breite */
 }
 
 h1 {

@@ -35,8 +35,6 @@ namespace VisualObjectRecognition.Server.Dtos
         [Required]
         public string Land { get; set; } = string.Empty;
 
-
-
         public string? Firma { get; set; } = string.Empty;
     }
 }
