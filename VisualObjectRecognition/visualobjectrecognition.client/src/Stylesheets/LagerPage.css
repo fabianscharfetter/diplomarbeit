@@ -1,166 +1,150 @@
 :root {
-    --background-color: #1c1c1c;
-    --text-color: #ffffff;
-    --container-background: #1D2024;
-    --list-item-background: #1b1e22;
-    --delete-button-color: #ff4c4c;
-    --delete-button-hover: #ff1a1a;
-    --add-button-color: #ffaa00;
-    --add-button-hover: #ffcc33;
-    --button-text-color: #ffffff;
-    --button-hover-transition: 0.3s ease;
+    --background-color: #1E2024;
+    --text-color: white;
+    --secondary-color: #f9a800;
+    --card-background: #2A2D32;
+    --hover-color: #ffb733;
 }
 
-/* Basis-Stile */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: calc(100vh - 100px); /* Platz für Header und Footer */
+.body {
     padding: 20px;
-    gap: 20px;
 }
 
-.list-container {
-    background-color: var(--container-background);
-    padding: 20px;
-    border-radius: 10px;
-    width: 45%;
-    height: 80vh;
-    overflow-y: scroll;
-    box-sizing: border-box;
-}
-
-    /* Responsive Scrollbar-Stil */
-    .list-container::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .list-container::-webkit-scrollbar-track {
-        background: #2b2b2b;
-        border-radius: 10px;
-    }
-
-    .list-container::-webkit-scrollbar-thumb {
-        background: #ffaa00;
-        border-radius: 10px;
-        border: 2px solid #2b2b2b;
-    }
-
-        .list-container::-webkit-scrollbar-thumb:hover {
-            background: #ffcc33;
-        }
-
-.h1 {
-    font-size: 24px;
+h1 {
+    color: var(--secondary-color);
+    text-align: center;
     margin-bottom: 20px;
-    text-align: left;
-    border-bottom: 1px solid #444444;
-    padding-bottom: 10px;
 }
 
-.item-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.loader {
+    border: 4px solid var(--card-background);
+    border-top: 4px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 10px;
 }
 
-    .item-list li {
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.user-items {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+    .user-items ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .user-items li {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 10px;
         padding: 10px;
-        background-color: var(--list-item-background);
-        border-radius: 5px;
+        border-bottom: 1px solid var(--hover-color);
     }
 
+        .user-items li:last-child {
+            border-bottom: none;
+        }
+
 .delete-button {
-    background-color: var(--delete-button-color);
-    color: var(--button-text-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     border: none;
-    width: 100px;
-    height: 25px;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color var(--button-hover-transition);
+    transition: background-color 0.3s, transform 0.2s;
 }
 
     .delete-button:hover {
-        background-color: var(--delete-button-hover);
+        background-color: var(--hover-color);
+        transform: scale(1.1);
     }
 
-.add-button {
-    background-color: var(--add-button-color);
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color var(--button-hover-transition);
-    position: fixed; /* Fixiert den Button am Bildschirm */
-    bottom: 20px; /* Abstand zum unteren Rand */
-    right: 20px; /* Abstand zum rechten Rand */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
 }
 
-    .add-button:hover {
-        background-color: var(--add-button-hover);
+/* Standortauswahl */
+.standorte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.standort {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+    .standort:hover {
+        transform: scale(1.05);
     }
 
-.right-space {
-    width: 45%;
-    background-color: transparent;
-}
+    .standort img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .standort h2 {
+        margin-top: 10px;
+        color: var(--text-color);
+    }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column; /* Wechselt zu Spalten-Layout */
-        align-items: center;
-    }
-
-    .list-container, .right-space {
-        width: 90%; /* Nimmt fast die gesamte Breite ein */
-        height: auto;
-    }
-}
-
 @media (max-width: 768px) {
-    .list-container {
-        width: 100%; /* Nimmt die volle Breite ein */
-        height: auto; /* Höhe passt sich dem Inhalt an */
+    .user-items {
+        max-width: 90%;
     }
 
-    .right-space {
-        display: none; /* Versteckt die rechte Fläche bei kleinen Bildschirmen */
-    }
-
-    .add-button {
-        width: 40px;
-        height: 40px;
-        bottom: 15px;
-        right: 15px;
+    .standort {
+        width: 200px;
     }
 }
 
 @media (max-width: 480px) {
-    .h1 {
-        font-size: 20px; /* Kleinere Schriftgröße für Titel */
+    .standorte {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .delete-button {
-        width: 80px; /* Kleinere Buttons */
-        height: 20px;
+    .standort {
+        width: 100%;
+        max-width: 300px;
     }
 }

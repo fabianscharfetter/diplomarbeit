@@ -1,0 +1,49 @@
+﻿/* CamPage.css */
+
+.livestream-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #000; /* Schwarzer Hintergrund für den Videoplayer */
+}
+
+.livestream-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.zoom-button {
+    position: absolute;
+    bottom: 20px; /* 20px Abstand vom unteren Rand */
+    right: 20px; /* 20px Abstand vom rechten Rand */
+    width: 50px; /* Feste Breite */
+    height: 50px; /* Feste Höhe */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .zoom-button:hover {
+        background-color: rgba(255, 255, 255, 1);
+        transform: scale(1.1);
+    }
+
+    .zoom-button svg {
+        font-size: 24px;
+        color: #333;
+    }
+
+    .zoom-button:active {
+        transform: scale(0.95);
+    }

@@ -36,7 +36,7 @@ export const registerAPI = async (
             email: email,
             firstname: firstname,
             secondname: secondname,
-            birthdate: birthdate,
+            birthdate: birthdate.toISOString().split("T")[0], // Nur das Datum im Format YYYY-MM-DD,
             phonenbr: phonenbr,
             password: password,
             strasse: strasse,

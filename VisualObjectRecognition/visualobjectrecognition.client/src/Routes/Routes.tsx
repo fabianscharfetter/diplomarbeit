@@ -7,6 +7,7 @@ import RegisterPage from '../Pages/RegisterPage'
 import Account from '../Pages/Account'
 import ProtectedRoute from "./ProtectedRoutes";
 import LagerPage from '../Pages/LagerPage'
+import CamPage from "../Pages/CamPage";
 
 
 
@@ -34,7 +35,13 @@ export const router = createBrowserRouter([
                     </ProtectedRoute>
                 ),
             },
-
+            {
+                path: "account/cam", element: (
+                    <ProtectedRoute>
+                        <CamPage />
+                    </ProtectedRoute>
+                ),
+            },
         ],
     },
 ]);

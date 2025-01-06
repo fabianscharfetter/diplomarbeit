@@ -81,144 +81,151 @@ const RegisterPage: React.FC = () => {
             form.birthdate,
             form.phonenbr,
             form.password,
-            form.firma!,
+
             form.strasse,
             form.hausnummer,
             form.postleitzahl,
             form.stadt,
             form.land,
+
+            form.firma!
         );
     };
 
     return (
         <section className="register-container">
             <div className="register-left-container">
+
                 <div className="register-form">
                     <h1>Registrierung</h1>
                     <form onSubmit={handleSubmit(handleRegister)}>
-                        <div>
-                            <input
-                                type="email"
-                                id="email"
-                                {...register("email")}
-                                placeholder="E-Mail"
-                            />
-                            {errors.email && <p className="error">{errors.email.message}</p>}
+                        <div className="form-grid">
+                            <div>
+                                <input
+                                    type="text"
+                                    id="firstname"
+                                    {...register("firstname")}
+                                    placeholder="Vorname"
+                                />
+                                {errors.firstname && <p className="error">{errors.firstname.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="secondname"
+                                    {...register("secondname")}
+                                    placeholder="Nachname"
+                                />
+                                {errors.secondname && <p className="error">{errors.secondname.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    {...register("email")}
+                                    placeholder="E-Mail"
+                                />
+                                {errors.email && <p className="error">{errors.email.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="tel"
+                                    id="phonenbr"
+                                    {...register("phonenbr")}
+                                    placeholder="Telefonnummer"
+                                />
+                                {errors.phonenbr && <p className="error">{errors.phonenbr.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="date"
+                                    id="birthdate"
+                                    {...register("birthdate")}
+                                    placeholder="Geburtsdatum"
+                                />
+                                {errors.birthdate && <p className="error">{errors.birthdate.message}</p>}
+                            </div>
+                            <div></div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="strasse"
+                                    {...register("strasse")}
+                                    placeholder="Straße"
+                                />
+                                {errors.strasse && <p className="error">{errors.strasse.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="hausnummer"
+                                    {...register("hausnummer")}
+                                    placeholder="Hausnummer"
+                                />
+                                {errors.hausnummer && <p className="error">{errors.hausnummer.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="postleitzahl"
+                                    {...register("postleitzahl")}
+                                    placeholder="Postleitzahl"
+                                />
+                                {errors.postleitzahl && <p className="error">{errors.postleitzahl.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="stadt"
+                                    {...register("stadt")}
+                                    placeholder="Stadt"
+                                />
+                                {errors.stadt && <p className="error">{errors.stadt.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="land"
+                                    {...register("land")}
+                                    placeholder="Land"
+                                />
+                                {errors.land && <p className="error">{errors.land.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="firma"
+                                    {...register("firma")}
+                                    placeholder="Firma (optional)"
+                                />
+                                {errors.firma && <p className="error">{errors.firma.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    {...register("password")}
+                                    placeholder="Passwort"
+                                />
+                                {errors.password && <p className="error">{errors.password.message}</p>}
+                            </div>
+                            <div>
+                                <input
+                                    type="password"
+                                    id="password2"
+                                    {...register("password2")}
+                                    placeholder="Passwort wiederholen"
+                                />
+                                {errors.password2 && <p className="error">{errors.password2.message}</p>}
+                            </div>
+                            <button type="submit">Jetzt Registrieren</button>
                         </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="firstname"
-                                {...register("firstname")}
-                                placeholder="Vorname"
-                            />
-                            {errors.firstname && <p className="error">{errors.firstname.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="secondname"
-                                {...register("secondname")}
-                                placeholder="Nachname"
-                            />
-                            {errors.secondname && <p className="error">{errors.secondname.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="tel"
-                                id="phonenbr"
-                                {...register("phonenbr")}
-                                placeholder="Telefonnummer"
-                            />
-                            {errors.phonenbr && <p className="error">{errors.phonenbr.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="date"
-                                id="birthdate"
-                                {...register("birthdate")}
-                                placeholder="Geburtsdatum"
-                            />
-                            {errors.birthdate && <p className="error">{errors.birthdate.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="Straße"
-                                {...register("strasse")}
-                                placeholder="Straße"
-                            />
-                            {errors.strasse && <p className="error">{errors.strasse.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="Hausnummer"
-                                {...register("hausnummer")}
-                                placeholder="Hausnummer"
-                            />
-                            {errors.hausnummer && <p className="error">{errors.hausnummer.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="Postleitzahl"
-                                {...register("postleitzahl")}
-                                placeholder="Postleitzahl"
-                            />
-                            {errors.postleitzahl && <p className="error">{errors.postleitzahl.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="Stadt"
-                                {...register("stadt")}
-                                placeholder="Stadt"
-                            />
-                            {errors.stadt && <p className="error">{errors.stadt.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="Land"
-                                {...register("land")}
-                                placeholder="Land"
-                            />
-                            {errors.land && <p className="error">{errors.land.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="firma"
-                                {...register("firma")}
-                                placeholder="Firma (optional)"
-                            />
-                            {errors.firma && <p className="error">{errors.firma.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="password"
-                                id="password"
-                                {...register("password")}
-                                placeholder="Passwort"
-                            />
-                            {errors.password && <p className="error">{errors.password.message}</p>}
-                        </div>
-                        <div>
-                            <input
-                                type="password"
-                                id="password2"
-                                {...register("password2")}
-                                placeholder="Passwort wiederholen"
-                            />
-                            {errors.password2 && <p className="error">{errors.password2.message}</p>}
-                        </div>
-                        <button type="submit">Jetzt Registrieren</button>
+                        <footer>
+                            <h5>Du hast bereits ein Konto?</h5>
+                            <a href="/account/login">« Zurück zur Anmeldung</a>
+                        </footer>
                     </form>
-                    <footer>
-                        <h5>Du hast bereits ein Konto?</h5>
-                        <a href="/account/login">« Zurück zur Anmeldung</a>
-                    </footer>
+
                 </div>
             </div>
 

@@ -48,9 +48,9 @@
 
 .logo-container-footer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Logo wird nach links ausgerichtet */
     align-items: center;
-    padding: 5%;
+    padding: 2%;
     background-color: var(--background-color);
     width: 100%;
     box-sizing: border-box;
@@ -58,9 +58,9 @@
 }
 
 .logo-footer {
-    height: 100px; /* Kleinere H�he f�r alle Ger�te */
-    margin: 0 auto; /* Zentriert das Logo */
+    height: 100px; /* Kleinere Höhe für alle Geräte */
 }
+
 
 /* Container f�r die Footer-Spalten */
 .footer-container {
