@@ -9,7 +9,7 @@ import axios from "axios";
 type UserContextType = {
     user: UserProfile | null;
     token: string | null;
-    registerUser: (email: string, firstname: string, secondname: string, phonenbr: string, password: string, firma?: string | null) => void;
+    registerUser: (email: string, firstname: string, secondname: string, birthdate: Date, phonenbr: string, password: string, strasse: string, hausnummer: string, stadt: string, land: string, postleitzahl: string, firma?: string | null) => void;
     loginUser: (email: string, password: string) => void;
     logout: () => void;
     isLoggedIn: () => boolean;
@@ -40,19 +40,31 @@ export const UserProvider = ({ children }: Props) => {
         email: string,
         firstname: string,
         secondname: string,
+        birthdate: Date,
         phonenbr: string,
         password: string,
+        strasse: string,
+        hausnummer: string,
+        postleitzahl: string,
+        stadt: string,
+        land: string,
         firma?: string | null  // firma ist jetzt optional oder null
     ) => {
-        await registerAPI(email, firstname, secondname, phonenbr, password, firma!)
+        await registerAPI(email, firstname, secondname, birthdate, phonenbr, password, strasse, hausnummer, postleitzahl, stadt, land, firma!)
             .then((res) => {
                 if (res) {
                     localStorage.setItem("token", res?.data.token);
                     const userObj = {
                         firstname: res?.data.firstname,
                         secondname: res?.data.secondname,
+                        birthdate: res?.data.birthdate,
                         email: res?.data.email,
                         phonenbr: res?.data.phonenbr,
+                        strasse: res?.data.strasse,
+                        hausnummer: res?.data.hausnummer,
+                        postleitzahl: res?.data.postleitzahl,
+                        stadt: res?.data.stadt,
+                        land: res?.data.land,
                         firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));
@@ -73,8 +85,14 @@ export const UserProvider = ({ children }: Props) => {
                     const userObj = {
                         firstname: res?.data.firstname,
                         secondname: res?.data.secondname,
+                        birthdate: res?.data.birthdate,
                         email: res?.data.email,
                         phonenbr: res?.data.phonenbr,
+                        strasse: res?.data.strasse,
+                        hausnummer: res?.data.hausnummer,
+                        postleitzahl: res?.data.postleitzahl,
+                        stadt: res?.data.stadt,
+                        land: res?.data.land,
                         firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
                     };
                     localStorage.setItem("user", JSON.stringify(userObj));

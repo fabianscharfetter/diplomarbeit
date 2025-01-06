@@ -20,8 +20,14 @@ export const registerAPI = async (
     email: string,
     firstname: string,
     secondname: string,
+    birthdate: Date,
     phonenbr: string,
     password: string,
+    strasse: string,
+    hausnummer: string,
+    postleitzahl: string,
+    stadt: string,
+    land: string,
     firma?: string | null  // firma optional oder null
 
 ) => {
@@ -30,8 +36,14 @@ export const registerAPI = async (
             email: email,
             firstname: firstname,
             secondname: secondname,
+            birthdate: birthdate,
             phonenbr: phonenbr,
             password: password,
+            strasse: strasse,
+            hausnummer: hausnummer,
+            postleitzahl: postleitzahl,
+            stadt: stadt,
+            land: land,
             firma: firma ?? null, // Wenn firma nicht angegeben wird, null setzen
         });
         return data;

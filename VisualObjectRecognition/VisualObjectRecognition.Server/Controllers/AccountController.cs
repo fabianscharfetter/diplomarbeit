@@ -43,8 +43,14 @@ namespace VisualObjectRecognition.Server.Controllers
                 Email = user.Email,
                 FirstName = user.FirstName,
                 SecondName = user.SecondName,
+                Birthdate = user.Birthdate,
                 PhoneNbr = user.PhoneNbr,
                 Firma = user.Firma,
+                Strasse = user.Strasse,
+                Hausnummer = user.Hausnummer,
+                Postleitzahl = user.Postleitzahl,
+                Stadt = user.Stadt,
+                Land = user.Land,
                 Token = _tokenService.CreateToken(user)
             });
         }
@@ -64,14 +70,20 @@ namespace VisualObjectRecognition.Server.Controllers
             var hashedPassword = HashPassword(registerDto.Password);
 
             // Neuen Benutzer erstellen
-            var newUser = new User
+            var newUser = new Models.User
             {
                 Id = Guid.NewGuid().ToString(),
                 FirstName = registerDto.FirstName,
                 SecondName = registerDto.SecondName,
+                Birthdate = registerDto.Birthdate,
                 Email = registerDto.Email.ToLower(),
                 PasswordHash = hashedPassword,
                 Firma = registerDto.Firma,
+                Strasse = registerDto.Strasse,
+                Hausnummer = registerDto.Hausnummer,
+                Postleitzahl = registerDto.Postleitzahl,
+                Stadt = registerDto.Stadt,
+                Land = registerDto.Land,
                 PhoneNbr = registerDto.PhoneNbr,
                 Role = UserRole.User // Standardrolle
             };
@@ -82,9 +94,15 @@ namespace VisualObjectRecognition.Server.Controllers
             {
                 FirstName = newUser.FirstName,
                 SecondName = newUser.SecondName,
+                Birthdate = newUser.Birthdate,
                 Email = newUser.Email,
                 PhoneNbr = newUser.PhoneNbr,
                 Firma = newUser.Firma,
+                Strasse = newUser.Strasse,
+                Hausnummer = newUser.Hausnummer,
+                Postleitzahl = newUser.Postleitzahl,
+                Stadt = newUser.Stadt,
+                Land = newUser.Land,
                 Token = _tokenService.CreateToken(newUser)
             });
         }
@@ -93,13 +111,13 @@ namespace VisualObjectRecognition.Server.Controllers
         // Passwort-Hashing und -Validierung
         private string HashPassword(string password)
         {
-            var hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<User>();
+            var hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<Models.User>();
             return hasher.HashPassword(null, password);
         }
 
         private bool VerifyPassword(string hashedPassword, string providedPassword)
         {
-            var hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<User>();
+            var hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<Models.User>();
             var result = hasher.VerifyHashedPassword(null, hashedPassword, providedPassword);
             return result == Microsoft.AspNetCore.Identity.PasswordVerificationResult.Success;
         }

@@ -13,9 +13,16 @@ type RegisterFormsInputs = {
     password: string;
     firma?: string | null;
     password2: string;
+    birthdate: Date; 
+
+    strasse: string; 
+    hausnummer: string; 
+    postleitzahl: string; 
+    stadt: string; 
+    land: string; 
 };
 
-// Validierung mit Passwortwiederholung
+// Validierung mit den neuen Variablennamen
 const validation = Yup.object().shape({
     email: Yup.string()
         .required("Email wird benötigt")
@@ -29,13 +36,30 @@ const validation = Yup.object().shape({
     phonenbr: Yup.string()
         .required("Telefonnummer wird benötigt")
         .min(10, "Telefonnummer zu kurz"),
+    birthdate: Yup.date()
+        .required("Geburtsdatum wird benötigt")
+        .max(new Date(), "Geburtsdatum kann nicht in der Zukunft liegen"),
+    strasse: Yup.string()
+        .required("Straße wird benötigt")
+        .min(3, "Straßenname zu kurz"),
+    hausnummer: Yup.string()
+        .required("Hausnummer wird benötigt")
+        .matches(/^\d+[a-zA-Z]?$/, "Ungültige Hausnummer"),
+    postleitzahl: Yup.string()
+        .required("Postleitzahl wird benötigt")
+        .matches(/^\d{4,5}$/, "Postleitzahl muss 4-5 Ziffern enthalten"),
+    stadt: Yup.string()
+        .required("Stadt wird benötigt")
+        .min(2, "Stadtname zu kurz"),
+    land: Yup.string()
+        .required("Land wird benötigt")
+        .min(2, "Ländename zu kurz"),
     password: Yup.string()
         .required("Passwort wird benötigt")
         .min(8, "Passwort muss mindestens 8 Zeichen beinhalten"),
     firma: Yup.string()
         .nullable()
         .notRequired(),
-    // Optional oder null erlaubt
     password2: Yup.string()
         .oneOf([Yup.ref("password")], "Passwörter stimmen nicht überein")
         .required("Passwortwiederholung wird benötigt"),
@@ -50,7 +74,20 @@ const RegisterPage: React.FC = () => {
     } = useForm<RegisterFormsInputs>({ resolver: yupResolver(validation) });
 
     const handleRegister = (form: RegisterFormsInputs) => {
-        registerUser(form.email, form.firstname, form.secondname, form.phonenbr, form.password, form.firma!);
+        registerUser(
+            form.email,
+            form.firstname,
+            form.secondname,
+            form.birthdate,
+            form.phonenbr,
+            form.password,
+            form.firma!,
+            form.strasse,
+            form.hausnummer,
+            form.postleitzahl,
+            form.stadt,
+            form.land,
+        );
     };
 
     return (
@@ -94,6 +131,60 @@ const RegisterPage: React.FC = () => {
                                 placeholder="Telefonnummer"
                             />
                             {errors.phonenbr && <p className="error">{errors.phonenbr.message}</p>}
+                        </div>
+                        <div>
+                            <input
+                                type="date"
+                                id="birthdate"
+                                {...register("birthdate")}
+                                placeholder="Geburtsdatum"
+                            />
+                            {errors.birthdate && <p className="error">{errors.birthdate.message}</p>}
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                id="Straße"
+                                {...register("strasse")}
+                                placeholder="Straße"
+                            />
+                            {errors.strasse && <p className="error">{errors.strasse.message}</p>}
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                id="Hausnummer"
+                                {...register("hausnummer")}
+                                placeholder="Hausnummer"
+                            />
+                            {errors.hausnummer && <p className="error">{errors.hausnummer.message}</p>}
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                id="Postleitzahl"
+                                {...register("postleitzahl")}
+                                placeholder="Postleitzahl"
+                            />
+                            {errors.postleitzahl && <p className="error">{errors.postleitzahl.message}</p>}
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                id="Stadt"
+                                {...register("stadt")}
+                                placeholder="Stadt"
+                            />
+                            {errors.stadt && <p className="error">{errors.stadt.message}</p>}
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                id="Land"
+                                {...register("land")}
+                                placeholder="Land"
+                            />
+                            {errors.land && <p className="error">{errors.land.message}</p>}
                         </div>
                         <div>
                             <input

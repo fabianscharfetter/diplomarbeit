@@ -99,20 +99,23 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
                                 <label htmlFor="dob">Geburtsdatum</label>
                                 <input
                                     type="date"
-                                    id="dob"
-                                    defaultValue={fetchedUser?.dob || ""}
+                                    id="birthdate"
+                                    defaultValue={fetchedUser?.birthdate || ""}
                                 />
                             </div>
-                        </form>
-                        <h2 className="popup-title">Adresse</h2>
-                        <form className="popup-form">
+                                </form>
+
+
+                            <h2 className="popup-title">Adresse</h2>
+
+                            <form className="popup-form">
                             <div className="form-group">
                                 <label htmlFor="street">*Straße</label>
                                 <input
                                     type="text"
                                     id="street"
                                     placeholder="Straße"
-                                    defaultValue={fetchedUser?.address?.Straße || ""}
+                                    defaultValue={fetchedUser?.strasse || ""}
                                 />
                             </div>
                             <div className="form-group">
@@ -121,7 +124,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
                                     type="text"
                                     id="houseNumber"
                                     placeholder="Hausnummer"
-                                    defaultValue={fetchedUser?.address?.Hausnummer || ""}
+                                    defaultValue={fetchedUser?.hausnummer || ""}
                                 />
                             </div>
                             <div className="form-group">
@@ -130,7 +133,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
                                     type="text"
                                     id="city"
                                     placeholder="Stadt"
-                                    defaultValue={fetchedUser?.address?.Stadt || ""}
+                                    defaultValue={fetchedUser?.stadt || ""}
                                 />
                             </div>
                             <div className="form-group">
@@ -139,7 +142,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
                                     type="text"
                                     id="zip"
                                     placeholder="Postleitzahl"
-                                    defaultValue={fetchedUser?.address?.Postleitzahl || ""}
+                                    defaultValue={fetchedUser?.postleitzahl || ""}
                                 />
                             </div>
                             <div className="form-group">
@@ -148,7 +151,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({ isOpen, onClose }) => {
                                     type="text"
                                     id="country"
                                     placeholder="Land"
-                                    defaultValue={fetchedUser?.address?.Land || ""}
+                                    defaultValue={fetchedUser?.land || ""}
                                 />
                             </div>
                         </form>

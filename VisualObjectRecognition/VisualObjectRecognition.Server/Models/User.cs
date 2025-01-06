@@ -33,12 +33,17 @@ namespace VisualObjectRecognition.Server.Models
 
         public string PhoneNbr { get; set; } = string.Empty;
 
+        public DateOnly Birthdate { get; set; }
 
-        public Adress? Adress { get; set; }
+        //Adresse
+        public string Strasse { get; set; } = string.Empty;
+        public string Hausnummer { get; set; } = string.Empty;
+        public string Postleitzahl { get; set; } = string.Empty;
+        public string Stadt { get; set; } = string.Empty;
+        public string Land { get; set; } = string.Empty;
 
 
         public List<Storage>? Storages { get; set; }
-
 
 		public List<Item>? Items { get; set; }
 	}
