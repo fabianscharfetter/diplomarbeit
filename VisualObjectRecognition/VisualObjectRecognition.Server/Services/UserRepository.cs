@@ -29,11 +29,13 @@ namespace VisualObjectRecognition.Server.Services
             return results;
         }
 
-        public async Task<Models.User> GetUserAsync(string id, string secondname)
+        public async Task<IEnumerable<Models.User>> GetUserAsync(string id)
         {
+            var query = _container.GetItemQueryIterator<Models.User>(new QueryDefinition("SELECT * FROM c WHERE c.id = @id").WithParameter("@id", id));
+
             try
             {
-                var response = await _container.ReadItemAsync<Models.User>(id, new PartitionKey(secondname));
+                var response = await query.ReadNextAsync();
                 return response;
 
             }
@@ -52,12 +54,15 @@ namespace VisualObjectRecognition.Server.Services
 
         public async Task<bool> DeleteUser(string id, string secondname)
         {
-            var response = await _container.DeleteItemAsync<Models.User>(id, new PartitionKey(secondname)); 
-
-            if(response.Resource  != null)
+            try
+            {
+                var response = await _container.DeleteItemAsync<Models.User>(id, new PartitionKey(secondname));
                 return true;
-
-            return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public async Task<Models.User> UpdateUserAsync(string id, Models.User user)

@@ -5,7 +5,7 @@ namespace VisualObjectRecognition.Server.Services
     public interface IStorageRepository
     {
         Task<IEnumerable<Storage>> GetStoragesAsync();
-        Task<Storage> GetStorageAsync(string id, string title);
+        Task<IEnumerable<Storage>> GetStorageAsync(string id);
 
         Task<Storage> CreateStorageAsync(Storage storage);
         Task<Storage> UpdateStorageAsync(string id, Storage storage);
