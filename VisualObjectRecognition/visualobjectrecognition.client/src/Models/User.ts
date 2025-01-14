@@ -9,7 +9,7 @@ export type UserProfileToken = {
     postleitzahl: string,
     stadt: string,
     land: string,
-    firma?: string | null;  // Firma kann null oder undefined sein
+    firma?: string | null;  // Firma kann null sein
     token: string;
 };
 
@@ -24,5 +24,5 @@ export type UserProfile = {
     postleitzahl: string,
     stadt: string,
     land: string,
-    firma?: string | null;  // Firma kann null oder undefined sein
+    firma?: string | null;  // Firma kann null sein
 };

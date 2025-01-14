@@ -54,17 +54,17 @@ const Footer: React.FC = () => {
 
                         <p>Adresse:
                             <a> </a>
-                            <a className="footer-link" href="https://goo.gl/maps/SoaoH8DiYMwBRde19">Seespitzstraße 8, 5700 Zell am See</a>
+                            <a className="footer-link" href="https://goo.gl/maps/SoaoH8DiYMwBRde19">Seespitzstra{"\u00DF"}e 8, 5700 Zell am See</a>
                         </p>
                     </div>
                     <div className="footer-column">
                         <h3>Zahlungsmittel</h3>
-                        <p>{"Text f\u00DCr die vierte Spalte."}</p>
+                        <p>{"Text f\u00FCr die vierte Spalte."}</p>
 
                     </div>
                     <div className="footer-column">
                         <h3>Documents</h3>
-                        <p>{"Text f\u00DCr die fünfte Spalte."}</p>
+                        <p>{"Text f\u00FCr die f\u00FCnfte Spalte."}</p>
                     </div>
                 </div>
             </footer>
