@@ -8,6 +8,7 @@ import Account from '../Pages/Account'
 import ProtectedRoute from "./ProtectedRoutes";
 import LagerPage from '../Pages/LagerPage'
 import CamPage from "../Pages/CamPage";
+import AdminPage from "../Pages/Admin"
 
 
 
@@ -39,6 +40,14 @@ export const router = createBrowserRouter([
                 path: "account/cam", element: (
                     <ProtectedRoute>
                         <CamPage />
+                    </ProtectedRoute>
+                ),
+            },
+
+            {
+                path: "account/admin", element: (
+                    <ProtectedRoute>
+                        <AdminPage />
                     </ProtectedRoute>
                 ),
             },

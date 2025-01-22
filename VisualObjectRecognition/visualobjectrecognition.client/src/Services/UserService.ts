@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const api = "https://localhost:7228/api/User";
+const apiUser = "https://localhost:7228/api/User";
+const apiStorage = "https://localhost:7228/api/Storage";
 
 /**
  * Fetches a user by email from the API.
@@ -14,7 +15,7 @@ export const fetchUserByEmail = async (email: string | null): Promise<any | null
     }
 
     try {
-        const response = await axios.get(api);
+        const response = await axios.get(apiUser);
         const users = response.data;
 
         if (Array.isArray(users)) {
@@ -25,5 +26,35 @@ export const fetchUserByEmail = async (email: string | null): Promise<any | null
         }
     } catch (err) {
         throw new Error(`Fehler beim Abrufen der Benutzerdaten: ${err}`);
+    }
+};
+
+export const getAllUsers = async (): Promise<any | null> => {
+    try {
+        const response = await axios.get(apiUser);
+        const users = response.data;
+
+        if (Array.isArray(users)) {
+            return users || null;
+        } else {
+            throw new Error("Ungültige Datenstruktur von der API erhalten.");
+        }
+    } catch (err) {
+        throw new Error(`Fehler beim Abrufen der Benutzerdaten: ${err}`);
+    }
+};
+
+export const getInventoryItems = async (): Promise<any[] | null> => {
+    try {
+        const response = await axios.get(apiStorage);
+        const items = response.data;
+
+        if (Array.isArray(items)) {
+            return items; // Keine zusätzliche Prüfung nötig
+        } else {
+            throw new Error("Ungültige Datenstruktur von der API erhalten.");
+        }
+    } catch (err) {
+        throw new Error(`Fehler beim Abrufen der Inventarliste: ${err}`);
     }
 };

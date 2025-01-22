@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Footer from '../Footer';
 import '../Stylesheets/Account.css';
 import { useAuth } from "../Context/useAuth";
-import { fetchUserByEmail } from "../Services/UserService";
+import { fetchUserByEmail} from "../Services/UserService";
 
 const Account: React.FC = () => {
     const { user } = useAuth();
@@ -11,6 +11,7 @@ const Account: React.FC = () => {
     const [fetchedUser, setFetchedUser] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
+   // const [inventory, setInventory] = useState<any[] | null>(null); // Zustand kann Array oder null sein // Initialwert ist ein leeres Array
 
     useEffect(() => {
         const getUser = async () => {
@@ -22,6 +23,8 @@ const Account: React.FC = () => {
             try {
                 const result = await fetchUserByEmail(user.email);
                 setFetchedUser(result);
+             //   const inventoryResult = await getInventoryItems(); // Alle Lagerdaten auf einmal laden
+             //   setInventory(inventoryResult);
             } catch (err) {
                 setError(`Fehler beim Abrufen des Benutzers: ${err}`);
             } finally {
@@ -36,6 +39,8 @@ const Account: React.FC = () => {
         <>
             <HeaderCustomer />
             <body className="body">
+             <div className="container">
+             <div className="main">
                 <h1>
                     {loading ? (
                         <span>
@@ -54,18 +59,18 @@ const Account: React.FC = () => {
                 {error && <p className="error-message">{error}</p>}
 
                 <div className="items-list">
-                    {fetchedUser?.items?.length > 0 ? (
-                        fetchedUser.items.map((item: any, index: number) => (
-                            <div key={index} className="item-card">
-                                <h3>{item.title || "Unbenanntes Item"}</h3>
-                                <button className="delete-button">Auslagern</button>
-                            </div>
-                        ))
+                    {fetchedUser && fetchedUser.items && Array.isArray(fetchedUser.items) && fetchedUser.items.length > 0 ? (
+                        <ul>
+                            {fetchedUser.items.map((item: any, index: number) => (
+                                <li key={index}>{item.title}</li>
+                            ))}
+                        </ul>
                     ) : (
-                        <p>Keine Items gefunden.</p>
+                        <p>Keine Lageritems vorhanden.</p>
                     )}
+                    </div>
                 </div>
-                
+            </div>
             </body>
             <Footer />
         </>

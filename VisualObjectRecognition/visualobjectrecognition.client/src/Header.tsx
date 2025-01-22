@@ -4,7 +4,7 @@ import { useAuth } from "./Context/useAuth";
 import React, { useState } from 'react';
 
 const Header: React.FC = () => {
-    const { isLoggedIn, user, logout } = useAuth();
+    const { isLoggedIn, logout } = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
