@@ -1,7 +1,5 @@
 ﻿using Microsoft.Azure.Cosmos;
 using MongoDB.Driver;
-using VisualObjectRecognition.Server.Models;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace VisualObjectRecognition.Server.Services
 {

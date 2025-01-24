@@ -1,10 +1,7 @@
-using VisualObjectRecognition.Server.Data;
 using VisualObjectRecognition.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using VisualObjectRecognition.Server.Interfaces;
-using VisualObjectRecognition.Server.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

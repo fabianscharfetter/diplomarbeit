@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using VisualObjectRecognition.Server.Data;
 using VisualObjectRecognition.Server.Models;
 using VisualObjectRecognition.Server.Services;
 using Newtonsoft.Json;
+using System.Text;
 
 
 namespace VisualObjectRecognition.Server.Controllers
@@ -213,6 +212,7 @@ namespace VisualObjectRecognition.Server.Controllers
             {
                 var response = await _userRepository.GetUserAsync(id);
                 var user = response.FirstOrDefault();
+                var storageObject = new Storage();
 
                 if (user == null)
                 {
@@ -222,14 +222,13 @@ namespace VisualObjectRecognition.Server.Controllers
                 //Storage per ID suchen
                 using (HttpClient client = new HttpClient())
                 {
+                    //Stroage User hinzufügen
                     string url = $"https://localhost:7228/api/Storage/{storageID}";
                     HttpResponseMessage http_response = await client.GetAsync(url);
-
                     if (http_response.IsSuccessStatusCode)
                     {
                         var responseJSON = await http_response.Content.ReadAsStringAsync();
-                        var storageObject = JsonConvert.DeserializeObject<Storage>(responseJSON);
-
+                        storageObject = JsonConvert.DeserializeObject<Storage>(responseJSON);
 
                         if (user.Storages == null)
                         {
@@ -244,17 +243,41 @@ namespace VisualObjectRecognition.Server.Controllers
                         {
                             user.Storages.Add(storageObject);
                         }
-
                         await UpdateUser(id, user);
-                        return Ok(user);
+
+
                     }
                     else
                     {
                         Console.WriteLine($"Fehler: {http_response.StatusCode}");
+                        return BadRequest();
                     }
                 }
 
-                return BadRequest();
+                //UserId von Storage updaten 
+                storageObject.UserID = id;
+                using (HttpClient client = new HttpClient())
+                {
+                    string jsonStorage = JsonConvert.SerializeObject(storageObject);
+                    string url = $"https://localhost:7228/api/Storage/{storageID}";
+
+                    var content = new StringContent(jsonStorage, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage httpResponse = await client.PutAsync(url, content);
+
+                    // Antwort auslesen
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine("Request erfolgreich!");
+                        string responseContent = await httpResponse.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        return BadRequest();
+                    }
+                }
+
+                return Ok(user);
             }
             catch (InvalidOperationException ex)
             {
@@ -276,10 +299,11 @@ namespace VisualObjectRecognition.Server.Controllers
             {
                 var response = await _userRepository.GetUserAsync(id);
                 var user = response.FirstOrDefault();
+                var storageObject = new Storage();
 
                 if (user == null)
                 {
-                    return NotFound($"Fehler beim Hinzufügen eines Items");
+                    return NotFound($"User nicht gefunden");
                 }
 
                 if (user.Storages != null)
@@ -288,10 +312,35 @@ namespace VisualObjectRecognition.Server.Controllers
                     {
                         if (storage.Id == storageID)
                         {
-                            user.Storages.Remove(storage);
+                            // Storage von User Storages entfernen
+                            storageObject = storage;
+                            user.Storages.Remove(storageObject);
                             if(user.Storages.Count == 0)
                             {
                                 user.Storages = null;
+                            }
+
+                            // UserId von Storage löschen 
+                            storageObject.UserID = null;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                string jsonStorage = JsonConvert.SerializeObject(storageObject);
+                                string url = $"https://localhost:7228/api/Storage/{storageID}";
+
+                                var content = new StringContent(jsonStorage, Encoding.UTF8, "application/json");
+
+                                HttpResponseMessage httpResponse = await client.PutAsync(url, content);
+
+                                // Antwort auslesen
+                                if (httpResponse.IsSuccessStatusCode)
+                                {
+                                    Console.WriteLine("Request erfolgreich!");
+                                    string responseContent = await httpResponse.Content.ReadAsStringAsync();
+                                }
+                                else
+                                {
+                                    return BadRequest($"Fehler beim Löschen der UserId von Storage {storageID}");
+                                }
                             }
                             await UpdateUser(id, user);
                             return Ok(user);
@@ -300,10 +349,8 @@ namespace VisualObjectRecognition.Server.Controllers
                 }
                 else
                 {
-                    return BadRequest();
-                }
-
-                return StatusCode(500, "An error occurred.");
+                    return BadRequest("Feheler beim Entfernen eines Storages");
+                } 
             }
             catch (InvalidOperationException ex)
             {
@@ -313,6 +360,7 @@ namespace VisualObjectRecognition.Server.Controllers
             {
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
+            return BadRequest("Fehler");        
         }
     }
 }
