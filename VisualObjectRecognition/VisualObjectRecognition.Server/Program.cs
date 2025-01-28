@@ -24,8 +24,14 @@ builder.Services.AddScoped<IUserRepository, UserRepository>(
         builder.Configuration["CosmosConfig:primaryKey"],
         builder.Configuration["CosmosConfig:databaseName"],
         builder.Configuration["CosmosConfig:storagesContainer"]
-        )); 
-
+        ))
+	.AddScoped<IImageObjectRepository, ImageObjectRepository>(
+    x => new ImageObjectRepository(
+        builder.Configuration.GetConnectionString("CosmosDb"),
+        builder.Configuration["CosmosConfig:primaryKey"],
+        builder.Configuration["CosmosConfig:databaseName"],
+        builder.Configuration["CosmosConfig:imageObjectContainer"]
+        ));
 
 
 builder.Services.AddAuthentication(options =>
