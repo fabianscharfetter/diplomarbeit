@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VisualObjectRecognition.Server.Models;
 using VisualObjectRecognition.Server.Services;
 
 namespace VisualObjectRecognition.Server.Controllers
@@ -9,10 +10,13 @@ namespace VisualObjectRecognition.Server.Controllers
     public class ImageObjectController : ControllerBase
     {
         private readonly IImageObjectRepository _imageObjectRepository;
+        private readonly BlobStorageService _blobStorageService;
 
-        public ImageObjectController(IImageObjectRepository imageObjectRepository)
+
+        public ImageObjectController(IImageObjectRepository imageObjectRepository, BlobStorageService blobStorageService)
         {
             _imageObjectRepository = imageObjectRepository;
+            _blobStorageService = blobStorageService;
         }
 
         // GET: api/ImageObject
@@ -124,5 +128,37 @@ namespace VisualObjectRecognition.Server.Controllers
             }
         }
 
+
+        //BLOB STORAGE VERWALTUNG
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            ImageObject image = new ImageObject();
+
+            try
+            {
+                if (file == null || file.Length == 0)
+                    return BadRequest("Bild fehlt.");
+
+                if (file.ContentType != "image/jpeg")
+                    return BadRequest("Nur JPG-Dateien sind erlaubt.");
+
+                string fileName = DateTime.Now.ToString() + ".jpeg";
+
+                using var stream = file.OpenReadStream();
+                string blobUrl = await _blobStorageService.UploadPngImageAsync(stream, fileName);
+
+                image.Id = new Guid().ToString();
+                image.Path = blobUrl;
+                image.StorageDate = DateTime.Now;
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
+            return Ok(image);
+        }
     }
 }

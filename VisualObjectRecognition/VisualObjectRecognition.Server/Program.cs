@@ -33,6 +33,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>(
         builder.Configuration["CosmosConfig:imageObjectContainer"]
         ));
 
+//Azure Storage Account
+builder.Services.AddSingleton<BlobStorageService>();
+
 
 builder.Services.AddAuthentication(options =>
 {
