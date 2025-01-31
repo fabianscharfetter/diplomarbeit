@@ -37,6 +37,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>(
 builder.Services.AddSingleton<BlobStorageService>();
 
 
+
 builder.Services.AddAuthentication(options =>
 {
 	options.DefaultAuthenticateScheme =

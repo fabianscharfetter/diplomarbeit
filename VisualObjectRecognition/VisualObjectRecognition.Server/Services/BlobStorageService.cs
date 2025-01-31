@@ -1,6 +1,7 @@
 ﻿using Azure.Storage.Blobs.Models;
 using Azure.Storage.Blobs;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace VisualObjectRecognition.Server.Services
 {
@@ -20,15 +21,30 @@ namespace VisualObjectRecognition.Server.Services
 
         public async Task<string> UploadPngImageAsync(Stream imageStream, string fileName)
         {
-            fileName = Regex.Replace(fileName, @"[\-_:\[\]{}()/\\]", ".");
-            fileName = Regex.Replace(fileName, @"[\s]", "_");
-
-
             var blobClient = _blobContainerClient.GetBlobClient(fileName);
 
             await blobClient.UploadAsync(imageStream, new BlobHttpHeaders { ContentType = "image/jpeg" });
 
             return blobClient.Uri.ToString();
         }
+
+        // Methode zum Downloaden eines Bildes aus dem Blob Storage
+        public async Task<Stream> DownloadImageAsync(string fileName)
+        {
+            var blobClient = _blobContainerClient.GetBlobClient(fileName);
+
+            // Überprüfen, ob das Blob existiert
+            if (await blobClient.ExistsAsync())
+            {
+                var blobDownloadInfo = await blobClient.DownloadAsync();
+                return blobDownloadInfo.Value.Content;
+            }
+            else
+            {
+                throw new FileNotFoundException("Das Bild wurde nicht gefunden.");
+            }
+        }
+
+
     }
 }

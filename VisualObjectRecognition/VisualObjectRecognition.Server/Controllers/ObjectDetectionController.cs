@@ -8,14 +8,14 @@ namespace VisualObjectRecognition.Server.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class PythonController : ControllerBase
+    public class ObjectDetectionController : ControllerBase
     {
-        private readonly PythonService _pythonService;
+        private readonly ObjectDetectionService _objectDetectionService;
 
-        public PythonController()
+        public ObjectDetectionController()
         {
-            string pythonExePath = @"C:\Users\fabia\OneDrive\Desktop\yolov5\venv\Scripts\python.exe";
-            _pythonService = new PythonService(pythonExePath);
+            string exePath = @"C:\Users\fabia\OneDrive\Desktop\yolov5\venv\Scripts\python.exe";
+            _objectDetectionService = new ObjectDetectionService(exePath);
         }
 
         [HttpGet("{filepath}")]
@@ -26,10 +26,10 @@ namespace VisualObjectRecognition.Server.Controllers
                 string scriptPath = @"C:\Users\fabia\OneDrive\Desktop\yolov5\yolov5\detect.py"; // Skriptpfad
                 //string arguments = "--source \"C:\\Users\\fabia\\OneDrive\\Desktop\\sources\\videos\\strasse.mp4\" --view-img"; // Optional: Argumente
 
-                string confidence = "--conf-thres 0.3"; 
+                string confidence = "--conf-thres 0.3"; //30%ige Erkennung 
                 string arguments = $"--source \"{filepath}\" {confidence}"; // Optional: Argumente
 
-                string result = await _pythonService.ExecutePythonScriptAsync(scriptPath, arguments);
+                string result = await _objectDetectionService.ExecutePythonScriptAsync(scriptPath, arguments);
 
                 string detections = ExtractDetections(result);
                 if(detections == null)

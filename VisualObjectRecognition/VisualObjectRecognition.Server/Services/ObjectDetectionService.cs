@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace VisualObjectRecognition.Server.Services
 {
-    public class PythonService
+    public class ObjectDetectionService
     {
-        private readonly string _pythonExePath;
+        private readonly string _exePath;
 
-        public PythonService(string pythonExePath)
+        public ObjectDetectionService(string exePath)
         {
-            _pythonExePath = pythonExePath;
+            _exePath = exePath;
         }
 
         public async Task<string> ExecutePythonScriptAsync(string scriptPath, string arguments = "")
@@ -20,7 +20,7 @@ namespace VisualObjectRecognition.Server.Services
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = _pythonExePath,                  // venv
+                    FileName = _exePath,                  // venv
                     Arguments = $"{scriptPath} {arguments}",    
                     RedirectStandardOutput = true,              // Normale Ausgabe umleiten
                     RedirectStandardError = true,               // Fehlerausgabe umleiten

@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 using VisualObjectRecognition.Server.Models;
 using VisualObjectRecognition.Server.Services;
+
 
 namespace VisualObjectRecognition.Server.Controllers
 {
@@ -128,10 +132,8 @@ namespace VisualObjectRecognition.Server.Controllers
             }
         }
 
-
-        //BLOB STORAGE VERWALTUNG
-        [HttpPost("upload")]
-        public async Task<IActionResult> UploadImage(IFormFile file)
+        [HttpGet("uploadImage")]
+        public async Task<IActionResult> UploadImage(Stream file, string userId)
         {
             ImageObject image = new ImageObject();
 
@@ -140,17 +142,28 @@ namespace VisualObjectRecognition.Server.Controllers
                 if (file == null || file.Length == 0)
                     return BadRequest("Bild fehlt.");
 
-                if (file.ContentType != "image/jpeg")
-                    return BadRequest("Nur JPG-Dateien sind erlaubt.");
 
                 string fileName = DateTime.Now.ToString() + ".jpeg";
+                fileName = Regex.Replace(fileName, @"[\-_:\[\]{}()/\\]", ".");
+                fileName = Regex.Replace(fileName, @"[\s]", "_");
 
-                using var stream = file.OpenReadStream();
-                string blobUrl = await _blobStorageService.UploadPngImageAsync(stream, fileName);
+                string blobUrl = await _blobStorageService.UploadPngImageAsync(file, fileName);
+                if(blobUrl == null)
+                {
+                    throw new Exception("Fehler beim Uploaden In Blob Storage");
+                }
 
-                image.Id = new Guid().ToString();
+                image.Id = Guid.NewGuid().ToString();
                 image.Path = blobUrl;
                 image.StorageDate = DateTime.Now;
+                image.UserId = userId;
+
+                var response = await _imageObjectRepository.CreateImageObjectAsync(image);
+                if (response == null)
+                {
+                    throw new Exception("Fehler beim Speichern des ImageObjects");
+                }
+
             }
             catch(Exception ex)
             {
@@ -158,7 +171,102 @@ namespace VisualObjectRecognition.Server.Controllers
             }
 
 
-            return Ok(image);
+            return Ok();
+        }
+
+        [HttpGet("captureSnapshot")]
+        public FileContentResult CaptureSnapshot()
+        {
+            try
+            {
+                string ffmpegPath = "C:\\FFmpeg\\ffmpeg_essentials_build\\bin\\ffmpeg.exe"; // Falls nicht im PATH, absoluten Pfad angeben
+                string rtspUrl = "rtsp://ubnt:ubnt@192.168.0.45:554/s0";
+
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = ffmpegPath,
+                    Arguments = $"-rtsp_transport tcp -i \"{rtspUrl}\" -frames:v 1 -q:v 2 -f image2pipe -vcodec mjpeg pipe:1",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using (Process process = new Process { StartInfo = psi })
+                {
+                    process.Start();
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        process.StandardOutput.BaseStream.CopyTo(ms);
+                        process.WaitForExit();
+
+                        if (process.ExitCode != 0)
+                        {
+                            throw new Exception($"Fehler beim Erstellen des Snapshots: {process.StandardError.ReadToEnd()}");
+                        }
+
+                        return File(ms.ToArray(), "image/jpeg");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Interner Fehler: {ex.Message}");
+            }
+        }
+
+        [HttpGet("captureImageForUser/{id}")]
+        public async Task<IActionResult> CaptureImageObjectSnapshot(string id)
+        {
+            ImageObject imageObject = new ImageObject();
+            try
+            {
+                var fileResult   = CaptureSnapshot();     
+                if(fileResult == null)
+                {
+                    throw new Exception("Fehler beim Snapshot erstellen!");
+                }
+
+                // Macht Snapshot von Kamera
+                FileContentResult image = fileResult;       // Holt die Bilddaten als Stream
+                Stream imageData = new MemoryStream(image.FileContents);
+
+                var response = await UploadImage(imageData, id);      //Uploaded Bild zum Azure Blob Storage
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Interner Serverfehler: {ex.Message}");
+            }
+        }
+
+        [HttpGet("getAzureImage")]
+        public async Task<IActionResult> GetAzureImage(string id)
+        {
+            try
+            {
+                var response = await _imageObjectRepository.GetImageObjectAsync(id);
+                var imageObject = response.FirstOrDefault();
+                if (imageObject != null)
+                {
+                    string filePath = imageObject.Path;
+                    string fileName = Path.GetFileName(filePath);
+
+                    var imageStream = await _blobStorageService.DownloadImageAsync(fileName);
+                    return File(imageStream, "image/jpeg");  // Oder das richtige Format je nach Bildtyp
+                }
+                else
+                {
+                    throw new FileNotFoundException();
+                }
+
+            }
+            catch (FileNotFoundException)
+            {
+                return NotFound("Das Bild konnte nicht gefunden werden.");
+            }
         }
     }
 }
