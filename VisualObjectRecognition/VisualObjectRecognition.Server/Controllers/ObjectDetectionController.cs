@@ -2,6 +2,8 @@
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using VisualObjectRecognition.Server.Services;
+using Newtonsoft.Json;
+
 
 namespace VisualObjectRecognition.Server.Controllers
 {
@@ -18,42 +20,32 @@ namespace VisualObjectRecognition.Server.Controllers
             _objectDetectionService = new ObjectDetectionService(exePath);
         }
 
-        [HttpGet("{filepath}")]
-        public async Task<IActionResult> RunObjectRecognition(string filepath)
+        [HttpGet("detect")]
+        public async Task<IActionResult> RunObjectRecognition([FromQuery] string filepath)
         {
+            if (string.IsNullOrWhiteSpace(filepath) || !System.IO.File.Exists(filepath))
+            {
+                return BadRequest("Ungültiger oder nicht existierender Dateipfad.");
+            }
+
             try
             {
                 string scriptPath = @"C:\Users\fabia\OneDrive\Desktop\yolov5\yolov5\detect.py"; // Skriptpfad
-                //string arguments = "--source \"C:\\Users\\fabia\\OneDrive\\Desktop\\sources\\videos\\strasse.mp4\" --view-img"; // Optional: Argumente
-
                 string confidence = "--conf-thres 0.3"; //30%ige Erkennung 
                 string arguments = $"--source \"{filepath}\" {confidence}"; // Optional: Argumente
 
                 string result = await _objectDetectionService.ExecutePythonScriptAsync(scriptPath, arguments);
+                string[] detections = ExtractDetections(result);
 
-                string detections = ExtractDetections(result);
-                if(detections == null)
-                {
-                    detections = "Nichts erkennbar!";
-                }
-
-                return Ok(new
-                {
-                    Message = $"Bilderkennung erfolgreich ausgeführt: {detections}",
-                    Output = result
-                }); ;
+                return Ok(JsonConvert.SerializeObject(detections));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    Message = "Fehler beim Ausführen der Bilderkennung.",
-                    Error = ex.Message
-                });
+                return StatusCode(500, new { error = "Fehler", message = ex.Message });
             }
         }
 
-        static string ExtractDetections(string input)
+        static string[] ExtractDetections(string input)
         {
             // Regulärer Ausdruck für die Detektionen
             //string pattern = @"image \d+/\d+.*?: \d+x\d+ ([^,]+),";
@@ -68,10 +60,17 @@ namespace VisualObjectRecognition.Server.Controllers
 
                 }*/
                 string detections = match.Groups[1].Value.Trim();
-                return detections != "(no detections)" ? detections : null;
+                if(detections == "(no detections)")
+                {
+                    return null;
+                }
+                else
+                {
+                    string[] detectionArray = detections.Split(", ");
+                    return detectionArray;
+                }
             }
-
-            return null; // Falls keine Übereinstimmung gefunden wird
+            return null;
         }
     }
 

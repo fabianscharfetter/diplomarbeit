@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos.Serialization.HybridRow;
 using Microsoft.Identity.Client;
+using Microsoft.IdentityModel.Tokens;
+using SharpCompress.Common;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using VisualObjectRecognition.Server.Models;
 using VisualObjectRecognition.Server.Services;
-
+using Newtonsoft.Json;
 
 namespace VisualObjectRecognition.Server.Controllers
 {
@@ -132,7 +135,9 @@ namespace VisualObjectRecognition.Server.Controllers
             }
         }
 
+        // GET: api/ImageObject/uploadImage
         [HttpGet("uploadImage")]
+        //Speichert Bild in Azure Storage
         public async Task<IActionResult> UploadImage(Stream file, string userId)
         {
             ImageObject image = new ImageObject();
@@ -174,7 +179,9 @@ namespace VisualObjectRecognition.Server.Controllers
             return Ok();
         }
 
+        // GET: api/ImageObject/captureSnapshot
         [HttpGet("captureSnapshot")]
+        // Nimmt snapshot von RTSP Stream
         public FileContentResult CaptureSnapshot()
         {
             try
@@ -216,6 +223,8 @@ namespace VisualObjectRecognition.Server.Controllers
             }
         }
 
+        // GET: api/ImageObject/captureImageForUser/{id}
+
         [HttpGet("captureImageForUser/{id}")]
         public async Task<IActionResult> CaptureImageObjectSnapshot(string id)
         {
@@ -242,6 +251,7 @@ namespace VisualObjectRecognition.Server.Controllers
             }
         }
 
+        // GET: api/ImageObject/getAzureImage
         [HttpGet("getAzureImage")]
         public async Task<IActionResult> GetAzureImage(string id)
         {
@@ -255,7 +265,10 @@ namespace VisualObjectRecognition.Server.Controllers
                     string fileName = Path.GetFileName(filePath);
 
                     var imageStream = await _blobStorageService.DownloadImageAsync(fileName);
-                    return File(imageStream, "image/jpeg");  // Oder das richtige Format je nach Bildtyp
+                    using var memoryStream = new MemoryStream();
+                    await imageStream.CopyToAsync(memoryStream);
+
+                    return new FileContentResult(memoryStream.ToArray(), "image/jpeg");  
                 }
                 else
                 {
@@ -268,5 +281,87 @@ namespace VisualObjectRecognition.Server.Controllers
                 return NotFound("Das Bild konnte nicht gefunden werden.");
             }
         }
+
+        // Schickt Bild an ObjectDetection und erhält erkannte Items
+        [HttpGet("GetObjectsFromAzureImage")]
+        public async Task<string[]> GetObjectsFromAzureImage(string id)
+        {
+            var result = await GetAzureImage(id);
+
+            if (result is FileContentResult fileResult)
+            {
+                if(fileResult.ContentType == "image/jpeg")
+                {
+                    var content = fileResult.FileContents;
+                    Stream stream = new MemoryStream(content);
+
+                    // Bild temporär speichern
+                    var response = SaveImageTemporarily(stream);
+                    string path = response.Result;
+
+                    // Bild an ObjectDetectionController senden
+                    string url = $"https://localhost:7228/api/ObjectDetection/detect?filepath={path}";
+                    using (HttpClient client = new HttpClient())
+                    {
+                        try
+                        {
+                            HttpResponseMessage httpResponse = await client.GetAsync(url);
+
+                            if (httpResponse.IsSuccessStatusCode)
+                            {
+                                string jsonResponse = await httpResponse.Content.ReadAsStringAsync();
+
+                                // JSON zu einem Objekt umwandeln
+                                var detections = JsonConvert.DeserializeObject<string[]>(jsonResponse);
+
+                                if(detections != null)
+                                {
+                                    return detections;
+                                }                            
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Fehler: {httpResponse.StatusCode} - {await httpResponse.Content.ReadAsStringAsync()}");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Fehler: {ex.Message}");
+                        }
+
+                        // Bild löschen
+                        DeleteTempFile(path);
+                    }
+                }
+            }
+            else if (result is NotFoundObjectResult notFoundResult)
+            {
+                    Console.WriteLine($"Fehler: {notFoundResult.Value}");
+            }
+
+            return null;
+        }
+
+        static async Task<string> SaveImageTemporarily(Stream imageStream)
+        {
+            string tempFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid() + ".jpg");
+
+            using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                await imageStream.CopyToAsync(fileStream);
+            }
+
+            return tempFilePath;
+        }
+
+        static void DeleteTempFile(string filePath)
+        {
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+        }
+
+
     }
 }
