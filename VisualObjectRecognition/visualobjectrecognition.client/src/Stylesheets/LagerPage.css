@@ -1,69 +1,70 @@
-/* Begrenzung des gesamten Viewports */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
-}
-
+/* Zentriert die Main-Sektion auf dem Bildschirm */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Vollbildhöhe */
-    background-color: #1a2024; /* Hintergrundfarbe */
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-
-.main {
-    width: 70%; /* Zentrales Fenster */
-    max-width: 800px;
-    min-height: 400px;
-    background-color: #0d1621;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
     padding: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+}
+
+/* Begrenzte Breite und Scrollen bei langen Listen */
+.main {
+    width: 60%;
+    max-height: 70vh;
     overflow-y: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h3 {
-    padding-top: 25px;
-    font-size: 1.5em;
+/* Stellt sicher, dass der Button eine feste Größe hat und nicht die ganze Zeile einnimmt */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.storage-button {
+    width: 200px; /* Feste Breite für den Button */
+    height: 50px; /* Feste Höhe für ein einheitliches Erscheinungsbild */
+    background-color: #007bff;
     color: white;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-    color: white;
-}
-
-li {
-    padding: 10px 15px;
-    border-bottom: 1px solid #ddd;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
-    text-align: center;
-    font-size: 1em;
-    transition: background-color 0.2s ease-in-out;
-}
-
-    li:hover {
-        background-color: #f9a800;
-    }
-
-    li.selected {
-        font-weight: bold;
-        color: white;
-    }
-
-p {
-    color: white;
-    font-size: 1em;
+    border-radius: 5px;
+    transition: background 0.3s;
     text-align: center;
 }
+
+    .storage-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Fehlernachricht Styling */
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* Items-Liste zentrieren */
+.items-list {
+    text-align: left;
+    margin-top: 20px;
+}
+
+    .items-list ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .items-list li {
+        padding: 10px;
+        background: #293243;
+        margin: 5px 0;
+        border-radius: 5px;
+
+    }

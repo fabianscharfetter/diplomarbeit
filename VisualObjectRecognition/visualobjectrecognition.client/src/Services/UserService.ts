@@ -44,7 +44,7 @@ export const getAllUsers = async (): Promise<any | null> => {
     }
 };
 
-export const getInventoryItems = async (): Promise<any[] | null> => {
+export const getStorages = async (): Promise<any[] | null> => {
     try {
         const response = await axios.get(apiStorage);
         const items = response.data;
