@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using VisualObjectRecognition.Server.Services;
 using Newtonsoft.Json;
+
 
 
 namespace VisualObjectRecognition.Server.Controllers
@@ -31,7 +31,7 @@ namespace VisualObjectRecognition.Server.Controllers
             try
             {
                 string scriptPath = @"C:\Users\fabia\OneDrive\Desktop\yolov5\yolov5\detect.py"; // Skriptpfad
-                string confidence = "--conf-thres 0.3"; //30%ige Erkennung 
+                string confidence = "--conf-thres 0.5"; // 50%ige Erkennung 
                 string arguments = $"--source \"{filepath}\" {confidence}"; // Optional: Argumente
 
                 string result = await _objectDetectionService.ExecutePythonScriptAsync(scriptPath, arguments);
@@ -67,6 +67,11 @@ namespace VisualObjectRecognition.Server.Controllers
                 else
                 {
                     string[] detectionArray = detections.Split(", ");
+                    for(int i=0; i < detectionArray.Length; i++)
+                    {
+                        // Zahlen und Leerzeichen wegtrimmen
+                        detectionArray[i] = new string(detectionArray[i].Where(c => !char.IsDigit(c) && !char.IsWhiteSpace(c)).ToArray());
+                     }
                     return detectionArray;
                 }
             }

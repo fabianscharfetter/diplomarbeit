@@ -175,8 +175,7 @@ namespace VisualObjectRecognition.Server.Controllers
                 return BadRequest(ex.Message);
             }
 
-
-            return Ok();
+            return Ok(image.Id);
         }
 
         // GET: api/ImageObject/captureSnapshot
@@ -186,8 +185,8 @@ namespace VisualObjectRecognition.Server.Controllers
         {
             try
             {
-                string ffmpegPath = "C:\\FFmpeg\\ffmpeg_essentials_build\\bin\\ffmpeg.exe"; // Falls nicht im PATH, absoluten Pfad angeben
-                string rtspUrl = "rtsp://ubnt:ubnt@192.168.0.45:554/s0";
+                string ffmpegPath = "C:\\FFmpeg\\ffmpeg_essentials_build\\bin\\ffmpeg.exe"; // Absoluter Pfad für FFMPEG
+                string rtspUrl = "rtsp://ubnt:ubnt@192.168.0.45:554/s0";    // Absoluter Pfad der Kamera
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -228,27 +227,33 @@ namespace VisualObjectRecognition.Server.Controllers
         [HttpGet("captureImageForUser/{id}")]
         public async Task<IActionResult> CaptureImageObjectSnapshot(string id)
         {
-            ImageObject imageObject = new ImageObject();
             try
             {
+                // Macht Snapshot von Kamera
                 var fileResult   = CaptureSnapshot();     
                 if(fileResult == null)
                 {
                     throw new Exception("Fehler beim Snapshot erstellen!");
                 }
 
-                // Macht Snapshot von Kamera
                 FileContentResult image = fileResult;       // Holt die Bilddaten als Stream
                 Stream imageData = new MemoryStream(image.FileContents);
 
-                var response = await UploadImage(imageData, id);      //Uploaded Bild zum Azure Blob Storage
+                // Uploaded Bild zum Azure Blob Storage & Erstellt ImageObject in Datenbank
+                IActionResult result = await UploadImage(imageData, id);
 
-                return Ok(response);
+                if(result is OkObjectResult objectResult)
+                {
+                    var value = objectResult.Value;
+                    return StatusCode(200, value);
+                }
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Interner Serverfehler: {ex.Message}");
             }
+
+            return BadRequest();
         }
 
         // GET: api/ImageObject/getAzureImage

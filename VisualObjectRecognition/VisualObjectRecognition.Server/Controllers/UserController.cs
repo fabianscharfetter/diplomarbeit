@@ -137,7 +137,7 @@ namespace VisualObjectRecognition.Server.Controllers
                 string itemid = Guid.NewGuid().ToString();
                 item.Id = itemid;
                 item.Title = itemTitle;
-                item.Permisson = 0; //Legal als Standard
+                item.Permisson = 0; // Legal als Standard
 
                 if (user.Items == null)
                 {
