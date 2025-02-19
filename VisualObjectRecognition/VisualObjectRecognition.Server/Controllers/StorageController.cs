@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using VisualObjectRecognition.Server.Data;
+using Microsoft.Azure.Cosmos;
+using System.Text;
 using VisualObjectRecognition.Server.Models;
 using VisualObjectRecognition.Server.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace VisualObjectRecognition.Server.Controllers
 {
@@ -12,6 +13,7 @@ namespace VisualObjectRecognition.Server.Controllers
     {
 
         private readonly IStorageRepository _storageRepository;
+
 
         public StorageController(IStorageRepository storageRepository)
         {
@@ -35,11 +37,13 @@ namespace VisualObjectRecognition.Server.Controllers
 
         // GET: api/Storage/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetStorage(string id, string title)
+        public async Task<IActionResult> GetStorage(string id)
         {
             try
             {
-                var storage = await _storageRepository.GetStorageAsync(id, title);
+                var response = await _storageRepository.GetStorageAsync(id);
+                var storage = response.FirstOrDefault();
+
                 if (storage == null)
                 {
                     return NotFound($"Storage with ID {id} not found.");
@@ -67,6 +71,7 @@ namespace VisualObjectRecognition.Server.Controllers
 
             try
             {
+
                 var createdStorage = await _storageRepository.CreateStorageAsync(storage);
                 return CreatedAtAction(nameof(GetStorage), new { id = createdStorage.Id }, createdStorage);
             }
@@ -100,103 +105,56 @@ namespace VisualObjectRecognition.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStorage(string id, string title)
         {
-            try
+            var response = await _storageRepository.GetStorageAsync(id);
+            var storage = response.FirstOrDefault();
+
+            if (storage == null)
             {
-                var success = await _storageRepository.DeleteStorage(id, title);
-                if (success)
-                {
-                    return NoContent();
-                }
                 return NotFound($"Storage with ID {id} not found.");
             }
-            catch (Exception ex)
+            else
             {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
+                //Storage von User entfernen
+                /*if (storage.UserID != null)
+                { 
+                    using (HttpClient client = new HttpClient())
+                    {
+                        try
+                        {
+                            string url = $"https://localhost:7228/api/User/DeleteUserStorage/{storage.UserID}";
+
+                            // JSON-Daten in den HTTP-Content einfügen
+                            var content = new StringContent(storage.Id, Encoding.UTF8, "application/json");
+                            HttpResponseMessage http_response = await client.PutAsync(url, content);
+
+                            if (http_response.IsSuccessStatusCode)
+                            {
+                                string responseContent = await http_response.Content.ReadAsStringAsync();
+                                Console.WriteLine($"Antwort: {responseContent}");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            return BadRequest();
+                        }
+                    }
+                }*/
+
+                //Storage aus DB löschen
+                try
+                {
+                    var success = await _storageRepository.DeleteStorage(id, title);
+                    if (success)
+                    {
+                        return Ok("Löschung erfolgreich!");
+                    }
+                    return NotFound($"Storage with ID {id} not found.");
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"An error occurred: {ex.Message}");
+                }
             }
         }
-
-        /*
-		private readonly ApplicationDBContext _context;
-
-		public StorageController(ApplicationDBContext context)
-		{
-			_context = context;
-		}
-
-		// GET: api/Storage
-		[HttpGet]
-		public async Task<ActionResult<List<Storage>>> Get()
-		{
-			return await _context.Storages.ToListAsync();
-		}
-
-		// GET: api/Storage/{id}
-		[HttpGet("{id}")]
-		public async Task<ActionResult<Storage>> GetById(string id)
-		{
-			var storage = await _context.Storages.FindAsync(id);
-
-			if (storage == null)
-			{
-				return NotFound();
-			}
-
-			return storage;
-		}
-
-		// POST: api/Storage
-		[HttpPost]
-		public async Task<IActionResult> Create(Storage newStorage)
-		{
-			_context.Storages.Add(newStorage);
-			await _context.SaveChangesAsync();
-
-			return CreatedAtAction(nameof(GetById), new { id = newStorage.Id }, newStorage);
-		}
-
-		// PUT: api/Storage/{id}
-		[HttpPut("{id}")]
-		public async Task<IActionResult> Update(string id, Storage updatedStorage)
-		{
-			if (id != updatedStorage.Id)
-			{
-				return BadRequest("Storage ID mismatch");
-			}
-
-			var existingStorage = await _context.Storages.FindAsync(id);
-
-			if (existingStorage == null)
-			{
-				return NotFound();
-			}
-
-			// Aktualisiere die relevanten Felder
-			existingStorage.Title = updatedStorage.Title;
-			existingStorage.Location = updatedStorage.Location;
-			existingStorage.StorageSize = updatedStorage.StorageSize;
-			// Weitere Felder je nach Modell
-
-			_context.Storages.Update(existingStorage);
-			await _context.SaveChangesAsync();
-
-			return Ok();
-		}
-
-		// DELETE: api/Storage/{id}
-		[HttpDelete("{id}")]
-		public async Task<IActionResult> Delete(string id)
-		{
-			var storage = await _context.Storages.FindAsync(id);
-
-			if (storage == null)
-			{
-				return NotFound();
-			}
-
-			_context.Storages.Remove(storage);
-			await _context.SaveChangesAsync();
-
-			return Ok();
-		}*/
     }
 }

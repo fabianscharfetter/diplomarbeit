@@ -28,17 +28,21 @@ namespace VisualObjectRecognition.Server.Services
             return results;
         }
 
-        public async Task<Models.Storage> GetStorageAsync(string id, string title)
+        public async Task<IEnumerable<Models.Storage>> GetStorageAsync(string id)
         {
+
+            var query = _container.GetItemQueryIterator<Models.Storage>(new QueryDefinition("SELECT * FROM c WHERE c.id = @id").WithParameter("@id", id));
+
             try
             {
-                var response = await _container.ReadItemAsync<Models.Storage>(id, new PartitionKey(title));
+                var response = await query.ReadNextAsync();
                 return response;
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw new InvalidOperationException($"Error retrieving storage with ID {id}", ex);
+                throw new InvalidOperationException($"Error retrieving storage with id {id}", ex);
             }
         }
 
@@ -50,12 +54,15 @@ namespace VisualObjectRecognition.Server.Services
 
         public async Task<bool> DeleteStorage(string id, string title)
         {
-            var response = await _container.DeleteItemAsync<Models.Storage>(id, new PartitionKey(title));
-
-            if (response.Resource != null)
+            try
+            {
+                var response = await _container.DeleteItemAsync<Models.Storage>(id, new PartitionKey(title));
                 return true;
-
-            return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public async Task<Models.Storage> UpdateStorageAsync(string id, Models.Storage storage)

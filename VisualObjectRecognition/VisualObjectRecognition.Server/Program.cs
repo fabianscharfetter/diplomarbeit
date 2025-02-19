@@ -1,10 +1,7 @@
-using VisualObjectRecognition.Server.Data;
 using VisualObjectRecognition.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using VisualObjectRecognition.Server.Interfaces;
-using VisualObjectRecognition.Server.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +24,17 @@ builder.Services.AddScoped<IUserRepository, UserRepository>(
         builder.Configuration["CosmosConfig:primaryKey"],
         builder.Configuration["CosmosConfig:databaseName"],
         builder.Configuration["CosmosConfig:storagesContainer"]
-        )); 
+        ))
+	.AddScoped<IImageObjectRepository, ImageObjectRepository>(
+    x => new ImageObjectRepository(
+        builder.Configuration.GetConnectionString("CosmosDb"),
+        builder.Configuration["CosmosConfig:primaryKey"],
+        builder.Configuration["CosmosConfig:databaseName"],
+        builder.Configuration["CosmosConfig:imageObjectContainer"]
+        ));
+
+//Azure Storage Account
+builder.Services.AddSingleton<BlobStorageService>();
 
 
 

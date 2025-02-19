@@ -23,8 +23,9 @@ function CamPage() {
             <h1>Admin-Cam:</h1>
 
             <div className="livestream-container">
+
                 <video className="livestream-video" autoPlay muted loop>
-                    <source src="livestream.mp4" type="video/mp4" />
+                    <source src="rtsp://ubnt:ubnt@192.168.0.45:554/s0" type="video/mp4" />
                     Ihr Browser unterstützt dieses Video-Format nicht.
                 </video>
                 <button className="zoom-button" onClick={toggleFullscreen}>

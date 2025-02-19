@@ -613,3 +613,6 @@ C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjec
 C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\VisualObjectRecognition.Server.pdb
 C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\VisualObjectRecognition.Server.genruntimeconfig.cache
 C:\Users\Zilla\Documents\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\obj\Debug\net8.0\ref\VisualObjectRecognition.Server.dll
+C:\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+C:\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\Azure.Storage.Common.dll
+C:\GitHub\diplomarbeit\VisualObjectRecognition\VisualObjectRecognition.Server\bin\Debug\net8.0\System.IO.Hashing.dll
