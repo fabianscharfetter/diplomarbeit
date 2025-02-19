@@ -1,1 +1,52 @@
-<mxfile host="Electron" modified="2025-01-16T14:31:19.926Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.2.8 Chrome/102.0.5005.167 Electron/19.0.15 Safari/537.36" etag="cp2Dn2Dmb-QuLlm27KKA" version="20.2.8" type="device"><diagram id="Gyp8LMhs1wYG19DHn65K" name="Seite-1">7Vjbcts2EP0aPdojkhItPerixg9p64nTpM4bRK5I1CCggqAu/vouQIAUL7LcjjSTNh3NiMBicTu7ZxfAIFhk+w+SbNKfRQxs4A/j/SBYDnzfGwYT/GjJoZSEk2kpSCSNrVIteKKv4HpaaUFjyBuKSgim6KYpjATnEKmGjEgpdk21tWDNWTckgY7gKSKsK/1KY5WW0ol/V8sfgCapm9kL7f4y4pTtTvKUxGJ3JAruB8FCCqHKUrZfANPgOVzKfj+daK0WJoGr93T49unxyzOfiBDY82v+efhtSYIbzw6zJaywO7arVQcHgRQFj0GP4g2C+S6lCp42JNKtOzQ6ylKVMdtshwOpYH9yoV61ffQbEBkoeUAV28G/s4hZl5na6q7G3x9bWXqM/cgKibV5Ug1dw4IFi8zfQCk4DxJad6OLRcZmkRISodAgUPSkj2QF7FHkVFHBUWUllBLZkcKM0UQ3KNECUxSKUQ6LyreHl0F4FDYR9oZdiIMehMNrAezY3kA4ZErDgVsJE116BJkjgFaO89RNTrhxggeicDigXIcQyCgo/OVY+YiElfhdAdVRCTL8/40rkBzSDLjT0FHBH37IVg/4KbRSLKQeUi9isAgG85AzGqVGCxLgudLS2QiZgqLXAv+YHojfHi14U6+35T5oS9W0fa6keEHTM+1LSy44as7XlLGWKEcqUp6gYFzXPmtPWt74wxOEFeg+a2aiUUrjGPcdzGuaX8jL/EnLy7yul3nTPiL7V/Oz0XcY7pooVagdc7E33F0PpfE72Ogka8FVA8Dwz0K4hpvcJPQZKiAk+7KbbXcDzYsoLXiS54dcGTrGhqA1DSv6lFM1p+8NAzHdOtFXWGHghZ5hFxpjYMjhvIoEM74DXiqCzEqeJ5rndTRxAURwHZod1/UmoMH1ozX8EGwPxg03DvpSit/jxtOreXF4Ya5r97MHVP9SiTj4/sg/eZP87yD66ATRv9C8IHr+X1d/6OOMP/wEkUh4eS46y+fzM3v+iZmfxFrt0CiGrZkh9wvgmYpXYeEeaQQmYSsj1Ut8UY0ooXUp5OZLuFaifIt2JpLmFMzhAJ1Jm6RYV+PW4Wcr9MRz4IV6NU1klcAaQ5EyM8jYzPtizxb8jWDSOuo4wUr2xMZ/0YnjGvQaNenVG5R66TW8Gr2m56MSpqCZvrpiLWIkz2nUNNRJ3DzEYg57qn63bbr8rMu3d2NbXe6P2pYHV+G4OdPrduyqz8dtdTdTc/3KtUPcuUS3TIT7E4WM4C1k3PWeyATU2UNc1+hHRu2zqZNJ5Lmi2+aC++xsZ3gU1JxwXJ6btkJ2O4GVG7W9ju/jrYHazum3r68lEJ2BjNtV2/7nnuj33bmu4onef9YTw/898RKe2H2E+sVlyQxYDOaCgafwKrnWaZXwC2Y2Yh9iItAvAj0vNBmmLj1Nb4p7mwwXSGedq+Kom868PocLrpXNXMh4j+XKF5d7c/Iy9736UPYjGXE8GZ834mh8ESNitX5fLtlav9IH938B</diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.10">
+  <diagram id="Gyp8LMhs1wYG19DHn65K" name="Seite-1">
+    <mxGraphModel dx="1877" dy="569" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aq3gI_2E2L21ljMqtWCf-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B5B5B5;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="20" width="880" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-11" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="270" y="90" width="250" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-3" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="460" y="100" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-10" value="&lt;h1&gt;Person&lt;/h1&gt;&lt;p&gt;Hat ein gemietetes Lager bei dem Unternehmen Lagerage GmbH um dort Persönliche Gegenstände zu lagern.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="280" y="110" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-14" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="20" y="280" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-15" value="&lt;h1&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Buchungssystem der Lagerage&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;Website der Lagerage, welches dem Anwender ermöglicht ein Lager online zu Buchen.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="35" y="300" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-16" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="430" y="280" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-18" value="&lt;h1 style=&quot;font-size: 24px;&quot;&gt;Visual Object Recognition&lt;/h1&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;Software zum erkennen der Eingelagerten Objekte, welche diese dann inventarisiert und auf der Website vom Benutzer abgefragt werden können.&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="440" y="300" width="350" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-19" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZRPVYn8o6elYzsT0ZDa3-11" target="ZRPVYn8o6elYzsT0ZDa3-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="290" as="sourcePoint" />
+            <mxPoint x="440" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-20" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZRPVYn8o6elYzsT0ZDa3-11" target="ZRPVYn8o6elYzsT0ZDa3-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="290" as="sourcePoint" />
+            <mxPoint x="440" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-21" value="Nutzer meldet sich auf Website an" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="220" y="240" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRPVYn8o6elYzsT0ZDa3-22" value="Nutzer meldet sich bei Erkennungssoftware an" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="585" y="240" width="145" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

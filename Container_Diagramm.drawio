@@ -1,1 +1,97 @@
-<mxfile host="Electron" modified="2025-01-18T13:30:18.270Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.2.8 Chrome/102.0.5005.167 Electron/19.0.15 Safari/537.36" etag="uotN-ncEO7bzxOQi97dy" version="20.2.8" type="device"><diagram id="0PMV6AgKhxgoMrpHis9U" name="Seite-1">7Vddb5swFP01PG4ieKHksSHttqqdKmVbnx24Aa/GRuYykvz6XRMTQpqqmdRUlbaXxD6+/jr3nCvjsbhYfTa8zO90CtIL/HTlsZkXBCOfRfRnkfUWCaPJFsiMSF1QD8zFBrqZDq1FCtUgELWWKMohmGilIMEBxo3RzTBsqeVw15Jn8ASYJ1w+RR9EivkWjYKLHv8CIsu7nUehu1/Bu2B3kyrnqW72IHblsdhojdtWsYpBWvI6Xrbzrp8Z3R3MgMJTJnDj3yTxXZxMHtl8+Su6wXT2wa3ym8vaXdgdFtcdA0bXKgW7yMhj0yYXCPOSJ3a0oZwTlmMh3bBbDgzC6tlzjna3J9mALgDNmkLchF3qnWI6/pqeftaF5APqHchdyrPd0j0r1HDE/AVJwcskUXJL26wLeZmgNkSFJUGQkG75AuS9rgQKrShkoRF1sRdwKUVmB1AfkKlrlEJBvJO2/zoMfwqHDLMjDB8hODwXv+wIv6FESwZdJMxs6x5MRfQF1z8qMN0wdfuIDiw74FuNGxvrNyCTvG2BoCX8WzKt7S1A2MrUtlvM1gIqOVAIQEB7fY4f9zYr+70O8k/JwGHyKjT6kXInrRhmSiuKnC6FlAdQRV4SKiNg3Pe+WymQ8PxnHKcp/0vZVpNcpCmQfKa9T19JJsH4RZnszLmvk8m5dHLx/ooVG1I0Co9wFL0lR9EJXnqABS9LKR55W5JOMtMcaXNriVRYj8yBmLVnKejnq0IwqjXMprZm+knq9GLmTeOsVtm/66DxCeoYH1FHdC51TN6hgybvzULdO+LcHrpUDaiUDPLfRy89WEZvZyTq9m/ydmzvy4Zd/QE=</diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.11">
+  <diagram id="0PMV6AgKhxgoMrpHis9U" name="Seite-1">
+    <mxGraphModel dx="1702" dy="1643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BDqUInauxHcuCY18yniB-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B5B5B5;" parent="1" vertex="1">
+          <mxGeometry x="-270" y="-325" width="1900" height="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-35" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D7D7D7;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="260" y="110" width="880" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ar0JcCMCc9k3Sfj8JtdD-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9A800;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="775" y="-30" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ar0JcCMCc9k3Sfj8JtdD-3" value="&lt;h1&gt;Person/User&lt;/h1&gt;&lt;p&gt;Nutzer welcher ein Lager bei der Lagerage gemietet hat.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="780" y="-20" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ar0JcCMCc9k3Sfj8JtdD-7" target="ar0JcCMCc9k3Sfj8JtdD-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ar0JcCMCc9k3Sfj8JtdD-7" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="345" y="170" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ar0JcCMCc9k3Sfj8JtdD-8" value="&lt;h1&gt;Asp.Net Server&lt;/h1&gt;&lt;p&gt;c#&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Stellt die Daten für die Website im Frontend zur Verfügung.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="360" y="175" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ar0JcCMCc9k3Sfj8JtdD-9" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="810" y="170" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-3" value="&lt;h1&gt;Web-Client&lt;/h1&gt;&lt;p&gt;React&lt;/p&gt;&lt;p&gt;Hier werden die Daten für den User Visuell dargestellt.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="827" y="175" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-4" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="420" y="370" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-6" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Database&lt;/h1&gt;&lt;p&gt;Speichert alle Daten über die User und deren Lagerinhalte.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="445" y="400" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-18" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#1D2024;strokeColor=#000000;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.security_camera;" parent="1" vertex="1">
+          <mxGeometry x="50" y="80" width="100" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-19" value="Kamerasystem" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="145" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-24" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF200;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="-60" y="240" width="270" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-25" value="&lt;h1&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Bildverarbeitungs-KI&lt;/span&gt;&lt;/h1&gt;&lt;h1&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;Ultralytics Yolo v5&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Wertet die Bilder der Kamera aus und lagert die gefundenen Objekte in die Datenbank&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-50" y="261.25" width="250" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-32" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#F9A800;fillColor=#F9A800;" parent="1" vertex="1">
+          <mxGeometry x="820" y="-100" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-36" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="BDqUInauxHcuCY18yniB-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="310" as="sourcePoint" />
+            <mxPoint x="790" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-37" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.586;exitY=1.002;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="ar0JcCMCc9k3Sfj8JtdD-1" target="ar0JcCMCc9k3Sfj8JtdD-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="360" as="sourcePoint" />
+            <mxPoint x="580" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-38" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.997;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" target="ar0JcCMCc9k3Sfj8JtdD-7" edge="1" source="BDqUInauxHcuCY18yniB-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="420.0000000000002" as="sourcePoint" />
+            <mxPoint x="340" y="422" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-40" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="BDqUInauxHcuCY18yniB-19" target="ar0JcCMCc9k3Sfj8JtdD-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="450" as="sourcePoint" />
+            <mxPoint x="115" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-42" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;localhost:8080&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="837.5" y="-80" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-43" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Daten werden an Web-Client gesendet&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="660" y="175" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-44" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Server frägt die Daten von der DB ab&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="520" y="317.5" width="150" height="52.5" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-47" value="Ausgewertete Bilddaten werden an Server gesendet" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="290" y="340" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BDqUInauxHcuCY18yniB-49" value="Stream wird an KI übergeben" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="130" y="190" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

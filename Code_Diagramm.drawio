@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.11">
+  <diagram id="t7gH_brT94XXbErl-sAx" name="Seite-1">
+    <mxGraphModel dx="1050" dy="1738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eVwJA34iciyopoX5ssE2-2" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;UserService&lt;/span&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=30;boundedLbl=1;verticalAlign=middle;align=left;spacingLeft=5;strokeColor=#F9A800;fontSize=9;fontColor=#000000;fillColor=#FFFFFF;dashed=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="60" y="-950" width="1010" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="eVwJA34iciyopoX5ssE2-1" target="eVwJA34iciyopoX5ssE2-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-1" value="&lt;b&gt;User-Component&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Überblick des Users&lt;br&gt;&lt;/font&gt;" style="html=1;fillColor=#F9A800;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="393" y="-1110" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.478;entryY=1.007;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" parent="1" source="eVwJA34iciyopoX5ssE2-3" target="eVwJA34iciyopoX5ssE2-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-3" value="User.cs" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#F9A800;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="690" y="-671" width="320" height="268" as="geometry">
+            <mxRectangle x="73" y="-880" width="160" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-4" value="+ Id: string&#xa;+ E-Mail: string&#xa;+ PastwordHash: string&#xa;+ Firstname: string&#xa;+ SecondName: string&#xa;+ Role: UserRole&#xa;+ Firma: string?&#xa;+ PhoneNbr: string&#xa;+ Birthdate: DateOnly&#xa;+ Straße: string&#xa;+ Hausnummer: string&#xa;+ Postleitzahl: string&#xa;+ Stadt: string&#xa;+ Land: string&#xa;+ Storages: List&lt;Storage&gt;?&#xa;+ Items: List&lt;Item&gt;?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="eVwJA34iciyopoX5ssE2-3" vertex="1">
+          <mxGeometry y="26" width="320" height="234" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="eVwJA34iciyopoX5ssE2-3" vertex="1">
+          <mxGeometry y="260" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-10" value="UserController.cs" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#F9A800;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="230" y="-910" width="526" height="160" as="geometry">
+            <mxRectangle x="73" y="-880" width="160" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-11" value="- _userRepository: IUserRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="eVwJA34iciyopoX5ssE2-10" vertex="1">
+          <mxGeometry y="26" width="526" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="eVwJA34iciyopoX5ssE2-10" vertex="1">
+          <mxGeometry y="50" width="526" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-13" value="+ Constructor(userRepository: IUserRepository): UserController&#xa;+ GetUsers(): Task&lt;IActionResult&gt;&#xa;+ GetUser(id: string, secondName: string): Task&lt;IActionResult&gt;&#xa;+ CreateUser(user: User): Task&lt;IActionResult&gt;&#xa;+ UpdateUser(id: string, user: User): Task&lt;IActionResult&gt;&#xa;+ DeleteUser(id: string, secondName: string): Task&lt;IActionResult&gt;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="eVwJA34iciyopoX5ssE2-10" vertex="1">
+          <mxGeometry y="58" width="526" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.477;entryY=1.007;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" parent="1" source="eVwJA34iciyopoX5ssE2-14" target="eVwJA34iciyopoX5ssE2-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-14" value="UserRepository.cs" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#F9A800;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="80" y="-671" width="550" height="160" as="geometry">
+            <mxRectangle x="73" y="-880" width="160" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-15" value="- _container: Container" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="eVwJA34iciyopoX5ssE2-14" vertex="1">
+          <mxGeometry y="26" width="550" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="eVwJA34iciyopoX5ssE2-14" vertex="1">
+          <mxGeometry y="50" width="550" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-17" value="+ Constructor(conn: string, key: string, databaseName: string, containerName: string): UserRepository&#xa;+ GetUsersAsync(): Task&lt;IEnumerable&lt;Models.User&gt;&gt;&#xa;+ GetUserAsync(id: string, secondName: string): Task&lt;Models.User&gt;&#xa;+ CreateUserAsync(user: User): Task&lt;Models.User&gt;&#xa;+ DeleteUser(id: string, secondName: string): Task&lt;bool&gt;&#xa;+ UpdateUserAsync(id: string, user: User): Task&lt;Models.User&gt;&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="eVwJA34iciyopoX5ssE2-14" vertex="1">
+          <mxGeometry y="58" width="550" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-21" value="&lt;font style=&quot;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;Database&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Speicherung der Registrierungs- und Logininformationen und&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;User&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;" style="shape=datastore;whiteSpace=wrap;html=1;strokeColor=#F9A800;fontSize=9;fontColor=#000000;fillColor=#F9A800;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="258" y="-260" width="194" height="137.5" as="geometry" />
+        </mxCell>
+        <mxCell id="eVwJA34iciyopoX5ssE2-22" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Abrufen und Schreiben&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;der Daten&lt;/span&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;[CosmosDB]&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fontSize=8;fontColor=#FFFFFF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.497;entryY=1.036;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="eVwJA34iciyopoX5ssE2-21" target="eVwJA34iciyopoX5ssE2-17" edge="1">
+          <mxGeometry x="-0.4173" y="1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="366" y="-441.25" as="sourcePoint" />
+            <mxPoint x="570" y="-281.25" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

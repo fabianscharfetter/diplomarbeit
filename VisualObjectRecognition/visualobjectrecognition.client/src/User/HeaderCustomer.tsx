@@ -32,8 +32,8 @@ const HeaderCustomer: React.FC = () => {
 
                 <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <Link className="link" to="/account"><IoHomeOutline /> Home</Link>
-                    <Link className="link" onClick={openPopup} to={''}><CgProfile /> Profil</Link>
-                    <a onClick={logout} className="link"> Abmelden </a>
+                <Link className="link" onClick={openPopup} to={''}><CgProfile /> Profil</Link>
+                <a onClick={logout} className="link"> Abmelden </a>
             </nav>
             <ProfilePopup isOpen={isPopupOpen} onClose={closePopup} />
         </header >
