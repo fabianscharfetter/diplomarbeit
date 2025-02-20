@@ -37,7 +37,7 @@ export const getAllUsers = async (): Promise<any | null> => {
         if (Array.isArray(users)) {
             return users || null;
         } else {
-            throw new Error("Ungültige Datenstruktur von der API erhalten.");
+            throw new Error("Ungueltige Datenstruktur von der API erhalten.");
         }
     } catch (err) {
         throw new Error(`Fehler beim Abrufen der Benutzerdaten: ${err}`);
@@ -56,5 +56,34 @@ export const getStorages = async (): Promise<any[] | null> => {
         }
     } catch (err) {
         throw new Error(`Fehler beim Abrufen der Inventarliste: ${err}`);
+    }
+};
+
+export const addItem = async (userId: string, itemTitle: string) => {
+    try {
+        const response = await axios.post(`${apiUser}/AddUserItem/${userId}`,
+            { itemTitle }, // Sende ein JSON-Objekt mit dem korrekten Feldnamen
+            {
+                headers: { "Content-Type": "application/json" }
+            }
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Fehler beim Hinzufuegen eines Items:", error);
+        throw error;
+    }
+};
+
+
+// ITEM LÖSCHEN
+export const deleteItem = async (userId: string, itemId: string) => {
+    try {
+        const response = await axios.post(`${apiUser}/DeleteUserItem/${userId}`, itemId, {
+            headers: { "Content-Type": "application/json" }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Fehler beim Loeschen eines Items:", error);
+        throw error;
     }
 };

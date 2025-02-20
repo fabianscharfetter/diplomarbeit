@@ -4,11 +4,11 @@ import Home from '../Pages/Home';
 import About from '../Pages/About';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage'
-import Account from '../Pages/Account'
+import Account from '../Pages/Account';
 import ProtectedRoute from "./ProtectedRoutes";
-import LagerPage from '../Pages/LagerPage'
-import CamPage from "../Pages/CamPage";
-import AdminPage from "../Pages/Admin"
+import LagerPage from '../Pages/LagerPage';
+import CamPage from '../Pages/CamPage';
+import AdminPage from '../Pages/Admin'
 
 
 
