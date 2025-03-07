@@ -5,7 +5,6 @@ import '../Stylesheets/Home.css';
 
 const Home: React.FC = () => {
     const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
-    const [activeMitarbeiterIndex, setActiveMitarbeiterIndex] = useState(0);
 
     const sections = {
         lagerage: {
@@ -58,20 +57,12 @@ const Home: React.FC = () => {
         setActiveFeatureIndex((prevIndex) => (prevIndex - 1 + sections.features.length) % sections.features.length);
     };
 
-    const handleMitarbeiterNext = () => {
-        setActiveMitarbeiterIndex((prevIndex) => (prevIndex + 1) % sections.mitarbeiter.length);
-    };
-
-    const handleMitarbeiterPrev = () => {
-        setActiveMitarbeiterIndex((prevIndex) => (prevIndex - 1 + sections.mitarbeiter.length) % sections.mitarbeiter.length);
-    };
-
     return (
         <>
             <Header />
             <main className="main-content">
                 <section className="section-container">
-                    {/* Lagerage Section – Hintergrundbild wird per Inline‑Style gesetzt */}
+                    {/* Lagerage Section */}
                     <div
                         className="section lagerage"
                         style={{
@@ -104,18 +95,18 @@ const Home: React.FC = () => {
                     {/* Mitarbeiter Section */}
                     <div className="section mitarbeiter">
                         <h2 className="section-title">Unsere Mitarbeiter</h2>
-                        <div className="section-item">
-                            <button className="nav-arrow nav-arrow-left" onClick={handleMitarbeiterPrev}>
-                                &#8592;
-                            </button>
-                            <div className="text">
-                                <h3>{sections.mitarbeiter[activeMitarbeiterIndex].name}</h3>
-                                <p>{sections.mitarbeiter[activeMitarbeiterIndex].description}</p>
-                            </div>
-                            <button className="nav-arrow nav-arrow-right" onClick={handleMitarbeiterNext}>
-                                &#8594;
-                            </button>
-                            <img src={sections.mitarbeiter[activeMitarbeiterIndex].image} alt={sections.mitarbeiter[activeMitarbeiterIndex].name} />
+                        <div className="mitarbeiter-items">
+                            {sections.mitarbeiter.map((mitarbeiter, index) => (
+                                <div className="mitarbeiter-item" key={index}>
+                                    <div className="name-line"></div>
+                                    <div className="mitarbeiter-details">
+                                        <h3>{mitarbeiter.name}</h3>
+                                        <p>{mitarbeiter.position}</p>
+                                        <p>{mitarbeiter.description}</p>
+                                    </div>
+                                    <img src={mitarbeiter.image} alt={mitarbeiter.name} />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
