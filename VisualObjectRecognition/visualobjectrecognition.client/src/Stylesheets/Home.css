@@ -1,0 +1,160 @@
+﻿/* Allgemeine Stile */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+/* Container für jede Section */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Generelle Section-Stile */
+.section {
+    background-color: var(--content-box-color);
+    border-radius: 10px;
+    padding: 40px;
+    width: 100vw; /* Volle Breite */
+    min-height: 500px;
+    position: relative;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Lagerage Section (Section 1) */
+.lagerage {
+    position: relative;
+    padding: 60px 10%;  /* Mehr Abstand links/rechts (10% vom Bildschirmrand) */
+}
+
+/* Überschrift in Section 1 mittig & mit mehr Abstand zum Text */
+.lagerage .section-title {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 26px;
+    margin-bottom: 80px; /* Erhöht den Abstand zwischen Überschrift & Text */
+}
+
+/* Text-Abschnitt mit Abstand vom Bildschirmrand */
+.lagerage p {
+    max-width: 80%; /* Begrenzte Breite, damit der Text nicht bis zum Rand geht */
+    margin: 0 auto; /* Zentriert den Text innerhalb der Section */
+    text-align: center; /* Optional: Text mittig ausrichten */
+    line-height: 1.6; /* Bessere Lesbarkeit */
+}
+
+/* Section Titles – Überschriften innerhalb der Sections */
+.section-title {
+    color: var(--secondary-color);
+    position: absolute;
+    top: 15px;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+
+/* In den anderen Sections (Features, Mitarbeiter) bleibt die Überschrift links */
+.features .section-title,
+.mitarbeiter .section-title {
+    left: 20px;
+    font-size: 22px;
+}
+
+    /* Horizontale Linie unter der Überschrift in Section 2 und 3 */
+    .features .section-title::after,
+    .mitarbeiter .section-title::after {
+        content: "";
+        display: block;
+        width: 120%;
+        height: 3px;
+        background-color: var(--secondary-color);
+        margin-top: 5px;
+    }
+
+/* Text Container */
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    text-align: center;
+}
+
+/* Section-Item Container */
+.section-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 60px; /* Platz für den Titel */
+}
+
+/* Image Container */
+.image-container {
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Bilder in der Lagerage-Section (Section 1) */
+.lagerage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Bilder in den Features- und Mitarbeiter-Sections (Section 2 und 3) – kleinere Bilder */
+.features img,
+.mitarbeiter img {
+    width: 80%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Navigation-Pfeile */
+.nav-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+    .nav-arrow:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+.nav-arrow-left {
+    margin-right: 10px;
+}
+
+.nav-arrow-right {
+    margin-left: 10px;
+}
