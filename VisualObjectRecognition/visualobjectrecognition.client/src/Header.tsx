@@ -25,7 +25,7 @@ const Header: React.FC = () => {
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <a href="https://lagerage.at/home">SelfStorage</a>
                 <a href="https://lagerage.at/home/immobilien">Immobilien</a>
-                <Link to="/about">{"\u00DCber uns"}</Link>
+                <Link to="/Home">{"\u00DCber uns"}</Link>
                 {isLoggedIn() ? (
                     <>
                         <Link className="account-link" to="/account">Home</Link>

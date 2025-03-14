@@ -6,11 +6,11 @@ const api = "https://localhost:7228/api/";
 
 export const loginAPI = async (email: string, password: string) => {
     try {
-        const data = await axios.post<UserProfileToken>(api + "account/login", {
+        const response = await axios.post<{ data: UserProfileToken }>(api + "account/login", {
             email: email,
             password: password,
         });
-        return data;
+        return response.data; // Hier geben wir nur die 'data' zurück
     } catch (error) {
         handleError(error);
     }
@@ -29,10 +29,9 @@ export const registerAPI = async (
     stadt: string,
     land: string,
     firma?: string | null  // firma optional oder null
-
 ) => {
     try {
-        const data = await axios.post<UserProfileToken>(api + "account/register", {
+        const response = await axios.post<{ data: UserProfileToken }>(api + "account/register", {
             email: email,
             firstname: firstname,
             secondname: secondname,
@@ -46,7 +45,7 @@ export const registerAPI = async (
             land: land,
             firma: firma ?? null, // Wenn firma nicht angegeben wird, null setzen
         });
-        return data;
+        return response.data; // Hier geben wir nur die 'data' zurück
     } catch (error) {
         console.error("Registrierungsfehler:", error); // Debugging: Logge Fehler
         handleError(error);
