@@ -18,7 +18,8 @@ type RegisterFormsInputs = {
     strasse: string; 
     hausnummer: string; 
     postleitzahl: string; 
-    stadt: string; 
+    stadt: string;
+    role?: number;
     land: string; 
 };
 
@@ -62,7 +63,7 @@ const validation = Yup.object().shape({
         .notRequired(),
     password2: Yup.string()
         .oneOf([Yup.ref("password")], "Passwörter stimmen nicht überein")
-        .required("Passwortwiederholung wird benötigt"),
+        .required("Passwortwiederholung wird benötigt")
 });
 
 const RegisterPage: React.FC = () => {
@@ -88,6 +89,7 @@ const RegisterPage: React.FC = () => {
             form.stadt,
             form.land,
 
+            form.role ?? 0,
             form.firma!
         );
     };

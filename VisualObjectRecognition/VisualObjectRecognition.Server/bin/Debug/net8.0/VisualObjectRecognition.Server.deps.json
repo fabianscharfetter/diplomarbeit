@@ -12,7 +12,7 @@
           "Azure.Storage.Blobs": "12.23.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
-          "Microsoft.AspNetCore.SpaProxy": "9.0.0",
+          "Microsoft.AspNetCore.SpaProxy": "9.0.3",
           "Microsoft.Azure.Cosmos": "3.46.0",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
@@ -171,7 +171,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.SpaProxy/9.0.0": {},
+      "Microsoft.AspNetCore.SpaProxy/9.0.3": {},
       "Microsoft.Azure.Cosmos/3.46.0": {
         "dependencies": {
           "Azure.Core": "1.44.1",
@@ -1865,12 +1865,12 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/8.0.0",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.SpaProxy/9.0.0": {
+    "Microsoft.AspNetCore.SpaProxy/9.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rzrW3ig2daD/G7xa3PQjvVsbudjaDPVvuMFgpNF+cIlRn8lBthRaDY218Yyqetf/ItC3sZb5FFLZhQVAIOuxOg==",
-      "path": "microsoft.aspnetcore.spaproxy/9.0.0",
-      "hashPath": "microsoft.aspnetcore.spaproxy.9.0.0.nupkg.sha512"
+      "sha512": "sha512-iErynM2aBLYMprxUv8HB+9zFWzXQN7ETSKEEaPN75Xmig7lcYT/97NULu3jI0uDV8jIrvGrS047AMCbB9iPW2A==",
+      "path": "microsoft.aspnetcore.spaproxy/9.0.3",
+      "hashPath": "microsoft.aspnetcore.spaproxy.9.0.3.nupkg.sha512"
     },
     "Microsoft.Azure.Cosmos/3.46.0": {
       "type": "package",

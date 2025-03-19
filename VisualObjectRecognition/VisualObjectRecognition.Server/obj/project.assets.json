@@ -223,7 +223,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.SpaProxy/9.0.0": {
+      "Microsoft.AspNetCore.SpaProxy/9.0.3": {
         "type": "package",
         "build": {
           "build/Microsoft.AspNetCore.SpaProxy.targets": {}
@@ -3164,10 +3164,10 @@
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.SpaProxy/9.0.0": {
-      "sha512": "rzrW3ig2daD/G7xa3PQjvVsbudjaDPVvuMFgpNF+cIlRn8lBthRaDY218Yyqetf/ItC3sZb5FFLZhQVAIOuxOg==",
+    "Microsoft.AspNetCore.SpaProxy/9.0.3": {
+      "sha512": "iErynM2aBLYMprxUv8HB+9zFWzXQN7ETSKEEaPN75Xmig7lcYT/97NULu3jI0uDV8jIrvGrS047AMCbB9iPW2A==",
       "type": "package",
-      "path": "microsoft.aspnetcore.spaproxy/9.0.0",
+      "path": "microsoft.aspnetcore.spaproxy/9.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3175,7 +3175,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/Microsoft.AspNetCore.SpaProxy.targets",
         "lib/net9.0/Microsoft.AspNetCore.SpaProxy.dll",
-        "microsoft.aspnetcore.spaproxy.9.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.spaproxy.9.0.3.nupkg.sha512",
         "microsoft.aspnetcore.spaproxy.nuspec"
       ]
     },
@@ -8844,7 +8844,7 @@
       "Azure.Storage.Blobs >= 12.23.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
-      "Microsoft.AspNetCore.SpaProxy >= 9.0.0",
+      "Microsoft.AspNetCore.SpaProxy >= 9.0.3",
       "Microsoft.Azure.Cosmos >= 3.46.0",
       "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
@@ -8928,7 +8928,7 @@
           },
           "Microsoft.AspNetCore.SpaProxy": {
             "target": "Package",
-            "version": "[9.0.0, )"
+            "version": "[9.0.3, )"
           },
           "Microsoft.Azure.Cosmos": {
             "target": "Package",

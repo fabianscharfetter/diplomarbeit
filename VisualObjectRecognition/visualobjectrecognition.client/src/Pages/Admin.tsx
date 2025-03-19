@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import '../Stylesheets/Admin.css';
 import { getAllUsers } from "../Services/UserService"; // Beide Funktionen importieren
 import { FaArrowLeft } from "react-icons/fa";
+import { addItem, deleteItem } from "../Services/UserService";
 
 const AdminPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
@@ -11,6 +12,31 @@ const AdminPage: React.FC = () => {
     const [selectedUser, setSelectedUser] = useState<any>(null); // Für ausgewählten Benutzer
     const [error, setError] = useState<string>("");
     const [selectedStorage, setSelectedStorage] = useState<any>(null);
+
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const [newItemTitle, setNewItemTitle] = useState<string>("");
+
+    // Funktion zum Hinzufügen eines Items
+    const handleAddItem = async () => {
+        if (!newItemTitle.trim()) return;
+        try {
+            await addItem(selectedUser.id, newItemTitle);
+            setNewItemTitle("");
+            setShowModal(false);
+        } catch (err) {
+            setError("Fehler beim Hinzufügen eines Items:" + err);
+        }
+    };
+
+    // Funktion zum Löschen eines Items
+    const handleDeleteItem = async (itemId: string) => {
+        try {
+            await deleteItem(selectedUser.id, itemId);
+        } catch (err) {
+            setError("Fehler beim Löschen eines Items:" + err);
+        }
+    };
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -58,7 +84,16 @@ const AdminPage: React.FC = () => {
                                 {selectedUser.items
                                     .filter((item: any) => item.storageId == selectedStorage.Id)
                                     .map((item: any, index: number) => (
-                                        <li key={index}>{item.title}</li>
+                                        <div>
+                                            <li key={index}>{item.title}</li>
+                                            <button
+                                                className="delete-button"
+                                                onClick={() => handleDeleteItem(item.id)} // Löschen-Funktion aufrufen
+                                            >
+                                                Auslagern
+                                            </button>
+                                        </div>
+                                        
                                     ))}
                             </ul>
                         </>

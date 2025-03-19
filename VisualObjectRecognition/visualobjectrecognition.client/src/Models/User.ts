@@ -9,9 +9,9 @@
     postleitzahl: string;
     stadt: string;
     land: string;
+    role: number;
     firma?: string | null;  // Firma kann null sein
     token: string;
-    role: number;  // 🔥 HINZUGEFÜGT
 };
 
 export type UserProfile = {
@@ -25,6 +25,6 @@ export type UserProfile = {
     postleitzahl: string;
     stadt: string;
     land: string;
+    role: number;
     firma?: string | null;  // Firma kann null sein
-    role: number;  // 🔥 HINZUGEFÜGT
 };

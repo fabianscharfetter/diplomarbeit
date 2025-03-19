@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\visualobjectrecognition.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\visualobjectrecognition.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\models\\user.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\models\\user.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\context\\useauth.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\context\\useauth.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\services\\authservice.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\services\\authservice.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\user\\headercustomer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\user\\headercustomer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.server\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{080D4E11-05F5-4A68-A750-4C26D7D91C10}|VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj|solutionrelative:visualobjectrecognition.server\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\pages\\registerpage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\pages\\registerpage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\routes\\routes.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\routes\\routes.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\routes\\protectedroutes.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\routes\\protectedroutes.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|c:\\users\\zilla\\documents\\github\\diplomarbeit\\visualobjectrecognition\\visualobjectrecognition.client\\src\\user\\headercustomer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DE487553-3922-4189-8EE2-8378416BF4D1}|visualobjectrecognition.client\\visualobjectrecognition.client.esproj|solutionrelative:visualobjectrecognition.client\\src\\user\\headercustomer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,22 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 226,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "useAuth.tsx",
-              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
-              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
-              "RelativeToolTip": "visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-07T10:32:34.63Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -64,31 +66,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VisualObjectRecognition.Server.csproj",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj",
+              "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj",
+              "RelativeToolTip": "VisualObjectRecognition.Server\\VisualObjectRecognition.Server.csproj",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-19T10:59:27.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthService.tsx",
-              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Services\\AuthService.tsx",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Services\\AuthService.tsx",
-              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Services\\AuthService.tsx",
-              "RelativeToolTip": "visualobjectrecognition.client\\src\\Services\\AuthService.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAACAAAAAAAAAA==",
+              "Title": "User.ts",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Models\\User.ts",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Models\\User.ts",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Models\\User.ts",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Models\\User.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwAkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-08T08:23:29.659Z"
+              "WhenOpened": "2025-03-19T10:43:55.532Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HeaderCustomer.tsx",
-              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
-              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
-              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
-              "RelativeToolTip": "visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-07T10:15:58.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\UserRole.cs",
               "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Models\\UserRole.cs",
@@ -96,19 +99,79 @@
               "RelativeToolTip": "VisualObjectRecognition.Server\\Models\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T08:31:47.208Z"
+              "WhenOpened": "2025-03-19T10:47:59.719Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\User.cs",
               "RelativeDocumentMoniker": "VisualObjectRecognition.Server\\Models\\User.cs",
               "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\VisualObjectRecognition.Server\\Models\\User.cs",
               "RelativeToolTip": "VisualObjectRecognition.Server\\Models\\User.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T08:22:33.25Z"
+              "WhenOpened": "2025-03-19T10:47:25.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "useAuth.tsx",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Context\\useAuth.tsx",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-19T10:44:57.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterPage.tsx",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Pages\\RegisterPage.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Pages\\RegisterPage.tsx",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Pages\\RegisterPage.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Pages\\RegisterPage.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-19T10:44:51.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Routes.tsx",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Routes\\Routes.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Routes\\Routes.tsx",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Routes\\Routes.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Routes\\Routes.tsx",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-19T10:44:45.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProtectedRoutes.tsx",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Routes\\ProtectedRoutes.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\Routes\\ProtectedRoutes.tsx",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\Routes\\ProtectedRoutes.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\Routes\\ProtectedRoutes.tsx",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-19T10:44:40.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HeaderCustomer.tsx",
+              "DocumentMoniker": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
+              "RelativeDocumentMoniker": "visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
+              "ToolTip": "C:\\Users\\Zilla\\Documents\\GitHub\\diplomarbeit\\VisualObjectRecognition\\visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
+              "RelativeToolTip": "visualobjectrecognition.client\\src\\User\\HeaderCustomer.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-03-19T10:43:44.914Z"
             }
           ]
         }

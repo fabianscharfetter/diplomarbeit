@@ -7,9 +7,11 @@ import ProfilePopup from "./ProfilePopup";
 import { useAuth } from "../Context/useAuth";
 
 const HeaderCustomer: React.FC = () => {
-    const { logout, isAdmin } = useAuth(); // isAdmin direkt aus dem Context
+    const { logout, user } = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    console.log(localStorage.setItem("user", JSON.stringify(user)));
+
 
     return (
         <header className="header">
@@ -28,10 +30,13 @@ const HeaderCustomer: React.FC = () => {
                 <Link className="link" to="/account">
                     <IoHomeOutline /> Home
                 </Link>
-                <Link className="link" to="#" onClick={() => setIsPopupOpen(true)}>
+                {Number(user?.role) === 0 && (
+                    <Link className="link" to="#" onClick={() => setIsPopupOpen(true)}>
                     <CgProfile /> Profil
-                </Link>
-                {isAdmin && (
+                    </Link>
+                )}
+                
+                {Number(user?.role) > 0 && (
                     <Link className="link" to="/account/cam">
                         CamPage
                     </Link>

@@ -62,7 +62,7 @@ export const getStorages = async (): Promise<any[] | null> => {
 export const addItem = async (userId: string, itemTitle: string) => {
     try {
         const response = await axios.post(`${apiUser}/AddUserItem/${userId}`,
-            { itemTitle }, // Sende ein JSON-Objekt mit dem korrekten Feldnamen
+            { itemTitle },
             {
                 headers: { "Content-Type": "application/json" }
             }

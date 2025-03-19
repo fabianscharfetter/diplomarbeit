@@ -68,7 +68,7 @@
             },
             "Microsoft.AspNetCore.SpaProxy": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.3, )"
             },
             "Microsoft.Azure.Cosmos": {
               "target": "Package",

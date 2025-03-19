@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Footer from '../Footer';
 import '../Stylesheets/LagerPage.css';
 import { useAuth } from "../Context/useAuth";
-import { fetchUserByEmail, addItem, deleteItem } from "../Services/UserService"; // deleteItem importieren
-import axios from 'axios'; // Axios importieren
+import { fetchUserByEmail, addItem, deleteItem } from "../Services/UserService";
+import axios from 'axios';
 
 const LagerPage: React.FC = () => {
     const { user } = useAuth();

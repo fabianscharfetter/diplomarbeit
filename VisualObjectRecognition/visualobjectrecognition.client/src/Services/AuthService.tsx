@@ -6,11 +6,11 @@ const api = "https://localhost:7228/api/";
 
 export const loginAPI = async (email: string, password: string) => {
     try {
-        const response = await axios.post<{ data: UserProfileToken }>(api + "account/login", {
+        const data = await axios.post<UserProfileToken>(api + "account/login", {
             email: email,
             password: password,
         });
-        return response.data; // Hier geben wir nur die 'data' zurück
+        return data;
     } catch (error) {
         handleError(error);
     }
@@ -28,14 +28,15 @@ export const registerAPI = async (
     postleitzahl: string,
     stadt: string,
     land: string,
-    firma?: string | null  // firma optional oder null
+    role: number,
+    firma?: string | null
 ) => {
     try {
-        const response = await axios.post<{ data: UserProfileToken }>(api + "account/register", {
+        const data = await axios.post<UserProfileToken>(api + "account/register", {
             email: email,
             firstname: firstname,
             secondname: secondname,
-            birthdate: birthdate.toISOString().split("T")[0], // Nur das Datum im Format YYYY-MM-DD,
+            birthdate: birthdate.toISOString().split("T")[0],
             phonenbr: phonenbr,
             password: password,
             strasse: strasse,
@@ -43,11 +44,12 @@ export const registerAPI = async (
             postleitzahl: postleitzahl,
             stadt: stadt,
             land: land,
-            firma: firma ?? null, // Wenn firma nicht angegeben wird, null setzen
+            role: role,
+            firma: firma ?? null
         });
-        return response.data; // Hier geben wir nur die 'data' zurück
+        return data;
     } catch (error) {
-        console.error("Registrierungsfehler:", error); // Debugging: Logge Fehler
+        console.error("Registrierungsfehler:", error);
         handleError(error);
     }
 };

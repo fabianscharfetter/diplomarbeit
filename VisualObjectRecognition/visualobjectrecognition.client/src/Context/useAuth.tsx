@@ -1,5 +1,5 @@
 ﻿import { createContext, useEffect, useState } from "react";
-import { UserProfileToken } from "../Models/User";
+import { UserProfile } from "../Models/User";
 import { useNavigate } from "react-router-dom";
 import { loginAPI, registerAPI } from "../Services/AuthService";
 import { toast } from "react-toastify";
@@ -7,23 +7,9 @@ import React from "react";
 import axios from "axios";
 
 type UserContextType = {
-    user: UserProfileToken | null;
-    isAdmin: boolean;
+    user: UserProfile | null;
     token: string | null;
-    registerUser: (
-        email: string,
-        firstname: string,
-        secondname: string,
-        birthdate: Date,
-        phonenbr: string,
-        password: string,
-        strasse: string,
-        hausnummer: string,
-        postleitzahl: string,
-        stadt: string,
-        land: string,
-        firma?: string | null
-    ) => void;
+    registerUser: (email: string, firstname: string, secondname: string, birthdate: Date, phonenbr: string, password: string, strasse: string, hausnummer: string, stadt: string, land: string, postleitzahl: string, role: number, firma?: string | null) => void;
     loginUser: (email: string, password: string) => void;
     logout: () => void;
     isLoggedIn: () => boolean;
@@ -36,31 +22,19 @@ const UserContext = createContext<UserContextType>({} as UserContextType);
 export const UserProvider = ({ children }: Props) => {
     const navigate = useNavigate();
     const [token, setToken] = useState<string | null>(null);
-    const [user, setUser] = useState<UserProfileToken | null>(null);
-    const [isAdmin, setIsAdmin] = useState<boolean>(false);  // Admin-Status im Context speichern
+    const [user, setUser] = useState<UserProfile | null>(null);
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        const loadUserFromStorage = async () => {
-            const storedUser = localStorage.getItem("user");
-            const storedToken = localStorage.getItem("token");
-
-            if (storedUser && storedToken) {
-                const parsedUser = JSON.parse(storedUser) as UserProfileToken;
-                setUser(parsedUser);
-                setToken(storedToken);
-                axios.defaults.headers.common["Authorization"] = "Bearer " + storedToken;
-
-                // Admin-Status aus dem User-Objekt ermitteln
-                const role = parsedUser.role || 0;
-                setIsAdmin(role > 0);  // Admin hat Role > 0
-                localStorage.setItem("isAdmin", JSON.stringify(role > 0));  // Admin-Status im localStorage speichern
-            }
-            setIsReady(true);  // Fertig mit dem Laden
-        };
-
-        loadUserFromStorage();
-    }, []);  // Diese Funktion läuft nur beim ersten Rendern
+        const user = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+        if (user && token) {
+            setUser(JSON.parse(user));
+            setToken(token);
+            axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+        }
+        setIsReady(true);
+    }, []);
 
     const registerUser = async (
         email: string,
@@ -74,68 +48,66 @@ export const UserProvider = ({ children }: Props) => {
         postleitzahl: string,
         stadt: string,
         land: string,
-        firma?: string | null
+        role: number = 0,
+        firma?: string | null  // firma ist jetzt optional oder null
+        
+        
     ) => {
-        try {
-            const res = await registerAPI(
-                email,
-                firstname,
-                secondname,
-                birthdate,
-                phonenbr,
-                password,
-                strasse,
-                hausnummer,
-                postleitzahl,
-                stadt,
-                land,
-                firma
-            );
-
-            if (res) {
-                const { data } = res;
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("user", JSON.stringify(data));
-                setToken(data.token);
-                setUser(data);
-
-                // Admin-Status setzen
-                const role = data.role || 0;
-                setIsAdmin(role > 0);  // Admin-Überprüfung (Role > 0)
-                localStorage.setItem("isAdmin", JSON.stringify(role > 0));  // Admin-Status im localStorage speichern
-
-                toast.success("Registrierung war erfolgreich!");
-                navigate("/account");
-            }
-        } catch (error) {
-            toast.warning("Registrierung fehlgeschlagen! Bitte versuchen Sie es später erneut.");
-            console.error("Error during registration:", error);
-        }
+        await registerAPI(email, firstname, secondname, birthdate, phonenbr, password, strasse, hausnummer, postleitzahl, stadt, land, role, firma!)
+            .then((res) => {
+                if (res) {
+                    localStorage.setItem("token", res?.data.token);
+                    const userObj = {
+                        firstname: res?.data.firstname,
+                        secondname: res?.data.secondname,
+                        birthdate: res?.data.birthdate,
+                        email: res?.data.email,
+                        phonenbr: res?.data.phonenbr,
+                        strasse: res?.data.strasse,
+                        hausnummer: res?.data.hausnummer,
+                        postleitzahl: res?.data.postleitzahl,
+                        stadt: res?.data.stadt,
+                        land: res?.data.land,
+                        role: res?.data.role,
+                        firma: res?.data.firma ?? null // Firma wird als null gesetzt, wenn nicht vorhanden
+                    };
+                    localStorage.setItem("user", JSON.stringify(userObj));
+                    setToken(res?.data.token!);
+                    setUser(userObj!);
+                    toast.success("Registrierung war erfolgreich!");
+                    navigate("/account");
+                }
+            })
+            .catch(() => toast.warning("Server-Error aufgetreten!"));
     };
 
     const loginUser = async (email: string, password: string) => {
-        try {
-            const res = await loginAPI(email, password);
-
-            if (res) {
-                const { data } = res;
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("user", JSON.stringify(data));
-                setToken(data.token);
-                setUser(data);
-
-                // Admin-Status setzen
-                const role = data.role || 0;
-                setIsAdmin(role > 0);  // Admin-Überprüfung (Role > 0)
-                localStorage.setItem("isAdmin", JSON.stringify(role > 0));  // Admin-Status im localStorage speichern
-
-                toast.success("Anmeldung war erfolgreich!");
-                navigate("/account");
-            }
-        } catch (error) {
-            toast.warning("Anmeldung fehlgeschlagen! Bitte überprüfen Sie Ihre Anmeldedaten.");
-            console.error("Error during login:", error);
-        }
+        await loginAPI(email, password)
+            .then((res) => {
+                if (res) {
+                    localStorage.setItem("token", res?.data.token);
+                    const userObj = {
+                        firstname: res?.data.firstname,
+                        secondname: res?.data.secondname,
+                        birthdate: res?.data.birthdate,
+                        email: res?.data.email,
+                        phonenbr: res?.data.phonenbr,
+                        strasse: res?.data.strasse,
+                        hausnummer: res?.data.hausnummer,
+                        postleitzahl: res?.data.postleitzahl,
+                        stadt: res?.data.stadt,
+                        land: res?.data.land,
+                        role: res?.data.role,
+                        firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
+                    };
+                    localStorage.setItem("user", JSON.stringify(userObj));
+                    setToken(res?.data.token!);
+                    setUser(userObj!);
+                    toast.success("Anmeldung war erfolgreich!");
+                    navigate("/account");
+                }
+            })
+            .catch(() => toast.warning("Server-Error aufgetreten!"));
     };
 
     const isLoggedIn = () => {
@@ -145,24 +117,14 @@ export const UserProvider = ({ children }: Props) => {
     const logout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-        localStorage.removeItem("isAdmin");
         setUser(null);
-        setToken(null);
-        setIsAdmin(false);
+        setToken("");
         navigate("/");
     };
 
     return (
         <UserContext.Provider
-            value={{
-                loginUser,
-                registerUser,
-                user,
-                isAdmin,
-                token,
-                logout,
-                isLoggedIn,
-            }}
+            value={{ loginUser, user, token, logout, isLoggedIn, registerUser }}
         >
             {isReady ? children : null}
         </UserContext.Provider>
