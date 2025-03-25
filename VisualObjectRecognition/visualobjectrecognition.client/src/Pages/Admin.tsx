@@ -2,41 +2,19 @@
 import React, { useEffect, useState } from "react";
 import Footer from '../Footer';
 import '../Stylesheets/Admin.css';
-import { getAllUsers } from "../Services/UserService"; // Beide Funktionen importieren
+import { getAllUsers, addItem, deleteItem } from "../Services/UserService";
+import axios from 'axios';
 import { FaArrowLeft } from "react-icons/fa";
-import { addItem, deleteItem } from "../Services/UserService";
 
 const AdminPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [users, setUsers] = useState<any[]>([]);
-    const [selectedUser, setSelectedUser] = useState<any>(null); // Für ausgewählten Benutzer
+    const [selectedUser, setSelectedUser] = useState<any>(null);
     const [error, setError] = useState<string>("");
     const [selectedStorage, setSelectedStorage] = useState<any>(null);
-
     const [showModal, setShowModal] = useState<boolean>(false);
     const [newItemTitle, setNewItemTitle] = useState<string>("");
-
-    // Funktion zum Hinzufügen eines Items
-    const handleAddItem = async () => {
-        if (!newItemTitle.trim()) return;
-        try {
-            await addItem(selectedUser.id, newItemTitle);
-            setNewItemTitle("");
-            setShowModal(false);
-        } catch (err) {
-            setError("Fehler beim Hinzufügen eines Items:" + err);
-        }
-    };
-
-    // Funktion zum Löschen eines Items
-    const handleDeleteItem = async (itemId: string) => {
-        try {
-            await deleteItem(selectedUser.id, itemId);
-        } catch (err) {
-            setError("Fehler beim Löschen eines Items:" + err);
-        }
-    };
-
+    const [isStoring, setIsStoring] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,7 +22,7 @@ const AdminPage: React.FC = () => {
                 const userResult = await getAllUsers();
                 setUsers(userResult);
             } catch (err) {
-                setError("Fehler beim Abrufen der Daten:" + err);
+                setError("Fehler beim Abrufen der Daten: " + err);
             } finally {
                 setLoading(false);
             }
@@ -57,7 +35,7 @@ const AdminPage: React.FC = () => {
     };
 
     const handleUserClick = (user: any) => {
-        setSelectedUser(user); // Benutzer auswählen
+        setSelectedUser(user);
     };
 
     const handleBackClick = () => {
@@ -68,6 +46,43 @@ const AdminPage: React.FC = () => {
         }
     };
 
+    const handleAddItem = async () => {
+        if (!newItemTitle.trim()) return;
+        try {
+            await addItem(selectedUser.id, newItemTitle);
+            setNewItemTitle("");
+            setShowModal(false);
+        } catch (err) {
+            setError("Fehler beim Hinzufügen eines Items: " + err);
+        }
+    };
+
+    const handleDeleteItem = async (itemId: string) => {
+        try {
+            await deleteItem(selectedUser.id, itemId);
+        } catch (err) {
+            setError("Fehler beim Löschen eines Items: " + err);
+        }
+    };
+
+    const toggleStorage = async () => {
+        if (!isStoring) {
+            try {
+                await axios.post('https://localhost:7228/api/Einlagerung/start', {}, { params: { userid: selectedUser.id } });
+                setIsStoring(true);
+            } catch (error) {
+                setError("Fehler beim Starten der Einlagerung: " + error);
+            }
+        } else {
+            try {
+                await axios.post('https://localhost:7228/api/Einlagerung/stop');
+                setIsStoring(false);
+            } catch (error) {
+                setError("Fehler beim Stoppen der Einlagerung: " + error);
+            }
+        }
+    };
+
     return (
         <>
             <HeaderCustomer />
@@ -75,43 +90,57 @@ const AdminPage: React.FC = () => {
                 <div className="main">
                     {selectedStorage ? (
                         <>
-                            {/* Zurück zu den Lagern */}
                             <button className="back-button" onClick={handleBackClick}>
                                 <FaArrowLeft />
                             </button>
                             <h3>Items in Lager: {selectedStorage.title}</h3>
                             <ul>
                                 {selectedUser.items
-                                    .filter((item: any) => item.storageId == selectedStorage.Id)
+                                    .filter((item: any) => item.storageId === selectedStorage.Id)
                                     .map((item: any, index: number) => (
-                                        <div>
-                                            <li key={index}>{item.title}</li>
-                                            <button
-                                                className="delete-button"
-                                                onClick={() => handleDeleteItem(item.id)} // Löschen-Funktion aufrufen
-                                            >
+                                        <div key={index}>
+                                            <li>{item.title}</li>
+                                            <button className="delete-button" onClick={() => handleDeleteItem(item.id)}>
                                                 Auslagern
                                             </button>
                                         </div>
-                                        
                                     ))}
                             </ul>
+                            <button className="floating-button" onClick={() => setShowModal(true)}>+</button>
+                            <button className={`storage-button ${isStoring ? "storing" : ""}`} onClick={toggleStorage}>
+                                {isStoring ? "Stoppen" : "Einlagern"}
+                            </button>
+                            {showModal && (
+                                <div className="modal">
+                                    <div className="modal-content">
+                                        <h2>Neues Item hinzufügen</h2>
+                                        <input
+                                            type="text"
+                                            value={newItemTitle}
+                                            onChange={(e) => setNewItemTitle(e.target.value)}
+                                            placeholder="Item-Name eingeben..."
+                                        />
+                                        <div className="modal-buttons">
+                                            <button onClick={handleAddItem}>Hinzufügen</button>
+                                            <button onClick={() => setShowModal(false)}>Abbrechen</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </>
                     ) : selectedUser ? (
                         <>
-                            {/* Zurück zu den Benutzern */}
                             <button className="back-button" onClick={handleBackClick}>
                                 <FaArrowLeft />
                             </button>
                             <h3>Lager von {selectedUser.firstName} {selectedUser.secondName}</h3>
-                                <ul>
-                                    {selectedUser.storages
-                                        .map((storage: { title: string }, index: number) => (
-                                            <li key={index} onClick={() => handleStorageClick(storage)}>
-                                                {storage.title}
-                                            </li>
-                                        ))}
-                                </ul>
+                            <ul>
+                                {selectedUser.storages.map((storage: { title: string }, index: number) => (
+                                    <li key={index} onClick={() => handleStorageClick(storage)}>
+                                        {storage.title}
+                                    </li>
+                                ))}
+                            </ul>
                         </>
                     ) : (
                         <>
@@ -139,4 +168,5 @@ const AdminPage: React.FC = () => {
         </>
     );
 };
+
 export default AdminPage;
