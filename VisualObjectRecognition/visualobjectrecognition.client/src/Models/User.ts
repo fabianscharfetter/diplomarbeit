@@ -1,30 +1,34 @@
-﻿export type UserProfileToken = {
-    firstname: string;
-    secondname: string;
+﻿export enum UserRole {
+    User = 0,
+    Admin = 1,
+    Superadmin = 2
+}
+
+export type UserProfileToken = {
+    firstName: string;
+    secondName: string;
     birthdate: Date;
     email: string;
-    phonenbr: string;
+    phoneNbr: string;
     strasse: string;
     hausnummer: string;
     postleitzahl: string;
     stadt: string;
     land: string;
-    role: number;
-    firma?: string | null;  // Firma kann null sein
+    firma?: string | null;
     token: string;
 };
 
 export type UserProfile = {
-    firstname: string;
-    secondname: string;
+    firstName: string;
+    secondName: string;
     birthdate: Date;
     email: string;
-    phonenbr: string;
+    phoneNbr: string;
     strasse: string;
     hausnummer: string;
     postleitzahl: string;
     stadt: string;
     land: string;
-    role: number;
-    firma?: string | null;  // Firma kann null sein
+    firma?: string | null;
 };

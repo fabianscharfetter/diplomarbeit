@@ -1,134 +1,81 @@
-﻿import { createContext, useEffect, useState } from "react";
-import { UserProfile } from "../Models/User";
-import { useNavigate } from "react-router-dom";
-import { loginAPI, registerAPI } from "../Services/AuthService";
-import { toast } from "react-toastify";
-import React from "react";
-import axios from "axios";
+﻿import React, { createContext, useContext, useState, useEffect } from "react";
 
-type UserContextType = {
-    user: UserProfile | null;
-    token: string | null;
-    registerUser: (email: string, firstname: string, secondname: string, birthdate: Date, phonenbr: string, password: string, strasse: string, hausnummer: string, stadt: string, land: string, postleitzahl: string, role: number, firma?: string | null) => void;
-    loginUser: (email: string, password: string) => void;
-    logout: () => void;
-    isLoggedIn: () => boolean;
+export type UserProfileToken = {
+    firstname: string;
+    secondname: string;
+    birthdate: Date;
+    email: string;
+    phonenbr: string;
+    strasse: string;
+    hausnummer: string;
+    postleitzahl: string;
+    stadt: string;
+    land: string;
+    firma?: string | null;
+    token: string;
 };
 
-type Props = { children: React.ReactNode };
+export type UserProfile = {
+    firstname: string;
+    secondname: string;
+    birthdate: Date;
+    email: string;
+    phonenbr: string;
+    strasse: string;
+    hausnummer: string;
+    postleitzahl: string;
+    stadt: string;
+    land: string;
+    firma?: string | null;
+};
 
-const UserContext = createContext<UserContextType>({} as UserContextType);
+type AuthContextType = {
+    user: UserProfileToken | null;
+    token: string | null;
+    login: (userData: UserProfileToken) => void;
+    logout: () => void;
+};
 
-export const UserProvider = ({ children }: Props) => {
-    const navigate = useNavigate();
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export const useAuth = (): AuthContextType => {
+    const context = useContext(AuthContext);
+    if (!context) {
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context;
+};
+
+export const AuthProvider: React.FC = ({ children }) => {
+    const [user, setUser] = useState<UserProfileToken | null>(null);
     const [token, setToken] = useState<string | null>(null);
-    const [user, setUser] = useState<UserProfile | null>(null);
-    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        const user = localStorage.getItem("user");
-        const token = localStorage.getItem("token");
-        if (user && token) {
-            setUser(JSON.parse(user));
-            setToken(token);
-            axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+        const storedUser = localStorage.getItem("user");
+        const storedToken = localStorage.getItem("token");
+        if (storedUser && storedToken) {
+            setUser(JSON.parse(storedUser));
+            setToken(storedToken);
         }
-        setIsReady(true);
     }, []);
 
-    const registerUser = async (
-        email: string,
-        firstname: string,
-        secondname: string,
-        birthdate: Date,
-        phonenbr: string,
-        password: string,
-        strasse: string,
-        hausnummer: string,
-        postleitzahl: string,
-        stadt: string,
-        land: string,
-        role: number = 0,
-        firma?: string | null  // firma ist jetzt optional oder null
-        
-        
-    ) => {
-        await registerAPI(email, firstname, secondname, birthdate, phonenbr, password, strasse, hausnummer, postleitzahl, stadt, land, role, firma!)
-            .then((res) => {
-                if (res) {
-                    localStorage.setItem("token", res?.data.token);
-                    const userObj = {
-                        firstname: res?.data.firstname,
-                        secondname: res?.data.secondname,
-                        birthdate: res?.data.birthdate,
-                        email: res?.data.email,
-                        phonenbr: res?.data.phonenbr,
-                        strasse: res?.data.strasse,
-                        hausnummer: res?.data.hausnummer,
-                        postleitzahl: res?.data.postleitzahl,
-                        stadt: res?.data.stadt,
-                        land: res?.data.land,
-                        role: res?.data.role,
-                        firma: res?.data.firma ?? null // Firma wird als null gesetzt, wenn nicht vorhanden
-                    };
-                    localStorage.setItem("user", JSON.stringify(userObj));
-                    setToken(res?.data.token!);
-                    setUser(userObj!);
-                    toast.success("Registrierung war erfolgreich!");
-                    navigate("/account");
-                }
-            })
-            .catch(() => toast.warning("Server-Error aufgetreten!"));
-    };
-
-    const loginUser = async (email: string, password: string) => {
-        await loginAPI(email, password)
-            .then((res) => {
-                if (res) {
-                    localStorage.setItem("token", res?.data.token);
-                    const userObj = {
-                        firstname: res?.data.firstname,
-                        secondname: res?.data.secondname,
-                        birthdate: res?.data.birthdate,
-                        email: res?.data.email,
-                        phonenbr: res?.data.phonenbr,
-                        strasse: res?.data.strasse,
-                        hausnummer: res?.data.hausnummer,
-                        postleitzahl: res?.data.postleitzahl,
-                        stadt: res?.data.stadt,
-                        land: res?.data.land,
-                        role: res?.data.role,
-                        firma: res?.data.firma ?? null  // Firma wird als null gesetzt, wenn nicht vorhanden
-                    };
-                    localStorage.setItem("user", JSON.stringify(userObj));
-                    setToken(res?.data.token!);
-                    setUser(userObj!);
-                    toast.success("Anmeldung war erfolgreich!");
-                    navigate("/account");
-                }
-            })
-            .catch(() => toast.warning("Server-Error aufgetreten!"));
-    };
-
-    const isLoggedIn = () => {
-        return !!user;
+    const login = (userData: UserProfileToken) => {
+        localStorage.setItem("user", JSON.stringify(userData));
+        localStorage.setItem("token", userData.token);
+        setUser(userData);
+        setToken(userData.token);
     };
 
     const logout = () => {
-        localStorage.removeItem("token");
         localStorage.removeItem("user");
+        localStorage.removeItem("token");
         setUser(null);
-        setToken("");
-        navigate("/");
+        setToken(null);
     };
 
     return (
-        <UserContext.Provider
-            value={{ loginUser, user, token, logout, isLoggedIn, registerUser }}
-        >
-            {isReady ? children : null}
-        </UserContext.Provider>
+        <AuthContext.Provider value={{ user, token, login, logout }}>
+            {children}
+        </AuthContext.Provider>
     );
 };
-
-export const useAuth = () => React.useContext(UserContext);

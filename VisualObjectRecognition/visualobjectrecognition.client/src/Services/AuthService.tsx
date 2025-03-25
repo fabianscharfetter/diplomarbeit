@@ -1,6 +1,6 @@
 import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
-import { UserProfileToken } from "../Models/User";
+import { UserProfileToken, UserRole } from "../Models/User";
 
 const api = "https://localhost:7228/api/";
 
@@ -28,7 +28,6 @@ export const registerAPI = async (
     postleitzahl: string,
     stadt: string,
     land: string,
-    role: number,
     firma?: string | null
 ) => {
     try {
@@ -44,12 +43,28 @@ export const registerAPI = async (
             postleitzahl: postleitzahl,
             stadt: stadt,
             land: land,
-            role: role,
             firma: firma ?? null
         });
         return data;
     } catch (error) {
         console.error("Registrierungsfehler:", error);
         handleError(error);
+    }
+};
+
+export const getUserRoleById = async (userId: string): Promise<UserRole | null> => {
+    try {
+        // API Request an den Endpoint getuser/userid
+        const response = await axios.get(`${api}/getUser/${userId}`);
+
+        // Überprüfe, ob die Antwort den entsprechenden Daten enthält
+        if (response && response.data && response.data.role) {
+            return response.data.role; // Gib die Rolle zurück
+        } else {
+            throw new Error("Role not found");
+        }
+    } catch (error) {
+        console.error("Error fetching user role:", error);
+        return null; // Falls ein Fehler auftritt, gebe null zurück
     }
 };

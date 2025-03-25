@@ -89,7 +89,6 @@ const RegisterPage: React.FC = () => {
             form.stadt,
             form.land,
 
-            form.role ?? 0,
             form.firma!
         );
     };

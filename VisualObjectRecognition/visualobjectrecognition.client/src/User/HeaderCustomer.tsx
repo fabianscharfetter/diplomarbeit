@@ -1,17 +1,16 @@
-﻿import React, { useState } from "react";
+﻿// HeaderCustomer.tsx
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Stylesheets/HeaderCustomer.css";
 import { IoHomeOutline } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
+//import { CgProfile } from "react-icons/cg";
 import ProfilePopup from "./ProfilePopup";
 import { useAuth } from "../Context/useAuth";
 
 const HeaderCustomer: React.FC = () => {
-    const { logout, user } = useAuth();
+    const { logout } = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-    console.log(localStorage.setItem("user", JSON.stringify(user)));
-
 
     return (
         <header className="header">
@@ -30,17 +29,19 @@ const HeaderCustomer: React.FC = () => {
                 <Link className="link" to="/account">
                     <IoHomeOutline /> Home
                 </Link>
-                {Number(user?.role) === 0 && (
+                {/* Überprüfen, ob userRole definiert ist und es den Wert 0 hat 
+                {userRole && userRole === 0 && (
                     <Link className="link" to="#" onClick={() => setIsPopupOpen(true)}>
-                    <CgProfile /> Profil
+                        <CgProfile /> Profil
                     </Link>
-                )}
-                
-                {Number(user?.role) > 0 && (
+                )}*/}
+                {/* Überprüfen, ob userRole definiert ist und größer als 0 
+                {userRole && userRole > 0 && (
                     <Link className="link" to="/account/cam">
                         CamPage
                     </Link>
-                )}
+                )}*/}
+
                 <a onClick={logout} className="link">
                     Abmelden
                 </a>
