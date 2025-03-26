@@ -14,12 +14,12 @@ const Home: React.FC = () => {
             {
                 title: "Automatische Objekterkennung",
                 description: "Unser KI-gestütztes System erkennt und katalogisiert Ihre eingelagerten Objekte automatisch.",
-                image: "/Saalfelden.jpeg"
+                image: "/Bilderkennung.jpeg"
             },
             {
                 title: "Flexible Auslagerung",
                 description: "Markieren Sie eingelagerte Objekte zur Abholung oder Lieferung – volle Kontrolle über Ihre Bestände.",
-                image: "feature2.jpg"
+                image: "/Auslagern.jpg"
             },
             {
                 title: "Bearbeitung bei Fehldetektion",
@@ -29,23 +29,24 @@ const Home: React.FC = () => {
         ],
         mitarbeiter: [
             {
-                name: "Max Mustermann",
+                name: "Alex",
                 position: "CEO",
-                description: "Max Mustermann ist der Gründer und Geschäftsführer von Lagerage GmbH. Mit seiner Expertise in der Lagerwirtschaft führt er das Unternehmen seit 2009.",
-                image: "/Saalfelden.jpeg"
+                description: "Alex ist der Geschäftsführer von Lagerage GmbH. Mit seiner Expertise in der Lagerwirtschaft führt er das Unternehmen seit 2009.",
+                image: "/Alex.png"
             },
             {
-                name: "Erika Musterfrau",
-                position: "Technische Leiterin",
-                description: "Erika Musterfrau verantwortet die technische Entwicklung und Implementierung neuer Lösungen im Bereich Lagerverwaltung und Automatisierung.",
-                image: "mitarbeiter2.jpg"
+                name: "Fabian",
+                position: "Projektleiter und Backendprogrammierer",
+                description: "Fabian leitet die technische Entwicklung des Visual-Object-Recognition Projekts, mit einem Fokus auf Backend-Systeme.",
+                image: "/Fabian.jpg"
             },
             {
-                name: "John Doe",
-                position: "Marketing Manager",
-                description: "John Doe ist verantwortlich für das Marketing und die Kundenkommunikation. Er sorgt dafür, dass die Marke Lagerage weiter wächst.",
-                image: "mitarbeiter3.jpg"
+                name: "Tobias",
+                position: "Frontendprogrammierer",
+                description: "Tobias ist verantwortlich für die Entwicklung der Benutzeroberflächen und sorgt für eine ansprechende und funktionale Nutzererfahrung.",
+                image: "/Tobias.jpeg"
             }
+
         ]
     };
 
@@ -66,7 +67,7 @@ const Home: React.FC = () => {
                     <div
                         className="section lagerage"
                         style={{
-                            background: "url('../public/Saalfelden.jpeg') no-repeat center center",
+                            background: "url('/Home.jpg') no-repeat center center",
                             backgroundSize: "cover"
                         }}
                     >
@@ -79,14 +80,14 @@ const Home: React.FC = () => {
                         <h2 className="section-title">Hauptfunktionen</h2>
                         <div className="section-item">
                             <button className="nav-arrow nav-arrow-left" onClick={handleFeaturePrev}>
-                                &#8592;
+                                ⬅️
                             </button>
                             <div className="text">
                                 <h3>{sections.features[activeFeatureIndex].title}</h3>
                                 <p>{sections.features[activeFeatureIndex].description}</p>
                             </div>
                             <button className="nav-arrow nav-arrow-right" onClick={handleFeatureNext}>
-                                &#8594;
+                                ➡️
                             </button>
                             <img src={sections.features[activeFeatureIndex].image} alt={sections.features[activeFeatureIndex].title} />
                         </div>

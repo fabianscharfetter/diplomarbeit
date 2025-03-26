@@ -1,29 +1,25 @@
-import HeaderCustomer from '../User/HeaderCustomer';
+ï»¿import HeaderCustomer from '../User/HeaderCustomer';
 import React, { useEffect, useState } from "react";
 import Footer from '../Footer';
 import '../Stylesheets/Account.css';
 import { Link } from 'react-router-dom';
 import { useAuth } from "../Context/useAuth";
-import { fetchUserByEmail } from "../Services/UserService"
 
 
 const Account: React.FC = () => {
     const { user } = useAuth();
-   
-    const [fetchedUser, setFetchedUser] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
 
     useEffect(() => {
         const getUser = async () => {
             if (!user?.email) {
-                setError("Keine gültige E-Mail-Adresse verfügbar.");
+                setError("Keine gÃ¼ltige E-Mail-Adresse verfÃ¼gbar.");
                 setLoading(false);
                 return;
             }
             try {
-                const result = await fetchUserByEmail(user.email);
-                setFetchedUser(result);
+                user != null;
             } catch (err) {
                 setError(`Fehler beim Abrufen des Benutzers: ${err}`);
             } finally {
@@ -48,9 +44,9 @@ const Account: React.FC = () => {
                             Lade Benutzerinformationen...
                             <span className="loader"></span>
                         </span>
-                    ) : fetchedUser ? (
+                    ) : user ? (
                         <>
-                            Willkommen, {fetchedUser?.email || ""} !
+                            Willkommen, {user.email || ""} !
                         </>
                     ) : (
                         "Benutzer nicht gefunden"

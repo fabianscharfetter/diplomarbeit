@@ -31,18 +31,29 @@ body {
     overflow: hidden;
 }
 
+/* Einheitlicher Style für alle Section Titles */
+.section-title {
+    font-size: 26px; /* Einheitliche Schriftgröße */
+    text-align: center; /* Zentrierte Ausrichtung */
+    margin-bottom: 20px; /* Einheitlicher Abstand nach unten */
+    font-weight: bold; /* Einheitliche Schriftstärke */
+    position: relative; /* Positionierung sicherstellen */
+}
+
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 50%; /* Unterstrich wird auf 50% der Breite gesetzt */
+        height: 3px;
+        background-color: var(--secondary-color);
+        margin: 10px auto; /* Zentrierter Unterstrich mit Abstand */
+    }
+
 /* Lagerage Section (Section 1) */
 .lagerage {
     position: relative;
     padding: 60px 10%;
 }
-
-    .lagerage .section-title {
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 26px;
-        margin-bottom: 80px;
-    }
 
     .lagerage p {
         max-width: 80%;
@@ -52,37 +63,61 @@ body {
     }
 
 /* Features Section (Section 2) */
-.features .section-title {
-    left: 20px;
-    font-size: 22px;
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Vertikale Ausrichtung */
+    text-align: center; /* Titel zentrieren */
 }
 
-    .features .section-title::after {
-        content: "";
-        display: block;
-        width: 120%;
-        height: 3px;
-        background-color: var(--secondary-color);
-        margin-top: 5px;
+    .features .section-item {
+        display: flex;
+        justify-content: space-between; /* Gleichmäßige Verteilung */
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        min-height: 300px; /* Stellt sicher, dass der Inhalt nicht springt */
     }
 
-.features .section-item {
+    /* Textbereich auf feste Größe setzen */
+    .features .text {
+        text-align: center;
+        flex: 1; /* Füllt den Platz zwischen den Pfeilen */
+        max-width: 40%; /* Begrenzung der Textbreite (etwas schmaler als vorher) */
+    }
+
+    /* Bildpositionierung */
+    .features img {
+        width: 450px; /* Größeres Bild */
+        height: 275px; /* Größere Höhe */
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+/* Pfeile fixieren */
+.nav-arrow {
+    background-color: transparent !important;
+    font-size: 50px; /* Größere Pfeile */
+    width: 70px;
+    height: 70px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%;
-    margin: 0 auto;
+    justify-content: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0; /* Verhindert das Skalieren der Pfeile */
 }
 
-/* Bild in der Features-Section mit fixierter Größe und abgerundeten Ecken */
-.features img {
-    width: 400px; /* Größere Breite */
-    height: 250px; /* Größere Höhe */
-    object-fit: cover;
-    border-radius: 4px; /* Abgerundete Ecken */
+.nav-arrow-left {
+    margin-right: 15px;
 }
 
-
+.nav-arrow-right {
+    margin-left: 15px;
+}
 /* Mitarbeiter Section (Section 3) */
 .mitarbeiter {
     display: flex;
@@ -92,23 +127,9 @@ body {
     align-items: center;
 }
 
-    .mitarbeiter .section-title {
-        left: 20px;
-        font-size: 22px;
-    }
-
-        .mitarbeiter .section-title::after {
-            content: "";
-            display: block;
-            width: 120%;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin-top: 5px;
-        }
-
 .mitarbeiter-items {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Zentrieren der Items */
     width: 100%;
     gap: 20px;
     flex-wrap: wrap;
@@ -116,35 +137,36 @@ body {
 
 .mitarbeiter .mitarbeiter-item {
     position: relative;
-    width: 30%;
+    width: 30%; /* Feste Breite für jedes Mitarbeiter-Item */
     margin-bottom: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Bilder oben und Text unten */
+    align-items: center; /* Horizontale Zentrierung */
+    min-height: 380px; /* Feste Höhe für jedes Item, damit Bilder auf gleicher Höhe sind */
+    box-sizing: border-box;
 }
 
     .mitarbeiter .mitarbeiter-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        width: 200px; /* Feste Breite für alle Bilder */
+        height: 250px; /* Feste Höhe für alle Bilder */
+        object-fit: cover; /* Bild bleibt im Container verhältnismäßig */
         border-radius: 10px;
-    }
-
-    .mitarbeiter .mitarbeiter-item .name-line {
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%;
-        height: 2px;
-        background-color: var(--secondary-color);
+        filter: grayscale(100%); /* Schwarz-Weiß-Effekt */
+        opacity: 0.9;
+        margin-bottom: 10px; /* Abstand zwischen Bild und Text */
     }
 
     .mitarbeiter .mitarbeiter-item .mitarbeiter-details {
-        position: absolute;
-        bottom: 40px; /* Verschoben, damit der Text nicht über den Rand geht */
-        left: 20px;
-        right: 20px;
         color: yellow; /* Gelber Text */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Erhöht den Kontrast des Textes */
+        text-align: center; /* Textzentrierung */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Text und Überschrift gleichmäßig verteilen */
+        flex-grow: 1; /* Flexibles Wachstum, damit der Textbereich immer den verbleibenden Platz ausfüllt */
+        margin-top: auto; /* Text am unteren Rand platzieren */
     }
 
         .mitarbeiter .mitarbeiter-item .mitarbeiter-details h3 {
@@ -156,31 +178,3 @@ body {
             font-size: 14px;
             margin: 5px 0 0;
         }
-
-/* Navigation-Pfeile */
-.nav-arrow {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    cursor: pointer;
-    font-size: 24px;
-    transition: all 0.3s ease;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-
-    .nav-arrow:hover {
-        background: rgba(255, 255, 255, 0.4);
-    }
-
-.nav-arrow-left {
-    margin-right: 10px;
-}
-
-.nav-arrow-right {
-    margin-left: 10px;
-}

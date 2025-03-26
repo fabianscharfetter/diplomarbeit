@@ -1,6 +1,6 @@
 import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
-import { UserProfileToken, UserRole } from "../Models/User";
+import { UserProfileToken } from "../Models/User";
 
 const api = "https://localhost:7228/api/";
 
@@ -52,19 +52,25 @@ export const registerAPI = async (
     }
 };
 
-export const getUserRoleById = async (userId: string): Promise<UserRole | null> => {
-    try {
-        // API Request an den Endpoint getuser/userid
-        const response = await axios.get(`${api}/getUser/${userId}`);
+export const getUserRoleById = async (email: string | null): Promise<any | null> => {
+    if (!email) {
+        return null;
+    }
 
-        // Überprüfe, ob die Antwort den entsprechenden Daten enthält
-        if (response && response.data && response.data.role) {
-            return response.data.role; // Gib die Rolle zurück
+    try {
+        const response = await axios.get(`${api}User`);
+        const users = response.data;
+
+        if (Array.isArray(users)) {
+            const foundUser = users.find((user: any) => user.email === email);
+            return foundUser?.role !== undefined ? foundUser.role : null;
         } else {
-            throw new Error("Role not found");
+            console.warn("Ungültige Datenstruktur von der API erhalten.");
+            return null;
         }
-    } catch (error) {
-        console.error("Error fetching user role:", error);
-        return null; // Falls ein Fehler auftritt, gebe null zurück
+    } catch (err) {
+        console.error("Fehler beim Abrufen der Benutzerdaten:", err);
+        return null;
     }
 };
+
